@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,7 +12,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="Gradient" customModule="BeardGram" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -30,21 +31,114 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.74509803921568629" green="0.20392156862745098" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Pmg-K0-sHB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9dH-KW-e1Q"/>
+                            <constraint firstItem="Pmg-K0-sHB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.508906" id="R8D-7H-VGC"/>
                             <constraint firstItem="hB9-TC-blP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="VXJ-oj-cAS"/>
                             <constraint firstItem="Pmg-K0-sHB" firstAttribute="top" secondItem="hB9-TC-blP" secondAttribute="bottom" constant="96" id="YtP-l7-yQe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hB9-TC-blP" secondAttribute="trailing" constant="50" id="gtr-ib-32C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hB9-TC-blP" secondAttribute="bottom" constant="400" id="hOP-8L-AH8"/>
                             <constraint firstItem="hB9-TC-blP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="tac-Mt-cWA"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" red="0.74509803919999995" green="0.20392156859999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" systemColor="systemYellowColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="QU1-3s-ZUc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266" y="256"/>
+            <point key="canvasLocation" x="264.8854961832061" y="255.63380281690141"/>
+        </scene>
+        <!--WellcomeVC-->
+        <scene sceneID="sGj-B7-FJL">
+            <objects>
+                <viewController storyboardIdentifier="wellcomeId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vre-yo-RWP" customClass="WellcomeVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="THS-xY-d28" customClass="GradientWellcome" customModule="BeardGram" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xh0-CP-Nti">
+                                <rect key="frame" x="96.666666666666686" y="411" width="200" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Yr7-s5-eEU"/>
+                                    <constraint firstAttribute="height" constant="32" id="tsK-As-dVN"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Register"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDQ-tz-MjH">
+                                <rect key="frame" x="96.666666666666686" y="496" width="200" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="4pQ-B8-ok5"/>
+                                    <constraint firstAttribute="height" constant="32" id="SAW-JD-6hs"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICj-va-KaU">
+                                <rect key="frame" x="50" y="224" width="293" height="41"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="In beard we trust">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="37"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iTd-JN-aTj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ICj-va-KaU" firstAttribute="centerX" secondItem="iTd-JN-aTj" secondAttribute="centerX" id="3aO-oB-MKU"/>
+                            <constraint firstItem="iTd-JN-aTj" firstAttribute="trailing" secondItem="ICj-va-KaU" secondAttribute="trailing" constant="50" id="3rs-VC-DEg"/>
+                            <constraint firstItem="ICj-va-KaU" firstAttribute="leading" secondItem="iTd-JN-aTj" secondAttribute="leading" constant="50" id="DJD-2t-Mix"/>
+                            <constraint firstItem="xDQ-tz-MjH" firstAttribute="top" secondItem="xh0-CP-Nti" secondAttribute="bottom" constant="53" id="Fwu-OJ-bNM"/>
+                            <constraint firstItem="xDQ-tz-MjH" firstAttribute="centerX" secondItem="iTd-JN-aTj" secondAttribute="centerX" id="Tsh-Bc-svl"/>
+                            <constraint firstItem="xh0-CP-Nti" firstAttribute="top" secondItem="ICj-va-KaU" secondAttribute="bottom" constant="146" id="UNf-3x-L8i"/>
+                            <constraint firstItem="xh0-CP-Nti" firstAttribute="centerX" secondItem="iTd-JN-aTj" secondAttribute="centerX" id="WsT-U8-4x0"/>
+                            <constraint firstItem="ICj-va-KaU" firstAttribute="top" secondItem="iTd-JN-aTj" secondAttribute="top" constant="165" id="q1L-r4-EqY"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" red="0.74509803919999995" green="0.20392156859999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" red="0.13209530882665566" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1eG-r6-f4p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="256"/>
+        </scene>
+        <!--HomeVC-->
+        <scene sceneID="NoE-y5-YLb">
+            <objects>
+                <viewController id="59I-Nv-fXS" customClass="HomeVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FAj-BP-6bf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DAM-PB-dCA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a0L-8F-kOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1663" y="256"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dVk-Kn-rgq">
@@ -65,5 +159,11 @@
     </scenes>
     <resources>
         <image name="logo black" width="8060" height="6974"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

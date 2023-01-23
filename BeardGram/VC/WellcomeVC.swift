@@ -1,32 +1,21 @@
 //
-//  ViewController.swift
+//  WellcomeVC.swift
 //  BeardGram
 //
 //  Created by Pavel Semenchenko on 23.01.2023.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
-
+class WellcomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        // load func timer 3 sec
-        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(ViewController.Pop), userInfo: nil, repeats: false)
-    }
-
-    @objc func Pop() {
-        //self.navigationController?.popToRootViewController(animated: true)
-        guard let wellcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "wellcomeId") as? WellcomeVC else {
-            return
-        }
-        self.navigationController?.pushViewController(wellcomeVC, animated: true)
     }
     
 }
 @IBDesignable
-public class Gradient: UIView {
+public class GradientWellcome: UIView {
     @IBInspectable var startColor:   UIColor = .black { didSet { updateColors() }}
     @IBInspectable var endColor:     UIColor = .white { didSet { updateColors() }}
     @IBInspectable var startLocation: Double =   0.05 { didSet { updateLocations() }}
@@ -61,4 +50,3 @@ public class Gradient: UIView {
     }
 
 }
-
