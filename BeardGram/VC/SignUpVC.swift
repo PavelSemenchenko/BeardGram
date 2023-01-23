@@ -90,7 +90,7 @@ class SignUpVC: UIViewController, BaseAuthentication, UITextFieldDelegate {
                 alert.addAction(UIAlertAction(title: "Fine", style: UIAlertAction.Style.default))
                 self.present(alert, animated: true)
             } else {
-                guard let home = self.storyboard?.instantiateViewController(withIdentifier: "homeBS") as? HomeVC else {
+                guard let home = self.storyboard?.instantiateViewController(withIdentifier: "homeSB") as? HomeVC else {
                     return
                 }
                 self.navigationController?.pushViewController(home, animated: true)
