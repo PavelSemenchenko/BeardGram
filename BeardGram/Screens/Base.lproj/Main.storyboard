@@ -307,8 +307,20 @@
                     <view key="view" contentMode="scaleToFill" id="FAj-BP-6bf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aO-ea-VoL">
+                                <rect key="frame" x="159" y="377" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="DAM-PB-dCA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1aO-ea-VoL" firstAttribute="centerX" secondItem="DAM-PB-dCA" secondAttribute="centerX" id="DXm-jM-pbC"/>
+                            <constraint firstItem="1aO-ea-VoL" firstAttribute="centerY" secondItem="DAM-PB-dCA" secondAttribute="centerY" id="hMo-El-I5t"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0L-8F-kOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
