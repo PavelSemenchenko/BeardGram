@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MGZ-BD-2jY">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -16,22 +16,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo black" translatesAutoresizingMaskIntoConstraints="NO" id="hB9-TC-blP">
-                                <rect key="frame" x="50" y="109" width="293" height="309"/>
+                                <rect key="frame" x="50" y="153" width="293" height="265"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From barbers to Men" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmg-K0-sHB">
+                                <rect key="frame" x="96.666666666666686" y="514" width="200" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="S1R-dW-WWH"/>
+                                    <constraint firstAttribute="height" constant="64" id="fbJ-yG-XUg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.74509803921568629" green="0.20392156862745098" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Pmg-K0-sHB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9dH-KW-e1Q"/>
                             <constraint firstItem="hB9-TC-blP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="VXJ-oj-cAS"/>
+                            <constraint firstItem="Pmg-K0-sHB" firstAttribute="top" secondItem="hB9-TC-blP" secondAttribute="bottom" constant="96" id="YtP-l7-yQe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hB9-TC-blP" secondAttribute="trailing" constant="50" id="gtr-ib-32C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hB9-TC-blP" secondAttribute="bottom" constant="400" id="hOP-8L-AH8"/>
                             <constraint firstItem="hB9-TC-blP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="tac-Mt-cWA"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QU1-3s-ZUc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5" y="-27"/>
+            <point key="canvasLocation" x="266" y="256"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dVk-Kn-rgq">
+            <objects>
+                <navigationController id="MGZ-BD-2jY" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ye2-CA-D27">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NNc-hf-LSr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JHV-s9-cqS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-461" y="256"/>
         </scene>
     </scenes>
     <resources>
