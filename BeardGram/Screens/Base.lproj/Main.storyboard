@@ -19,13 +19,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo black" translatesAutoresizingMaskIntoConstraints="NO" id="hB9-TC-blP">
                                 <rect key="frame" x="50" y="153" width="293" height="265"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From barbers to Men" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmg-K0-sHB">
-                                <rect key="frame" x="96.666666666666686" y="514" width="200" height="64"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beard Gram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmg-K0-sHB">
+                                <rect key="frame" x="30" y="468" width="333" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="S1R-dW-WWH"/>
-                                    <constraint firstAttribute="height" constant="64" id="fbJ-yG-XUg"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="hoS-Sy-mqM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -33,10 +32,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pmg-K0-sHB" secondAttribute="trailing" constant="30" id="7OQ-sG-smJ"/>
                             <constraint firstItem="Pmg-K0-sHB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9dH-KW-e1Q"/>
-                            <constraint firstItem="Pmg-K0-sHB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.508906" id="R8D-7H-VGC"/>
                             <constraint firstItem="hB9-TC-blP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="VXJ-oj-cAS"/>
-                            <constraint firstItem="Pmg-K0-sHB" firstAttribute="top" secondItem="hB9-TC-blP" secondAttribute="bottom" constant="96" id="YtP-l7-yQe"/>
+                            <constraint firstItem="Pmg-K0-sHB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Wzx-zz-90j"/>
+                            <constraint firstItem="Pmg-K0-sHB" firstAttribute="top" secondItem="hB9-TC-blP" secondAttribute="bottom" constant="50" id="YtP-l7-yQe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hB9-TC-blP" secondAttribute="trailing" constant="50" id="gtr-ib-32C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hB9-TC-blP" secondAttribute="bottom" constant="400" id="hOP-8L-AH8"/>
                             <constraint firstItem="hB9-TC-blP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="tac-Mt-cWA"/>
@@ -158,7 +158,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo black" width="8060" height="6974"/>
+        <image name="logo black" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
