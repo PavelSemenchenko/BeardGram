@@ -99,10 +99,10 @@
 		2A4129F2297F0DEC00E33979 /* BeardGram */ = {
 			isa = PBXGroup;
 			children = (
+				2A412A24297F107200E33979 /* VC */,
+				2A412A23297F106300E33979 /* Screens */,
 				2A4129F3297F0DEC00E33979 /* AppDelegate.swift */,
 				2A4129F5297F0DEC00E33979 /* SceneDelegate.swift */,
-				2A4129F7297F0DEC00E33979 /* ViewController.swift */,
-				2A4129F9297F0DEC00E33979 /* Main.storyboard */,
 				2A4129FC297F0DEE00E33979 /* Assets.xcassets */,
 				2A4129FE297F0DEE00E33979 /* LaunchScreen.storyboard */,
 				2A412A01297F0DEE00E33979 /* Info.plist */,
@@ -125,6 +125,22 @@
 				2A412A16297F0DEE00E33979 /* BeardGramUITestsLaunchTests.swift */,
 			);
 			path = BeardGramUITests;
+			sourceTree = "<group>";
+		};
+		2A412A23297F106300E33979 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2A4129F9297F0DEC00E33979 /* Main.storyboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		2A412A24297F107200E33979 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				2A4129F7297F0DEC00E33979 /* ViewController.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
