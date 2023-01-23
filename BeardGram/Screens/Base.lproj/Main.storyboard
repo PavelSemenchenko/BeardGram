@@ -58,6 +58,21 @@
             </objects>
             <point key="canvasLocation" x="264.8854961832061" y="255.63380281690141"/>
         </scene>
+        <!--Sign UpVC-->
+        <scene sceneID="q0s-3c-Qyh">
+            <objects>
+                <viewController storyboardIdentifier="signUP" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bkg-vZ-Gb2" customClass="SignUpVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fRG-qI-yID">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="TFK-Yc-tNZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fa2-eY-QCD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="938" y="-385"/>
+        </scene>
         <!--WellcomeVC-->
         <scene sceneID="sGj-B7-FJL">
             <objects>
