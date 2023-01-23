@@ -13,6 +13,18 @@ class WellcomeVC: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func registerButtonClicked(_ sender: Any) {
+        guard let signUp = self.storyboard?.instantiateViewController(withIdentifier: "signUP") as? SignUpVC else {
+            return
+        }
+        self.navigationController?.pushViewController(signUp, animated: true)
+    }
+    
+    
+    @IBAction func loginButtonClicked(_ sender: Any) {
+    }
+    
+    
 }
 @IBDesignable
 public class GradientWellcome: UIView {
@@ -49,4 +61,6 @@ public class GradientWellcome: UIView {
         updateColors()
     }
 
+   
+    
 }

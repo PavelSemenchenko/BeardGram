@@ -47,6 +47,12 @@
 		2A412A5F297F2B9800E33979 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A412A5E297F2B9800E33979 /* FirebaseRemoteConfigSwift */; };
 		2A412A61297F2B9800E33979 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2A412A60297F2B9800E33979 /* FirebaseStorage */; };
 		2A412A63297F2B9800E33979 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 2A412A62297F2B9800E33979 /* FirebaseStorageCombine-Community */; };
+		2A412A67297F370200E33979 /* BaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A66297F370200E33979 /* BaseAuthentication.swift */; };
+		2A412A69297F370E00E33979 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A68297F370E00E33979 /* Authentication.swift */; };
+		2A412A6B297F371A00E33979 /* Filestorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A6A297F371A00E33979 /* Filestorage.swift */; };
+		2A412A6E297F39A200E33979 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A6D297F39A200E33979 /* EmailTextField.swift */; };
+		2A412A70297F3A4100E33979 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A6F297F3A4100E33979 /* PasswordTextField.swift */; };
+		2A412A72297F3A6300E33979 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A71297F3A6300E33979 /* NameTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +90,12 @@
 		2A412A27297F245100E33979 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		2A412A29297F294C00E33979 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		2A412A2B297F2A8200E33979 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2A412A66297F370200E33979 /* BaseAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuthentication.swift; sourceTree = "<group>"; };
+		2A412A68297F370E00E33979 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		2A412A6A297F371A00E33979 /* Filestorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filestorage.swift; sourceTree = "<group>"; };
+		2A412A6D297F39A200E33979 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
+		2A412A6F297F3A4100E33979 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		2A412A71297F3A6300E33979 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +173,9 @@
 		2A4129F2297F0DEC00E33979 /* BeardGram */ = {
 			isa = PBXGroup;
 			children = (
+				2A412A6C297F398800E33979 /* Fields */,
+				2A412A65297F36E200E33979 /* Common */,
+				2A412A64297F36CE00E33979 /* Services */,
 				2A412A24297F107200E33979 /* VC */,
 				2A412A23297F106300E33979 /* Screens */,
 				2A4129F3297F0DEC00E33979 /* AppDelegate.swift */,
@@ -207,6 +222,33 @@
 				2A412A27297F245100E33979 /* HomeVC.swift */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		2A412A64297F36CE00E33979 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2A412A68297F370E00E33979 /* Authentication.swift */,
+				2A412A6A297F371A00E33979 /* Filestorage.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2A412A65297F36E200E33979 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2A412A66297F370200E33979 /* BaseAuthentication.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2A412A6C297F398800E33979 /* Fields */ = {
+			isa = PBXGroup;
+			children = (
+				2A412A6D297F39A200E33979 /* EmailTextField.swift */,
+				2A412A6F297F3A4100E33979 /* PasswordTextField.swift */,
+				2A412A71297F3A6300E33979 /* NameTextField.swift */,
+			);
+			path = Fields;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,12 +415,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A412A72297F3A6300E33979 /* NameTextField.swift in Sources */,
 				2A412A26297F1B2500E33979 /* WellcomeVC.swift in Sources */,
 				2A412A28297F245100E33979 /* HomeVC.swift in Sources */,
+				2A412A6E297F39A200E33979 /* EmailTextField.swift in Sources */,
 				2A4129F8297F0DEC00E33979 /* ViewController.swift in Sources */,
+				2A412A67297F370200E33979 /* BaseAuthentication.swift in Sources */,
+				2A412A6B297F371A00E33979 /* Filestorage.swift in Sources */,
 				2A4129F4297F0DEC00E33979 /* AppDelegate.swift in Sources */,
 				2A412A2A297F294C00E33979 /* SignUpVC.swift in Sources */,
 				2A4129F6297F0DEC00E33979 /* SceneDelegate.swift in Sources */,
+				2A412A70297F3A4100E33979 /* PasswordTextField.swift in Sources */,
+				2A412A69297F370E00E33979 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
