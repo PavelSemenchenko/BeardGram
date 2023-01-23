@@ -9,13 +9,13 @@ import Foundation
 import FirebaseAuth
 
 protocol AuthenticationService {
-    func sigUp(name: String, email: String, password: String, completion: @escaping (String?) -> Void)
+    func signUp(name: String, email: String, password: String, completion: @escaping (String?) -> Void)
     func isAuthenticated() -> Bool
     func logOut()
 }
 
 class FirebaseAuthenticationService: AuthenticationService {
-    func sigUp(name: String, email: String, password: String, completion: @escaping (String?) -> Void) {
+    func signUp(name: String, email: String, password: String, completion: @escaping (String?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let user = result?.user {
                 let request = user.createProfileChangeRequest()

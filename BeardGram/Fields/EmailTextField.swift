@@ -9,14 +9,13 @@ import Foundation
 import UIKit
 
 class EmailTextField: UITextField {
-    /*
-    override class func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
         layer.shadowOpacity = 1
         layer.shadowRadius = 12.0
         layer.shadowOffset = CGSize.zero
         layer.shadowColor = UIColor.gray.cgColor
-    }*/
+    }
     func validateEmailTextField(errorLabel: UILabel) -> String? {
         let optionalEmail = text
         guard let email = optionalEmail, email.contains("@") else {
