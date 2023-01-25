@@ -13,12 +13,11 @@ jobs:
       - uses: actions/cache@v3
         name: Caching packages
         with:
-          path: build_output/SourcePackages
-          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
           restore-keys: |
-            ${{ runner.os }}-spm-
-      - run: |
-          xcodebuild -resolvePackageDependencies -project BeardGram.xcodeproj -clonedSourcePackagesDirPath build_output/SourcePackages
+            ${{ runner.os }}-pods-
+      - run: pod install
         name: Resolving Dependencies
       - run: |
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
@@ -35,11 +34,11 @@ jobs:
           echo 'CURRENT_PROJECT_VERSION=${{github.run_number}}' >> Configs/Release.xcconfig
           xcodebuild -quiet -project BeardGram.xcodeproj -scheme BeardGram -configuration Release -derivedDataPath build_output -sdk iphoneos -archivePath app_output/BeardGram.xcarchive archive
         name: Building application
-        timeout-minutes: 10
+        timeout-minutes: 20
       - run: |
           xcodebuild -exportArchive -archivePath app_output/BeardGram.xcarchive -exportPath app_output/ -exportOptionsPlist BeardGram.plist
         name: Exporting application
-        timeout-minutes: 5
+        timeout-minutes: 10
       - uses: actions/upload-artifact@v3
         name: Archive production artifacts
         with:
