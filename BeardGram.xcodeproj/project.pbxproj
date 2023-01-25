@@ -261,6 +261,7 @@
 				2A4129ED297F0DEC00E33979 /* Frameworks */,
 				2A4129EE297F0DEC00E33979 /* Resources */,
 				4DDBBDCBEBED05F753DCB00F /* [CP] Embed Pods Frameworks */,
+				F7C11508B67F0B434E48A629 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,6 +300,7 @@
 				2A412A0D297F0DEE00E33979 /* Frameworks */,
 				2A412A0E297F0DEE00E33979 /* Resources */,
 				4CC2A21D12E50690B9AA719D /* [CP] Embed Pods Frameworks */,
+				FCA37048AA7E108D40D82E40 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -480,6 +482,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7C11508B67F0B434E48A629 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeardGram/Pods-BeardGram-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeardGram/Pods-BeardGram-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeardGram/Pods-BeardGram-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCA37048AA7E108D40D82E40 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeardGram-BeardGramUITests/Pods-BeardGram-BeardGramUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeardGram-BeardGramUITests/Pods-BeardGram-BeardGramUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeardGram-BeardGramUITests/Pods-BeardGram-BeardGramUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

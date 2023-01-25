@@ -7,7 +7,7 @@ target 'BeardGram' do
 
   pod 'FirebaseAnalytics'
   pod 'FirebaseAuth'
-  pod 'FirebaseFirestore'
+  pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '10.4.0'
 
   target 'BeardGramTests' do
     inherit! :search_paths
@@ -18,4 +18,12 @@ target 'BeardGram' do
     # Pods for testing
   end
 
+end
+
+post_install do |installer|
+ installer.pods_project.targets.each do |target|
+  target.build_configurations.each do |config|
+   config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+  end
+ end
 end
