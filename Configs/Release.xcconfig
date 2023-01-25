@@ -1,0 +1,18 @@
+//
+//  Release.xcconfig
+//  BeardGram
+//
+//  Created by Nikolay Dymura on 25.01.2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+CURRENT_PROJECT_VERSION=1
+MARKETING_VERSION=1.0
+VERSIONING_SYSTEM=apple-generic
+IPHONEOS_DEPLOYMENT_TARGET=15.6
+PRODUCT_BUNDLE_IDENTIFIER=PavelSemenchenko.BeardGram.Demo
+CODE_SIGN_IDENTITY=Apple Distribution: Mykola Dymura (8MJN994E42)
+CODE_SIGN_STYLE=Manual
+PROVISIONING_PROFILE_SPECIFIER=PavelSemenchenkoBeardGram
+DEVELOPMENT_TEAM=8MJN994E42

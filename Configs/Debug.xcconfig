@@ -1,0 +1,14 @@
+//
+//  Debug.xcconfig
+//  BeardGram
+//
+//  Created by Nikolay Dymura on 25.01.2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+CURRENT_PROJECT_VERSION=1
+MARKETING_VERSION=1.0
+IPHONEOS_DEPLOYMENT_TARGET=15.6
+PRODUCT_BUNDLE_IDENTIFIER=PavelSemenchenko.BeardGram.Demo
+DEVELOPMENT_TEAM=7328NRHXBW

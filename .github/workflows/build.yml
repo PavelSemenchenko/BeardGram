@@ -1,0 +1,46 @@
+name: Distributing application
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    name: Build application
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Downloading sources
+      - uses: actions/cache@v3
+        name: Caching packages
+        with:
+          path: build_output/SourcePackages
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+      - run: |
+          xcodebuild -resolvePackageDependencies -project BeardGram.xcodeproj -clonedSourcePackagesDirPath build_output/SourcePackages
+        name: Resolving Dependencies
+      - run: |
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          cp PavelSemenchenkoBeardGram.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+          
+          security create-keychain -p "" PavelSemenchenkoBeardGram-build.keychain
+          security import imagevideo.p12 -t agg -k ~/Library/Keychains/PavelSemenchenkoBeardGram-build.keychain -P "098qwe!@#" -A
+          
+          security list-keychains -s ~/Library/Keychains/PavelSemenchenkoBeardGram-build.keychain
+          security default-keychain -s ~/Library/Keychains/PavelSemenchenkoBeardGram-build.keychain
+          security unlock-keychain -p "" ~/Library/Keychains/PavelSemenchenkoBeardGram-build.keychain
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/PavelSemenchenkoBeardGram-build.keychain
+          
+          xcodebuild -quiet -project BeardGram.xcodeproj -scheme BeardGram -configuration Release -derivedDataPath build_output -sdk iphoneos -archivePath app_output/BeardGram.xcarchive archive
+        name: Building application
+      - run: |
+          xcodebuild -exportArchive -archivePath app_output/BeardGram.xcarchive -exportPath app_output/ -exportOptionsPlist BeardGram.plist
+        name: Exporting application
+      - uses: wzieba/Firebase-Distribution-Github-Action@v1
+        name: Uploading to Firebase App Distribution
+        with:
+          appId: ${{ secrets.FIREBASE_APP_ID }}
+          token: ${{ secrets.FIREBASE_TOKEN }}
+          groups: testers
+          file: app_output/BeardGram.ipa
