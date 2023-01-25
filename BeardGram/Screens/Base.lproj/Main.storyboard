@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MGZ-BD-2jY">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -225,7 +226,111 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fa2-eY-QCD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936.64122137404581" y="-385.21126760563385"/>
+            <point key="canvasLocation" x="305" y="-475"/>
+        </scene>
+        <!--Phone Sign UpVC-->
+        <scene sceneID="C3R-0b-fVZ">
+            <objects>
+                <viewController storyboardIdentifier="phoneSignUpSB" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AeL-5P-Rn1" customClass="PhoneSignUpVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0a2-Qe-R3m">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r5E-Hc-IlY">
+                                <rect key="frame" x="35" y="142" width="322" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7sO-nF-3Vm">
+                                        <rect key="frame" x="38" y="47" width="97" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Номер телефона" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaS-E4-4JB">
+                                        <rect key="frame" x="38" y="8" width="136" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fdl-fz-pYJ">
+                                        <rect key="frame" x="83" y="112" width="133" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Получить код"/>
+                                        <connections>
+                                            <action selector="getCodeButtonClicked:" destination="AeL-5P-Rn1" eventType="touchUpInside" id="sIb-J4-edX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jiv-tI-CSq">
+                                        <rect key="frame" x="90" y="266" width="144" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Проверить код"/>
+                                        <connections>
+                                            <action selector="checkCodeButtonClicked:" destination="AeL-5P-Rn1" eventType="touchUpInside" id="Ooi-1V-GAa"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Код из смс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npU-j4-uav">
+                                        <rect key="frame" x="15" y="170" width="88" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnK-MU-utG">
+                                        <rect key="frame" x="27" y="218" width="97" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XYi-9g-23C"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="checkCodeButton" destination="Jiv-tI-CSq" id="emq-xI-vXd"/>
+                        <outlet property="checkCodeTextField" destination="MnK-MU-utG" id="5v7-uf-rye"/>
+                        <outlet property="getCodeButton" destination="Fdl-fz-pYJ" id="ieR-fB-H3D"/>
+                        <outlet property="phoneNumberTextField" destination="7sO-nF-3Vm" id="0PB-8J-UVq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vye-h1-MhE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="985.49618320610682" y="-475.35211267605638"/>
+        </scene>
+        <!--Apple Sign UpVC-->
+        <scene sceneID="ZTX-FY-uTz">
+            <objects>
+                <viewController storyboardIdentifier="appleSignUpSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QIP-Da-D5U" customClass="AppleSignUpVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ue-4y-ONk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7yu-0l-njJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mUm-PH-5Cp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1703" y="-475"/>
+        </scene>
+        <!--Facebook Sign UpVC-->
+        <scene sceneID="wPM-5l-qY9">
+            <objects>
+                <viewController storyboardIdentifier="facebookSignUpSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZeV-bX-MbK" customClass="FacebookSignUpVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sOV-pz-YSS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0jx-ko-Z6Y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klP-30-9O6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2416" y="-475"/>
         </scene>
         <!--WellcomeVC-->
         <scene sceneID="sGj-B7-FJL">
@@ -236,31 +341,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xh0-CP-Nti">
-                                <rect key="frame" x="96.666666666666686" y="411" width="200" height="32"/>
+                                <rect key="frame" x="96.666666666666686" y="368.33333333333331" width="200" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Yr7-s5-eEU"/>
                                     <constraint firstAttribute="height" constant="32" id="tsK-As-dVN"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Register"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Register by Email"/>
                                 <connections>
                                     <action selector="registerButtonClicked:" destination="Vre-yo-RWP" eventType="touchUpInside" id="tiK-GU-0bn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDQ-tz-MjH">
-                                <rect key="frame" x="96.666666666666686" y="496" width="200" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="4pQ-B8-ok5"/>
-                                    <constraint firstAttribute="height" constant="32" id="SAW-JD-6hs"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Login"/>
-                                <connections>
-                                    <action selector="loginButtonClicked:" destination="Vre-yo-RWP" eventType="touchUpInside" id="vWt-W3-OSq"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICj-va-KaU">
-                                <rect key="frame" x="50" y="224" width="293" height="41"/>
+                                <rect key="frame" x="50" y="224" width="293" height="44.333333333333314"/>
                                 <attributedString key="attributedText">
                                     <fragment content="In beard we trust">
                                         <attributes>
@@ -272,6 +365,42 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLj-xm-S0P">
+                                <rect key="frame" x="96.666666666666671" y="417" width="46.000000000000014" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="iphone.gen1" catalog="system"/>
+                                <connections>
+                                    <action selector="registerPhoneButtonClicked:" destination="Vre-yo-RWP" eventType="touchUpInside" id="h4u-Ot-F9l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptU-sq-NZ6">
+                                <rect key="frame" x="174.66666666666666" y="418" width="44" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="apple.logo" catalog="system"/>
+                                <connections>
+                                    <action selector="registerAppleButtonClicked:" destination="Vre-yo-RWP" eventType="touchUpInside" id="W3y-WE-t6u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbB-O0-SJL">
+                                <rect key="frame" x="262.66666666666669" y="418" width="34" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="F"/>
+                                <connections>
+                                    <action selector="registerFacebookButtonClicked:" destination="Vre-yo-RWP" eventType="touchUpInside" id="MQ2-V1-C69"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDQ-tz-MjH">
+                                <rect key="frame" x="96.666666666666686" y="500.33333333333326" width="200" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="4pQ-B8-ok5"/>
+                                    <constraint firstAttribute="height" constant="32" id="SAW-JD-6hs"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonClicked:" destination="Vre-yo-RWP" eventType="touchUpInside" id="vWt-W3-OSq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iTd-JN-aTj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -279,11 +408,17 @@
                             <constraint firstItem="ICj-va-KaU" firstAttribute="centerX" secondItem="iTd-JN-aTj" secondAttribute="centerX" id="3aO-oB-MKU"/>
                             <constraint firstItem="iTd-JN-aTj" firstAttribute="trailing" secondItem="ICj-va-KaU" secondAttribute="trailing" constant="50" id="3rs-VC-DEg"/>
                             <constraint firstItem="ICj-va-KaU" firstAttribute="leading" secondItem="iTd-JN-aTj" secondAttribute="leading" constant="50" id="DJD-2t-Mix"/>
-                            <constraint firstItem="xDQ-tz-MjH" firstAttribute="top" secondItem="xh0-CP-Nti" secondAttribute="bottom" constant="53" id="Fwu-OJ-bNM"/>
+                            <constraint firstItem="xDQ-tz-MjH" firstAttribute="top" secondItem="xh0-CP-Nti" secondAttribute="bottom" constant="100" id="EUa-rt-In0"/>
+                            <constraint firstItem="BbB-O0-SJL" firstAttribute="trailing" secondItem="xh0-CP-Nti" secondAttribute="trailing" id="Lsy-S0-dk2"/>
+                            <constraint firstItem="ptU-sq-NZ6" firstAttribute="centerX" secondItem="xh0-CP-Nti" secondAttribute="centerX" id="TcI-5h-2G9"/>
                             <constraint firstItem="xDQ-tz-MjH" firstAttribute="centerX" secondItem="iTd-JN-aTj" secondAttribute="centerX" id="Tsh-Bc-svl"/>
-                            <constraint firstItem="xh0-CP-Nti" firstAttribute="top" secondItem="ICj-va-KaU" secondAttribute="bottom" constant="146" id="UNf-3x-L8i"/>
+                            <constraint firstItem="xh0-CP-Nti" firstAttribute="top" secondItem="ICj-va-KaU" secondAttribute="bottom" constant="100" id="UNf-3x-L8i"/>
+                            <constraint firstItem="NLj-xm-S0P" firstAttribute="leading" secondItem="xh0-CP-Nti" secondAttribute="leading" id="WAh-Eb-407"/>
                             <constraint firstItem="xh0-CP-Nti" firstAttribute="centerX" secondItem="iTd-JN-aTj" secondAttribute="centerX" id="WsT-U8-4x0"/>
+                            <constraint firstItem="BbB-O0-SJL" firstAttribute="top" secondItem="xh0-CP-Nti" secondAttribute="bottom" constant="17.666666666666686" id="XlV-0z-ae1"/>
+                            <constraint firstItem="ptU-sq-NZ6" firstAttribute="top" secondItem="xh0-CP-Nti" secondAttribute="bottom" constant="17.666666666666686" id="koy-lu-Sno"/>
                             <constraint firstItem="ICj-va-KaU" firstAttribute="top" secondItem="iTd-JN-aTj" secondAttribute="top" constant="165" id="q1L-r4-EqY"/>
+                            <constraint firstItem="NLj-xm-S0P" firstAttribute="top" secondItem="xh0-CP-Nti" secondAttribute="bottom" constant="16.666666666666686" id="zUF-Rq-Cgl"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="startColor">
@@ -298,7 +433,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eG-r6-f4p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="256"/>
+            <point key="canvasLocation" x="956.48854961832058" y="255.63380281690141"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="NoE-y5-YLb">
@@ -345,6 +480,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="apple.logo" catalog="system" width="105" height="128"/>
+        <image name="iphone.gen1" catalog="system" width="112" height="128"/>
         <image name="logo black" width="512" height="512"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

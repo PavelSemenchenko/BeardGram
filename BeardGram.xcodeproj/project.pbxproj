@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2A1DDCD22981A83C00CA194F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A1DDCD12981A83C00CA194F /* GoogleService-Info.plist */; };
+		2A1DDCD62981C8CF00CA194F /* PhoneSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DDCD52981C8CF00CA194F /* PhoneSignUpVC.swift */; };
+		2A1DDCD82981CC7400CA194F /* AppleSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DDCD72981CC7400CA194F /* AppleSignUpVC.swift */; };
+		2A1DDCDA2981CCD700CA194F /* FacebookSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DDCD92981CCD700CA194F /* FacebookSignUpVC.swift */; };
 		2A4129F4297F0DEC00E33979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4129F3297F0DEC00E33979 /* AppDelegate.swift */; };
 		2A4129F6297F0DEC00E33979 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4129F5297F0DEC00E33979 /* SceneDelegate.swift */; };
 		2A4129F8297F0DEC00E33979 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4129F7297F0DEC00E33979 /* ViewController.swift */; };
@@ -74,6 +77,10 @@
 
 /* Begin PBXFileReference section */
 		2A1DDCD12981A83C00CA194F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2A1DDCD42981C41700CA194F /* BeardGram.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeardGram.entitlements; sourceTree = "<group>"; };
+		2A1DDCD52981C8CF00CA194F /* PhoneSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSignUpVC.swift; sourceTree = "<group>"; };
+		2A1DDCD72981CC7400CA194F /* AppleSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignUpVC.swift; sourceTree = "<group>"; };
+		2A1DDCD92981CCD700CA194F /* FacebookSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookSignUpVC.swift; sourceTree = "<group>"; };
 		2A4129F0297F0DEC00E33979 /* BeardGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeardGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A4129F3297F0DEC00E33979 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A4129F5297F0DEC00E33979 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +183,7 @@
 		2A4129F2297F0DEC00E33979 /* BeardGram */ = {
 			isa = PBXGroup;
 			children = (
+				2A1DDCD42981C41700CA194F /* BeardGram.entitlements */,
 				2A412A6C297F398800E33979 /* Fields */,
 				2A412A65297F36E200E33979 /* Common */,
 				2A412A64297F36CE00E33979 /* Services */,
@@ -223,6 +231,9 @@
 				2A412A29297F294C00E33979 /* SignUpVC.swift */,
 				2A412A25297F1B2500E33979 /* WellcomeVC.swift */,
 				2A412A27297F245100E33979 /* HomeVC.swift */,
+				2A1DDCD52981C8CF00CA194F /* PhoneSignUpVC.swift */,
+				2A1DDCD72981CC7400CA194F /* AppleSignUpVC.swift */,
+				2A1DDCD92981CCD700CA194F /* FacebookSignUpVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -382,6 +393,7 @@
 			mainGroup = 2A4129E7297F0DEC00E33979;
 			packageReferences = (
 				2A412A2D297F2B9700E33979 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2A1DDCDB2981D2DE00CA194F /* XCRemoteSwiftPackageReference "FlagPhoneNumber" */,
 			);
 			productRefGroup = 2A4129F1297F0DEC00E33979 /* Products */;
 			projectDirPath = "";
@@ -428,6 +440,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A412A72297F3A6300E33979 /* NameTextField.swift in Sources */,
+				2A1DDCDA2981CCD700CA194F /* FacebookSignUpVC.swift in Sources */,
+				2A1DDCD82981CC7400CA194F /* AppleSignUpVC.swift in Sources */,
 				2A412A26297F1B2500E33979 /* WellcomeVC.swift in Sources */,
 				2A412A28297F245100E33979 /* HomeVC.swift in Sources */,
 				2A412A6E297F39A200E33979 /* EmailTextField.swift in Sources */,
@@ -439,6 +453,7 @@
 				2A4129F6297F0DEC00E33979 /* SceneDelegate.swift in Sources */,
 				2A412A70297F3A4100E33979 /* PasswordTextField.swift in Sources */,
 				2A412A69297F370E00E33979 /* Authentication.swift in Sources */,
+				2A1DDCD62981C8CF00CA194F /* PhoneSignUpVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,7 +629,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BeardGram/BeardGram.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 1;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8MJN994E42;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BeardGram/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -628,6 +646,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = PavelSemenchenkoBeardGram;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -640,6 +659,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BeardGram/BeardGram.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BeardGram/Info.plist;
@@ -778,6 +798,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2A1DDCDB2981D2DE00CA194F /* XCRemoteSwiftPackageReference "FlagPhoneNumber" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:chronotruck/FlagPhoneNumber.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.0;
+			};
+		};
 		2A412A2D297F2B9700E33979 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";

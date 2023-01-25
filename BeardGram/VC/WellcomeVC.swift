@@ -12,12 +12,33 @@ class WellcomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+    // Register by email
     @IBAction func registerButtonClicked(_ sender: Any) {
         guard let signUp = self.storyboard?.instantiateViewController(withIdentifier: "signUP") as? SignUpVC else {
             return
         }
         self.navigationController?.pushViewController(signUp, animated: true)
+    }
+    // Enter by phone number
+    @IBAction func registerPhoneButtonClicked(_ sender: Any) {
+        guard let signUpPhone = self.storyboard?.instantiateViewController(withIdentifier: "phoneSignUpSB") as? PhoneSignUpVC else {
+            return
+        }
+        self.navigationController?.pushViewController(signUpPhone, animated: true)
+    }
+    // Enter by Apple
+    @IBAction func registerAppleButtonClicked(_ sender: Any) {
+        guard let enterByApple = self.storyboard?.instantiateViewController(withIdentifier: "appleSignUpSB") as? AppleSignUpVC else {
+            return
+        }
+        self.navigationController?.pushViewController(enterByApple, animated: true)
+    }
+    // Enter by Facebook
+    @IBAction func registerFacebookButtonClicked(_ sender: Any) {
+        guard let enterByFacebook = self.storyboard?.instantiateViewController(withIdentifier: "facebookSignUpSB") as? FacebookSignUpVC else {
+            return
+        }
+        self.navigationController?.pushViewController(enterByFacebook, animated: true)
     }
     
     
