@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import FirebaseAuth
-// ? import FlagPhoneNumber
+import FlagPhoneNumber
 
 class PhoneSignUpVC: UIViewController {
     var phoneNumber: String?
@@ -26,7 +26,8 @@ class PhoneSignUpVC: UIViewController {
     @IBAction func getCodeButtonClicked(_ sender: Any) {
         guard phoneNumber != nil else { return }
         
-        PhoneAuth
+        PhoneAuthPovider
+        
     }
     
     @IBAction func checkCodeButtonClicked(_ sender: Any) {

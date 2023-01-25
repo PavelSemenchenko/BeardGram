@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		252BEE179D7198CEEF2F7C09 /* Pods_BeardGram_BeardGramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E297EB896B30596143DDACD /* Pods_BeardGram_BeardGramUITests.framework */; };
 		2A1DDCD22981A83C00CA194F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A1DDCD12981A83C00CA194F /* GoogleService-Info.plist */; };
 		2A1DDCD62981C8CF00CA194F /* PhoneSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DDCD52981C8CF00CA194F /* PhoneSignUpVC.swift */; };
 		2A1DDCD82981CC7400CA194F /* AppleSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DDCD72981CC7400CA194F /* AppleSignUpVC.swift */; };
@@ -56,6 +57,8 @@
 		2A412A6E297F39A200E33979 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A6D297F39A200E33979 /* EmailTextField.swift */; };
 		2A412A70297F3A4100E33979 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A6F297F3A4100E33979 /* PasswordTextField.swift */; };
 		2A412A72297F3A6300E33979 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A71297F3A6300E33979 /* NameTextField.swift */; };
+		31208E91C03357F65CAFD45E /* Pods_BeardGramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7116BA5921DD8B29F9E36C5 /* Pods_BeardGramTests.framework */; };
+		F5F0A8679D8CDCC26E1DA88D /* Pods_BeardGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 303C657FC8A59EA1C128E58F /* Pods_BeardGram.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E297EB896B30596143DDACD /* Pods_BeardGram_BeardGramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeardGram_BeardGramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1DDCD12981A83C00CA194F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2A1DDCD42981C41700CA194F /* BeardGram.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeardGram.entitlements; sourceTree = "<group>"; };
 		2A1DDCD52981C8CF00CA194F /* PhoneSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSignUpVC.swift; sourceTree = "<group>"; };
@@ -103,8 +107,16 @@
 		2A412A6D297F39A200E33979 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
 		2A412A6F297F3A4100E33979 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		2A412A71297F3A6300E33979 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
+		2DFF4A76DB7EB40EA2C25A17 /* Pods-BeardGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeardGram.release.xcconfig"; path = "Target Support Files/Pods-BeardGram/Pods-BeardGram.release.xcconfig"; sourceTree = "<group>"; };
+		300AA92962871EFCC074AB2B /* Pods-BeardGram-BeardGramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeardGram-BeardGramUITests.debug.xcconfig"; path = "Target Support Files/Pods-BeardGram-BeardGramUITests/Pods-BeardGram-BeardGramUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		303C657FC8A59EA1C128E58F /* Pods_BeardGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeardGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		350D17508D50991D045A56D9 /* Pods-BeardGram-BeardGramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeardGram-BeardGramUITests.release.xcconfig"; path = "Target Support Files/Pods-BeardGram-BeardGramUITests/Pods-BeardGram-BeardGramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6DFD0B89298158E30043A50B /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		6DFD0B8A298158EE0043A50B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		878E02D53AA54EF5099F7849 /* Pods-BeardGram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeardGram.debug.xcconfig"; path = "Target Support Files/Pods-BeardGram/Pods-BeardGram.debug.xcconfig"; sourceTree = "<group>"; };
+		9A06E6C6619D894C3E220DFA /* Pods-BeardGramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeardGramTests.release.xcconfig"; path = "Target Support Files/Pods-BeardGramTests/Pods-BeardGramTests.release.xcconfig"; sourceTree = "<group>"; };
+		A7116BA5921DD8B29F9E36C5 /* Pods_BeardGramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeardGramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9220F9BD21BA82248821E49 /* Pods-BeardGramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeardGramTests.debug.xcconfig"; path = "Target Support Files/Pods-BeardGramTests/Pods-BeardGramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +151,7 @@
 				2A412A49297F2B9700E33979 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				2A412A59297F2B9800E33979 /* FirebaseMessaging in Frameworks */,
 				2A412A55297F2B9800E33979 /* FirebaseInstallations in Frameworks */,
+				F5F0A8679D8CDCC26E1DA88D /* Pods_BeardGram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31208E91C03357F65CAFD45E /* Pods_BeardGramTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				252BEE179D7198CEEF2F7C09 /* Pods_BeardGram_BeardGramUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +182,8 @@
 				2A412A09297F0DEE00E33979 /* BeardGramTests */,
 				2A412A13297F0DEE00E33979 /* BeardGramUITests */,
 				2A4129F1297F0DEC00E33979 /* Products */,
+				B48FC8E023BA377E64035A73 /* Pods */,
+				BA5A39E62C35C9D7B7F000F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -274,6 +291,30 @@
 			path = Configs;
 			sourceTree = "<group>";
 		};
+		B48FC8E023BA377E64035A73 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				878E02D53AA54EF5099F7849 /* Pods-BeardGram.debug.xcconfig */,
+				2DFF4A76DB7EB40EA2C25A17 /* Pods-BeardGram.release.xcconfig */,
+				300AA92962871EFCC074AB2B /* Pods-BeardGram-BeardGramUITests.debug.xcconfig */,
+				350D17508D50991D045A56D9 /* Pods-BeardGram-BeardGramUITests.release.xcconfig */,
+				A9220F9BD21BA82248821E49 /* Pods-BeardGramTests.debug.xcconfig */,
+				9A06E6C6619D894C3E220DFA /* Pods-BeardGramTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA5A39E62C35C9D7B7F000F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				303C657FC8A59EA1C128E58F /* Pods_BeardGram.framework */,
+				1E297EB896B30596143DDACD /* Pods_BeardGram_BeardGramUITests.framework */,
+				A7116BA5921DD8B29F9E36C5 /* Pods_BeardGramTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,9 +322,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A412A1A297F0DEE00E33979 /* Build configuration list for PBXNativeTarget "BeardGram" */;
 			buildPhases = (
+				F5CB38141510DB33C8B40A39 /* [CP] Check Pods Manifest.lock */,
 				2A4129EC297F0DEC00E33979 /* Sources */,
 				2A4129ED297F0DEC00E33979 /* Frameworks */,
 				2A4129EE297F0DEC00E33979 /* Resources */,
+				81236AD735CCB136040B5313 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -327,6 +370,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A412A1D297F0DEE00E33979 /* Build configuration list for PBXNativeTarget "BeardGramTests" */;
 			buildPhases = (
+				B017A443BC8DF9605648FE6E /* [CP] Check Pods Manifest.lock */,
 				2A412A02297F0DEE00E33979 /* Sources */,
 				2A412A03297F0DEE00E33979 /* Frameworks */,
 				2A412A04297F0DEE00E33979 /* Resources */,
@@ -345,9 +389,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A412A20297F0DEE00E33979 /* Build configuration list for PBXNativeTarget "BeardGramUITests" */;
 			buildPhases = (
+				33B66A35E9DF215D26513DC0 /* [CP] Check Pods Manifest.lock */,
 				2A412A0C297F0DEE00E33979 /* Sources */,
 				2A412A0D297F0DEE00E33979 /* Frameworks */,
 				2A412A0E297F0DEE00E33979 /* Resources */,
+				DD1D4E9C790E2E1F94468109 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -393,7 +439,7 @@
 			mainGroup = 2A4129E7297F0DEC00E33979;
 			packageReferences = (
 				2A412A2D297F2B9700E33979 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				2A1DDCDB2981D2DE00CA194F /* XCRemoteSwiftPackageReference "FlagPhoneNumber" */,
+				2A1DDCDB2981D2DE00CA194F /* XCRemoteSwiftPackageReference "FlagPhoneNumber.git" */,
 			);
 			productRefGroup = 2A4129F1297F0DEC00E33979 /* Products */;
 			projectDirPath = "";
@@ -433,6 +479,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33B66A35E9DF215D26513DC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeardGram-BeardGramUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81236AD735CCB136040B5313 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeardGram/Pods-BeardGram-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeardGram/Pods-BeardGram-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeardGram/Pods-BeardGram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B017A443BC8DF9605648FE6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeardGramTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD1D4E9C790E2E1F94468109 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeardGram-BeardGramUITests/Pods-BeardGram-BeardGramUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeardGram-BeardGramUITests/Pods-BeardGram-BeardGramUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeardGram-BeardGramUITests/Pods-BeardGram-BeardGramUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5CB38141510DB33C8B40A39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeardGram-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A4129EC297F0DEC00E33979 /* Sources */ = {
@@ -682,6 +831,7 @@
 		};
 		2A412A1E297F0DEE00E33979 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9220F9BD21BA82248821E49 /* Pods-BeardGramTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -702,6 +852,7 @@
 		};
 		2A412A1F297F0DEE00E33979 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A06E6C6619D894C3E220DFA /* Pods-BeardGramTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -722,6 +873,7 @@
 		};
 		2A412A21297F0DEE00E33979 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 300AA92962871EFCC074AB2B /* Pods-BeardGram-BeardGramUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -740,6 +892,7 @@
 		};
 		2A412A22297F0DEE00E33979 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 350D17508D50991D045A56D9 /* Pods-BeardGram-BeardGramUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -798,7 +951,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2A1DDCDB2981D2DE00CA194F /* XCRemoteSwiftPackageReference "FlagPhoneNumber" */ = {
+		2A1DDCDB2981D2DE00CA194F /* XCRemoteSwiftPackageReference "FlagPhoneNumber.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:chronotruck/FlagPhoneNumber.git";
 			requirement = {

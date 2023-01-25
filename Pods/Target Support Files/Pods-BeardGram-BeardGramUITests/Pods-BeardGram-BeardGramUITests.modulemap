@@ -1,0 +1,6 @@
+framework module Pods_BeardGram_BeardGramUITests {
+  umbrella header "Pods-BeardGram-BeardGramUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
