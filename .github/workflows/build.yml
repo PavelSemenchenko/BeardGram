@@ -32,7 +32,7 @@ jobs:
           security unlock-keychain -p "" ~/Library/Keychains/PavelSemenchenkoBeardGram-build.keychain
           security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/PavelSemenchenkoBeardGram-build.keychain
           
-          echo '\nCURRENT_PROJECT_VERSION=${{github.run_number}}' >> Configs/Release.xcconfig
+          echo 'CURRENT_PROJECT_VERSION=${{github.run_number}}' >> Configs/Release.xcconfig
           xcodebuild -quiet -project BeardGram.xcodeproj -scheme BeardGram -configuration Release -derivedDataPath build_output -sdk iphoneos -archivePath app_output/BeardGram.xcarchive archive
         name: Building application
         timeout-minutes: 10
