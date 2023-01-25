@@ -34,13 +34,32 @@ jobs:
           
           xcodebuild -quiet -project BeardGram.xcodeproj -scheme BeardGram -configuration Release -derivedDataPath build_output -sdk iphoneos -archivePath app_output/BeardGram.xcarchive archive
         name: Building application
+        timeout-minutes: 10
       - run: |
           xcodebuild -exportArchive -archivePath app_output/BeardGram.xcarchive -exportPath app_output/ -exportOptionsPlist BeardGram.plist
         name: Exporting application
-      - uses: wzieba/Firebase-Distribution-Github-Action@v1
-        name: Uploading to Firebase App Distribution
+        timeout-minutes: 5
+      - uses: actions/upload-artifact@v3
+        name: Archive production artifacts
         with:
-          appId: ${{ secrets.FIREBASE_APP_ID }}
+          name: ios-app-1.0.${{github.run_number}}-${{github.sha}}
+          path: |
+            app_output/BeardGram.ipa
+          retention-days: 1
+
+  deploy_apps:
+    name: Upload artifact
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - uses: actions/download-artifact@v3
+        name: Download all workflow artifacts
+        with:
+          path: ./artifacts
+      - uses: wzieba/Firebase-Distribution-Github-Action@v1
+        name: Uploading iOS production artifact to Firebase App Distribution
+        with:
+          appId: ${{ secrets.FIREBASE_IOS_APP_ID }}
           token: ${{ secrets.FIREBASE_TOKEN }}
           groups: testers
-          file: app_output/BeardGram.ipa
+          file: ./artifacts/ios-app-1.0.${{github.run_number}}-${{github.sha}}/BeardGram.ipa
