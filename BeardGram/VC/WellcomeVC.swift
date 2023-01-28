@@ -7,8 +7,14 @@
 
 import Foundation
 import UIKit
+import CryptoKit
+import AuthenticationServices
 
 class WellcomeVC: UIViewController {
+    let authenticationService: AuthenticationService = FirebaseAuthenticationService()
+    
+    fileprivate var currentNonce: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,11 +27,56 @@ class WellcomeVC: UIViewController {
     }
     
     
+    @IBAction func enterWithAppleButtonClicked(_ sender: Any) {
+        let nonce = FirebaseAuthenticationService.randomNonceString()
+        currentNonce = nonce
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        request.nonce = FirebaseAuthenticationService.sha256(nonce)
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        // authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+    
     @IBAction func loginButtonClicked(_ sender: Any) {
     }
     
-    
 }
+// делегат для apple
+extension WellcomeVC: ASAuthorizationControllerDelegate {
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            guard let nonce = currentNonce else {
+                fatalError("Invalid state: A login callback was received, but no login request was sent.")
+            }
+            guard let appleIDToken = appleIDCredential.identityToken else {
+                print("Unable to fetch identity token")
+                return
+            }
+            guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
+                print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
+                return
+            }
+            authenticationService.signInWithApple(token: idTokenString, nonce: nonce) { newUser, error in
+                if newUser {
+                    // скрин после получения имейла и имени
+                } else {
+                    // если не новый пользователь - go Home
+                }
+            }
+        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        // Handle error.
+        print("Sign in with Apple errored: \(error)")
+    }
+}
+
 @IBDesignable
 public class GradientWellcome: UIView {
     @IBInspectable var startColor:   UIColor = .black { didSet { updateColors() }}
@@ -34,11 +85,11 @@ public class GradientWellcome: UIView {
     @IBInspectable var endLocation:   Double =   0.95 { didSet { updateLocations() }}
     @IBInspectable var horizontalMode:  Bool =  false { didSet { updatePoints() }}
     @IBInspectable var diagonalMode:    Bool =  false { didSet { updatePoints() }}
-
+    
     override public class var layerClass: AnyClass { CAGradientLayer.self }
-
+    
     var gradientLayer: CAGradientLayer { layer as! CAGradientLayer }
-
+    
     func updatePoints() {
         if horizontalMode {
             gradientLayer.startPoint = diagonalMode ? .init(x: 1, y: 0) : .init(x: 0, y: 0.5)
@@ -60,7 +111,7 @@ public class GradientWellcome: UIView {
         updateLocations()
         updateColors()
     }
-
-   
+    
+    
     
 }

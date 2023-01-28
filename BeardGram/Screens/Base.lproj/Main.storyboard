@@ -245,6 +245,14 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7i-UQ-giB">
+                                <rect key="frame" x="99" y="456" width="69" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Apple"/>
+                                <connections>
+                                    <action selector="enterWithAppleButtonClicked:" destination="Vre-yo-RWP" eventType="touchUpInside" id="uFs-9j-Rvr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iTd-JN-aTj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -256,7 +264,9 @@
                             <constraint firstItem="xDQ-tz-MjH" firstAttribute="centerX" secondItem="iTd-JN-aTj" secondAttribute="centerX" id="Tsh-Bc-svl"/>
                             <constraint firstItem="xh0-CP-Nti" firstAttribute="top" secondItem="ICj-va-KaU" secondAttribute="bottom" constant="146" id="UNf-3x-L8i"/>
                             <constraint firstItem="xh0-CP-Nti" firstAttribute="centerX" secondItem="iTd-JN-aTj" secondAttribute="centerX" id="WsT-U8-4x0"/>
+                            <constraint firstItem="y7i-UQ-giB" firstAttribute="top" secondItem="xh0-CP-Nti" secondAttribute="bottom" constant="9.6666666666666856" id="XgJ-U4-Xvr"/>
                             <constraint firstItem="ICj-va-KaU" firstAttribute="top" secondItem="iTd-JN-aTj" secondAttribute="top" constant="165" id="q1L-r4-EqY"/>
+                            <constraint firstItem="y7i-UQ-giB" firstAttribute="leading" secondItem="xh0-CP-Nti" secondAttribute="leading" id="sVH-ti-nAS"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="startColor">
