@@ -21,7 +21,12 @@ protocol AuthenticationService {
 
 class FirebaseAuthenticationService: AuthenticationService {
     func signInWithFacebook(token: String, nonce: String, completion: @escaping (Bool, String?) -> Void) {
-        let credential = FacebookAuthProvider.credential(withAccessToken: token)
+        // let credential = FacebookAuthProvider.credential(withAccessToken: token)
+        
+        let credential = OAuthProvider.credential(withProviderID: "facebook.com",
+                                                  idToken: token,
+                                                  rawNonce: nonce)
+        
         Auth.auth().signIn(with: credential) { (authResult, error) in
             let isNewUser = authResult?.additionalUserInfo?.isNewUser ?? false
             completion(isNewUser, error?.localizedDescription)
@@ -32,7 +37,7 @@ class FirebaseAuthenticationService: AuthenticationService {
         let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                   idToken: token,
                                                   rawNonce: nonce)
-        // Sign in with Firebase.
+        
         Auth.auth().signIn(with: credential) { (authResult, error) in
             let isNewUser = authResult?.additionalUserInfo?.isNewUser ?? false
             completion(isNewUser, error?.localizedDescription)
