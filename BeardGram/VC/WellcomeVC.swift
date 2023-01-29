@@ -7,16 +7,26 @@
 
 import Foundation
 import UIKit
-import CryptoKit
+// import CryptoKit
 import AuthenticationServices
+import FBSDKLoginKit
 
 class WellcomeVC: UIViewController {
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     
     fileprivate var currentNonce: String?
     
+    @IBOutlet weak var loginFBView: FBLoginButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
+        let nonce = FirebaseAuthenticationService.randomNonceString()
+        currentNonce = nonce
+        loginButton.delegate = self
+        loginButton.loginTracking = .limited
+        loginButton.nonce = FirebaseAuthenticationService.sha256(nonce)
+         */
     }
     
     @IBAction func registerButtonClicked(_ sender: Any) {
@@ -40,6 +50,18 @@ class WellcomeVC: UIViewController {
         // authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
     }
+    
+    
+    @IBAction func enterWithFacebookButtonClicked(_ sender: Any) {
+        let loginButton = FBLoginButton()
+        let nonce = FirebaseAuthenticationService.randomNonceString()
+            currentNonce = nonce
+            loginButton.delegate = self
+            loginButton.loginTracking = .limited
+        loginButton.nonce = FirebaseAuthenticationService.sha256(nonce)
+        
+    }
+    
     
     @IBAction func loginButtonClicked(_ sender: Any) {
     }
@@ -80,6 +102,36 @@ extension WellcomeVC: ASAuthorizationControllerDelegate {
         print("Sign in with Apple errored: \(error)")
     }
 }
+
+extension WellcomeVC: LoginButtonDelegate {
+    func loginButton(_ loginButton: FBSDKLoginKit.FBLoginButton,
+                     didCompleteWith result: FBSDKLoginKit.LoginManagerLoginResult?,
+                     error: Error?) {
+        if let result = result {
+            guard let tokenString = result.token?.tokenString else {
+                print("Unable to fetch identity token")
+                return
+            }
+            guard let nonce = currentNonce else {
+                fatalError("Invalid state: A login callback was received, but no login request was sent.")
+            }
+            authenticationService.signInWithFacebook(token: tokenString, nonce: nonce) { newUser, error in
+                if newUser {
+                    
+                } else {
+                    
+                }
+            }
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginKit.FBLoginButton) {
+    
+    }
+    
+    
+}
+
 
 @IBDesignable
 public class GradientWellcome: UIView {

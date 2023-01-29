@@ -12,6 +12,7 @@ import CryptoKit
 protocol AuthenticationService {
     func signUp(name: String, email: String, password: String, completion: @escaping (String?) -> Void)
     func signInWithApple(token: String, nonce: String, completion: @escaping (Bool, String?) -> Void)
+    func signInWithFacebook(token: String, nonce: String, completion: @escaping (Bool, String?) -> Void)
     func isAuthenticated() -> Bool
     func logOut()
     
@@ -19,6 +20,14 @@ protocol AuthenticationService {
 }
 
 class FirebaseAuthenticationService: AuthenticationService {
+    func signInWithFacebook(token: String, nonce: String, completion: @escaping (Bool, String?) -> Void) {
+        let credential = FacebookAuthProvider.credential(withAccessToken: token)
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            let isNewUser = authResult?.additionalUserInfo?.isNewUser ?? false
+            completion(isNewUser, error?.localizedDescription)
+        }
+    }
+    
     func signInWithApple(token: String, nonce: String, completion: @escaping (Bool, String?) -> Void) {
         let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                   idToken: token,
