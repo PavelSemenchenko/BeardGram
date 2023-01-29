@@ -117,8 +117,12 @@ extension WellcomeVC: LoginButtonDelegate {
             }
             authenticationService.signInWithFacebook(token: tokenString, nonce: nonce) { newUser, error in
                 if newUser {
-                    
+                   // идем дополнять инфу о пользователе
                 } else {
+                    guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "homeSB") as? HomeVC else {
+                        return
+                    }
+                    self.navigationController?.pushViewController(homeVC, animated: true)
                     
                 }
             }
