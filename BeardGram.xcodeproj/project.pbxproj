@@ -25,6 +25,7 @@
 		2A412A6E297F39A200E33979 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A6D297F39A200E33979 /* EmailTextField.swift */; };
 		2A412A70297F3A4100E33979 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A6F297F3A4100E33979 /* PasswordTextField.swift */; };
 		2A412A72297F3A6300E33979 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A71297F3A6300E33979 /* NameTextField.swift */; };
+		2A7E218F29885B3C00229ACA /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E218E29885B3C00229ACA /* SignInVC.swift */; };
 		6DFD0B8D2981EC880043A50B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD0B8C2981EC880043A50B /* GoogleService-Info.plist */; };
 		B145D7E890E40841E74EC044 /* Pods_BeardGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4E8DB41D40C99C571A22B9 /* Pods_BeardGram.framework */; };
 		ED15B9612D3FEACF3E8B423D /* Pods_BeardGram_BeardGramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04725EAE9C236AC60C5583EE /* Pods_BeardGram_BeardGramUITests.framework */; };
@@ -72,6 +73,7 @@
 		2A412A6D297F39A200E33979 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
 		2A412A6F297F3A4100E33979 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		2A412A71297F3A6300E33979 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
+		2A7E218E29885B3C00229ACA /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		2D2B30F9709BA5885D9DB335 /* Pods-BeardGram-BeardGramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeardGram-BeardGramUITests.release.xcconfig"; path = "Target Support Files/Pods-BeardGram-BeardGramUITests/Pods-BeardGram-BeardGramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6DFD0B89298158E30043A50B /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		6DFD0B8A298158EE0043A50B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				2A412A29297F294C00E33979 /* SignUpVC.swift */,
 				2A412A25297F1B2500E33979 /* WellcomeVC.swift */,
 				2A412A27297F245100E33979 /* HomeVC.swift */,
+				2A7E218E29885B3C00229ACA /* SignInVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				2A412A28297F245100E33979 /* HomeVC.swift in Sources */,
 				2A412A6E297F39A200E33979 /* EmailTextField.swift in Sources */,
 				2A4129F8297F0DEC00E33979 /* ViewController.swift in Sources */,
+				2A7E218F29885B3C00229ACA /* SignInVC.swift in Sources */,
 				2A412A67297F370200E33979 /* BaseAuthentication.swift in Sources */,
 				2A412A6B297F371A00E33979 /* Filestorage.swift in Sources */,
 				2A4129F4297F0DEC00E33979 /* AppDelegate.swift in Sources */,

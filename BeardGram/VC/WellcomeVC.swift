@@ -64,6 +64,11 @@ class WellcomeVC: UIViewController {
     
     
     @IBAction func loginButtonClicked(_ sender: Any) {
+        guard let signUp = self.storyboard?
+            .instantiateViewController(withIdentifier: "signInSB") as? SignInVC else {
+            return
+        }
+        self.navigationController?.pushViewController(signUp, animated: true)
     }
     
 }
