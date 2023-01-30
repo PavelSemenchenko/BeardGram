@@ -355,7 +355,7 @@
                                                     <action selector="signInButtonClicked:" destination="zPK-Dd-cdf" eventType="touchUpInside" id="EI6-Sh-r6h"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sse-Ad-vvZ">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sse-Ad-vvZ">
                                                 <rect key="frame" x="216" y="374.33333333333331" width="161" height="35"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="forgot password ?"/>
