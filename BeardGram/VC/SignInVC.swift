@@ -48,8 +48,7 @@ class SignInVC: UIViewController, BaseAuthentication, UITextFieldDelegate{
     }
     
     
-    func signIn(){
-        validateFields()
+    func signIn() {
         guard let email = emailTextField.validateEmailTextField(errorLabel: errorEmailLabel) else {
             return
         }
