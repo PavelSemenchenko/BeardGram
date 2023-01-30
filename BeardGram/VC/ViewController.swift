@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // load func timer 3 sec
-        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(ViewController.Pop), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(ViewController.Pop), userInfo: nil, repeats: false)
     }
 
     @objc func Pop() {
