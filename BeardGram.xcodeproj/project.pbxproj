@@ -26,6 +26,9 @@
 		2A412A70297F3A4100E33979 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A6F297F3A4100E33979 /* PasswordTextField.swift */; };
 		2A412A72297F3A6300E33979 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A412A71297F3A6300E33979 /* NameTextField.swift */; };
 		2A7E218F29885B3C00229ACA /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E218E29885B3C00229ACA /* SignInVC.swift */; };
+		2A8C855D298957F1002A411D /* ContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8C855C298957F1002A411D /* ContactsRepository.swift */; };
+		2A8C856129895E29002A411D /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8C855F29895E29002A411D /* ContactTableViewCell.swift */; };
+		2A8C856229895E29002A411D /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A8C856029895E29002A411D /* ContactTableViewCell.xib */; };
 		6DFD0B8D2981EC880043A50B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD0B8C2981EC880043A50B /* GoogleService-Info.plist */; };
 		B145D7E890E40841E74EC044 /* Pods_BeardGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4E8DB41D40C99C571A22B9 /* Pods_BeardGram.framework */; };
 		ED15B9612D3FEACF3E8B423D /* Pods_BeardGram_BeardGramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04725EAE9C236AC60C5583EE /* Pods_BeardGram_BeardGramUITests.framework */; };
@@ -74,6 +77,9 @@
 		2A412A6F297F3A4100E33979 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		2A412A71297F3A6300E33979 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
 		2A7E218E29885B3C00229ACA /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		2A8C855C298957F1002A411D /* ContactsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRepository.swift; sourceTree = "<group>"; };
+		2A8C855F29895E29002A411D /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		2A8C856029895E29002A411D /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		2D2B30F9709BA5885D9DB335 /* Pods-BeardGram-BeardGramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeardGram-BeardGramUITests.release.xcconfig"; path = "Target Support Files/Pods-BeardGram-BeardGramUITests/Pods-BeardGram-BeardGramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6DFD0B89298158E30043A50B /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		6DFD0B8A298158EE0043A50B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -141,6 +147,8 @@
 		2A4129F2297F0DEC00E33979 /* BeardGram */ = {
 			isa = PBXGroup;
 			children = (
+				2A8C855E29895DD7002A411D /* Cells */,
+				2A8C855B298957DB002A411D /* Repositories */,
 				2A412A6C297F398800E33979 /* Fields */,
 				2A412A65297F36E200E33979 /* Common */,
 				2A412A64297F36CE00E33979 /* Services */,
@@ -218,6 +226,23 @@
 				2A412A71297F3A6300E33979 /* NameTextField.swift */,
 			);
 			path = Fields;
+			sourceTree = "<group>";
+		};
+		2A8C855B298957DB002A411D /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2A8C855C298957F1002A411D /* ContactsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		2A8C855E29895DD7002A411D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2A8C855F29895E29002A411D /* ContactTableViewCell.swift */,
+				2A8C856029895E29002A411D /* ContactTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		4430FAEEB08063B4AF5372E4 /* Pods */ = {
@@ -367,6 +392,7 @@
 				6DFD0B8D2981EC880043A50B /* GoogleService-Info.plist in Resources */,
 				2A4129FD297F0DEE00E33979 /* Assets.xcassets in Resources */,
 				2A4129FB297F0DEC00E33979 /* Main.storyboard in Resources */,
+				2A8C856229895E29002A411D /* ContactTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,12 +558,14 @@
 				2A412A26297F1B2500E33979 /* WellcomeVC.swift in Sources */,
 				2A412A28297F245100E33979 /* HomeVC.swift in Sources */,
 				2A412A6E297F39A200E33979 /* EmailTextField.swift in Sources */,
+				2A8C856129895E29002A411D /* ContactTableViewCell.swift in Sources */,
 				2A4129F8297F0DEC00E33979 /* ViewController.swift in Sources */,
 				2A7E218F29885B3C00229ACA /* SignInVC.swift in Sources */,
 				2A412A67297F370200E33979 /* BaseAuthentication.swift in Sources */,
 				2A412A6B297F371A00E33979 /* Filestorage.swift in Sources */,
 				2A4129F4297F0DEC00E33979 /* AppDelegate.swift in Sources */,
 				2A412A2A297F294C00E33979 /* SignUpVC.swift in Sources */,
+				2A8C855D298957F1002A411D /* ContactsRepository.swift in Sources */,
 				2A4129F6297F0DEC00E33979 /* SceneDelegate.swift in Sources */,
 				2A412A70297F3A4100E33979 /* PasswordTextField.swift in Sources */,
 				2A412A69297F370E00E33979 /* Authentication.swift in Sources */,

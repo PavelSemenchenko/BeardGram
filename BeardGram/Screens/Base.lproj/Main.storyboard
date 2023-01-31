@@ -260,14 +260,6 @@
                                 <rect key="frame" x="173.66666666666666" y="456" width="51" height="35"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2Y-Gc-aK6">
-                                <rect key="frame" x="251.66666666666663" y="646.33333333333337" width="45" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="FB"/>
-                                <connections>
-                                    <action selector="enterWithFacebookButtonClicked:" destination="Vre-yo-RWP" eventType="touchUpInside" id="Blm-KU-aOe"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iTd-JN-aTj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -276,8 +268,6 @@
                             <constraint firstItem="iTd-JN-aTj" firstAttribute="trailing" secondItem="ICj-va-KaU" secondAttribute="trailing" constant="50" id="3rs-VC-DEg"/>
                             <constraint firstItem="ICj-va-KaU" firstAttribute="leading" secondItem="iTd-JN-aTj" secondAttribute="leading" constant="50" id="DJD-2t-Mix"/>
                             <constraint firstItem="xDQ-tz-MjH" firstAttribute="top" secondItem="xh0-CP-Nti" secondAttribute="bottom" constant="53" id="Fwu-OJ-bNM"/>
-                            <constraint firstItem="f2Y-Gc-aK6" firstAttribute="top" secondItem="xh0-CP-Nti" secondAttribute="bottom" constant="200" id="LVG-ky-aqi"/>
-                            <constraint firstItem="f2Y-Gc-aK6" firstAttribute="trailing" secondItem="xh0-CP-Nti" secondAttribute="trailing" id="NAp-Nv-vUV"/>
                             <constraint firstItem="xDQ-tz-MjH" firstAttribute="centerX" secondItem="iTd-JN-aTj" secondAttribute="centerX" id="Tsh-Bc-svl"/>
                             <constraint firstItem="xh0-CP-Nti" firstAttribute="top" secondItem="ICj-va-KaU" secondAttribute="bottom" constant="146" id="UNf-3x-L8i"/>
                             <constraint firstItem="xh0-CP-Nti" firstAttribute="centerX" secondItem="iTd-JN-aTj" secondAttribute="centerX" id="WsT-U8-4x0"/>
@@ -442,20 +432,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aO-ea-VoL">
-                                <rect key="frame" x="159" y="377" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7w5-ER-yYV">
+                                <rect key="frame" x="1" y="60" width="391" height="757"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DAM-PB-dCA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1aO-ea-VoL" firstAttribute="centerX" secondItem="DAM-PB-dCA" secondAttribute="centerX" id="DXm-jM-pbC"/>
-                            <constraint firstItem="1aO-ea-VoL" firstAttribute="centerY" secondItem="DAM-PB-dCA" secondAttribute="centerY" id="hMo-El-I5t"/>
+                            <constraint firstItem="DAM-PB-dCA" firstAttribute="bottom" secondItem="7w5-ER-yYV" secondAttribute="bottom" constant="1" id="4iG-N3-c6M"/>
+                            <constraint firstItem="DAM-PB-dCA" firstAttribute="trailing" secondItem="7w5-ER-yYV" secondAttribute="trailing" constant="1" id="FdT-SH-m2S"/>
+                            <constraint firstItem="7w5-ER-yYV" firstAttribute="leading" secondItem="DAM-PB-dCA" secondAttribute="leading" constant="1" id="MsT-XL-e11"/>
+                            <constraint firstItem="7w5-ER-yYV" firstAttribute="top" secondItem="DAM-PB-dCA" secondAttribute="top" constant="1" id="jPL-43-I09"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contactsTableView" destination="7w5-ER-yYV" id="Rqo-mj-b4V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0L-8F-kOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
