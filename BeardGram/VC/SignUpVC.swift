@@ -53,7 +53,7 @@ class SignUpVC: UIViewController, BaseAuthentication, UITextFieldDelegate {
     
     @IBAction func signUpButtonClicked(_ sender: Any) {
         validateFields()
-        
+        /*
         let optionalName = nameTextField.text
         guard let name = optionalName, name.count > 1 else {
             errorNameLabel.text = "Name is empty"
@@ -61,7 +61,7 @@ class SignUpVC: UIViewController, BaseAuthentication, UITextFieldDelegate {
             return
         }
         errorNameLabel.isHidden = true
-        
+        */
         let optionalEmail = emailTextField.text
         guard let email = optionalEmail, email.contains("@") else {
             emailTextField.layer.borderColor = UIColor.red.cgColor
@@ -82,7 +82,7 @@ class SignUpVC: UIViewController, BaseAuthentication, UITextFieldDelegate {
         passwordTextField.layer.borderColor = UIColor.green.cgColor
         errorPasswordLabel.isHidden = true
         
-        authenticationService.signUp(name: name, email: email, password: password) { errorMessage in
+        authenticationService.signUp(email: email, password: password) { errorMessage in
             if let message = errorMessage {
                 let alert = UIAlertController(title: "BeardGram",
                                               message: message,
