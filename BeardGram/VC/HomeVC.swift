@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class HomeVC: UIViewController, UITableViewDataSource {
+class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     
     
@@ -82,6 +82,14 @@ class HomeVC: UIViewController, UITableViewDataSource {
         let contact = contacts[indexPath.row]
         contactCell.contactNameLabel.text = contact.name
         return contactCell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let conversationVc = self.storyboard?.instantiateViewController(withIdentifier: "conversationsSB") as? ConversationsVC else {
+            return
+        }
+        conversationVc.userId = contacts[indexPath.row].id
+        self.navigationController?.pushViewController(conversationVc, animated: true)
     }
     
 }
