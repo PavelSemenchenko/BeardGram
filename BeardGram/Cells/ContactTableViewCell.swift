@@ -14,7 +14,7 @@ class ContactTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        contactNameLabel.text = data.name
+       // contactNameLabel.text = data.name
         // Initialization code
     }
     

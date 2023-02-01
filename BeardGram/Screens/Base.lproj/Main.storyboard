@@ -464,6 +464,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="searchContactFieldButton:" destination="59I-Nv-fXS" eventType="editingDidEnd" id="gBT-uo-0Y5"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6J-Qk-F21">
                                         <rect key="frame" x="10" y="55" width="144" height="35"/>
@@ -499,7 +502,7 @@
                     </view>
                     <connections>
                         <outlet property="contactsTableView" destination="7w5-ER-yYV" id="Rqo-mj-b4V"/>
-                        <outlet property="searchContactsTextField" destination="jXm-E5-qKA" id="Iat-dP-hFN"/>
+                        <outlet property="searchContactsTextField" destination="jXm-E5-qKA" id="0aC-3A-nI4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0L-8F-kOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -650,7 +653,7 @@
         <image name="logo black" width="512" height="512"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.badge.plus" catalog="system" width="128" height="125"/>
-        <image name="send_message" width="64" height="64"/>
+        <image name="send_message" width="21.333333969116211" height="21.333333969116211"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
