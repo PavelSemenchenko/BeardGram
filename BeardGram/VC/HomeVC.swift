@@ -10,7 +10,9 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    @IBOutlet weak var searchContactsTextField: UITextField!
     @IBOutlet weak var contactsTableView: UITableView!
+    
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     let contactRepository = ContactsRepository()
     var contacts: [Contact] = []
@@ -18,6 +20,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Contacts list"
+        navigationItem.setHidesBackButton(true, animated: true)
         navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "LogOut",
                                                               style: UIBarButtonItem.Style.plain,
                                                               target: self,
@@ -25,6 +28,11 @@ class HomeVC: UIViewController {
         
         let cellNib = UINib(nibName: "ContactTableViewCell", bundle: nil)
     }
+    
+    @IBAction func addContactButtonClicked(_ sender: Any) {
+    }
+    
+    
     @objc func logOutClicked() {
         authenticationService.logOut()
         if navigationController?.viewControllers.count == 1 {
