@@ -433,17 +433,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7w5-ER-yYV">
-                                <rect key="frame" x="1" y="60" width="391" height="757"/>
+                                <rect key="frame" x="1" y="159" width="391" height="658"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwb-Lo-3S7">
+                                <rect key="frame" x="1" y="54" width="391" height="103"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" background="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jXm-E5-qKA">
+                                        <rect key="frame" x="10" y="5" width="371" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6J-Qk-F21">
+                                        <rect key="frame" x="10" y="55" width="144" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="person.badge.plus" catalog="system" title="Add Contact"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="o6J-Qk-F21" firstAttribute="leading" secondItem="jXm-E5-qKA" secondAttribute="leading" id="FqO-1i-aWa"/>
+                                    <constraint firstAttribute="trailing" secondItem="jXm-E5-qKA" secondAttribute="trailing" constant="10" id="KxE-ge-uCF"/>
+                                    <constraint firstItem="o6J-Qk-F21" firstAttribute="top" secondItem="jXm-E5-qKA" secondAttribute="bottom" constant="16" id="anw-IQ-jIE"/>
+                                    <constraint firstItem="jXm-E5-qKA" firstAttribute="leading" secondItem="Kwb-Lo-3S7" secondAttribute="leading" constant="10" id="hAz-YK-ebh"/>
+                                    <constraint firstItem="jXm-E5-qKA" firstAttribute="top" secondItem="Kwb-Lo-3S7" secondAttribute="top" constant="5" id="mWy-Lq-qJ1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DAM-PB-dCA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DAM-PB-dCA" firstAttribute="bottom" secondItem="7w5-ER-yYV" secondAttribute="bottom" constant="1" id="4iG-N3-c6M"/>
                             <constraint firstItem="DAM-PB-dCA" firstAttribute="trailing" secondItem="7w5-ER-yYV" secondAttribute="trailing" constant="1" id="FdT-SH-m2S"/>
+                            <constraint firstItem="DAM-PB-dCA" firstAttribute="top" secondItem="Kwb-Lo-3S7" secondAttribute="top" constant="5" id="GUG-v2-dBW"/>
                             <constraint firstItem="7w5-ER-yYV" firstAttribute="leading" secondItem="DAM-PB-dCA" secondAttribute="leading" constant="1" id="MsT-XL-e11"/>
-                            <constraint firstItem="7w5-ER-yYV" firstAttribute="top" secondItem="DAM-PB-dCA" secondAttribute="top" constant="1" id="jPL-43-I09"/>
+                            <constraint firstItem="Kwb-Lo-3S7" firstAttribute="leading" secondItem="DAM-PB-dCA" secondAttribute="leading" constant="1" id="aiL-E9-OWu"/>
+                            <constraint firstItem="7w5-ER-yYV" firstAttribute="top" secondItem="Kwb-Lo-3S7" secondAttribute="bottom" constant="2" id="hj8-GP-RiF"/>
+                            <constraint firstItem="7w5-ER-yYV" firstAttribute="top" secondItem="DAM-PB-dCA" secondAttribute="top" constant="100" id="jPL-43-I09"/>
+                            <constraint firstItem="DAM-PB-dCA" firstAttribute="trailing" secondItem="Kwb-Lo-3S7" secondAttribute="trailing" constant="1" id="pnV-eT-XmG"/>
                         </constraints>
                     </view>
                     <connections>
@@ -452,7 +479,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0L-8F-kOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663" y="256"/>
+            <point key="canvasLocation" x="1661.8320610687022" y="255.63380281690141"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dVk-Kn-rgq">
@@ -473,6 +500,8 @@
     </scenes>
     <resources>
         <image name="logo black" width="512" height="512"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="person.badge.plus" catalog="system" width="128" height="125"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
