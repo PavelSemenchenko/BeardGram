@@ -32,6 +32,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
                                                               action: #selector(logOutClicked))]
         //  отображаем массив через ячейку
         contactsTableView.dataSource = self
+        contactsTableView.delegate = self
         contactsTableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "contactCell")
         contactsTableView.reloadData()
         contacts = allContacts
