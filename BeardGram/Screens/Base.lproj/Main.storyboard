@@ -551,6 +551,10 @@
                             <constraint firstItem="Ft0-eJ-R9q" firstAttribute="leading" secondItem="tj8-Br-AP4" secondAttribute="leading" id="mpz-Hl-vzg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recentMessagesTableView" destination="1om-bI-sjH" id="kue-ch-HnT"/>
+                        <outlet property="searchMessageTextField" destination="4gb-lx-28D" id="FUQ-xq-6B6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44L-ER-YUG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -576,6 +580,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Send"/>
+                                                <connections>
+                                                    <action selector="sendNewMessageButtonCLicked:" destination="9MD-3Z-N0t" eventType="touchUpInside" id="RDE-qp-x8f"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SNJ-vf-kfP">
                                                 <rect key="frame" x="43" y="242" width="97" height="34"/>
@@ -603,6 +610,10 @@
                             <constraint firstItem="8IM-cV-bqy" firstAttribute="bottom" secondItem="8fH-jg-yao" secondAttribute="bottom" id="zwj-Ej-5xu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="newMessageTextField" destination="SNJ-vf-kfP" id="daD-bP-T6X"/>
+                        <outlet property="newMessageView" destination="0uE-mn-gwR" id="pNL-1Z-f76"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0FS-Ia-i5x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
