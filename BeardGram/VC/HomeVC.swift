@@ -9,9 +9,7 @@ import Foundation
 import UIKit
 
 class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    
-    
-    
+        
     @IBOutlet weak var searchContactsTextField: UITextField!
     @IBOutlet weak var contactsTableView: UITableView!
     
@@ -36,7 +34,6 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         contactsTableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "contactCell")
         contactsTableView.reloadData()
         contacts = allContacts
-        
     }
     
     @IBAction func searchContactFieldButton(_ sender: Any) {
@@ -54,7 +51,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         }
         contacts = searchContacts
         contactsTableView.reloadData()
-    }    
+    }
     
     @IBAction func addContactButtonClicked(_ sender: Any) {
     }
