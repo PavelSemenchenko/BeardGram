@@ -11,47 +11,45 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct ContactProfile: Codable {
+struct Contact: Codable {
     @DocumentID var id: String?
     let name: String
     let email: String
+    let authorId: String?
 }
 
-protocol ContactProfilesRepository {
-    func getAll()
-    func getOne(userId: String, completion: @escaping (ContactProfile?) -> Void)
-    func create(profile: ContactProfile)
-    func delete()
+protocol ContactsRepository {
+    func getAll(competion: @escaping ([Contact]) -> Void)
+    func getOne(userId: String, completion: @escaping ([Contact]) -> Void)
+    func create(name: String, email: String) -> Contact
+    func delete(contactId: String)
+    func update(value: Contact)
 }
 
-class FirebaseContactProfilesRepository: ContactProfilesRepository {
-    func getAll() {
+class FirebaseContactsRepository: ContactsRepository {
+    func getOne(userId: String, completion: @escaping ([Contact]) -> Void) {
         <#code#>
     }
     
-    func getOne(userId: String, completion: @escaping (ContactProfile?) -> Void) {
-        Firestore.firestore().collection("contacts").document(userId).getDocument(as: ContactProfile.self) { snapshot in
-            switch(snapshot) {
-            case .success(let contact):
-                completion(contact)
-            case .failure(_):
-                completion(nil)
-            }
-        }
-    }
-    
-    func create(profile: ContactProfile) {
-        var contactProfile = profile
-        guard let currentUserId = Auth.auth().currentUser?.uid else {
-            fatalError("Only authenticated users")
-        }
-        contactProfile.id = currentUserId
-        try? Firestore.firestore().collection("contacts").document(currentUserId).setData(from: contactProfile)
-    }
-    
-    func delete() {
+    func create(name: String, email: String) -> Contact {
         <#code#>
     }
+    
+    
+    func getAll(competion: @escaping ([Contact]) -> Void) {
+        contactsT
+    }
+    
+    func delete(contactId: String) {
+        <#code#>
+    }
+    
+    func update(value: Contact) {
+        <#code#>
+    }
+    
+    // let fileStorageService: FileStorageService = FirebaseFileStorageService()
+    
     
     
 }
