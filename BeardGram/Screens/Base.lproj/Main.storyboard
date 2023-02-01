@@ -63,15 +63,15 @@
         <scene sceneID="q0s-3c-Qyh">
             <objects>
                 <viewController storyboardIdentifier="signUP" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bkg-vZ-Gb2" customClass="SignUpVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fRG-qI-yID">
+                    <view key="view" contentMode="scaleToFill" id="fRG-qI-yID" customClass="GradientSignUp" customModule="BeardGram" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OX5-MN-s6C">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T78-Od-tUJ">
-                                        <rect key="frame" x="20" y="100" width="353" height="415"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T78-Od-tUJ" customClass="GradientSignUp" customModule="BeardGram" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="80" width="353" height="522"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mr7-kG-G1j">
                                                 <rect key="frame" x="27" y="37" width="41" height="21"/>
@@ -163,14 +163,23 @@
                                             <constraint firstItem="4FM-XS-4M7" firstAttribute="top" secondItem="twb-7q-udg" secondAttribute="bottom" constant="8" symbolic="YES" id="mNP-cg-KZe"/>
                                             <constraint firstItem="9Na-jq-EpF" firstAttribute="centerY" secondItem="A4a-54-yDR" secondAttribute="centerY" id="uX3-9X-od2"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="T78-Od-tUJ" firstAttribute="top" secondItem="OX5-MN-s6C" secondAttribute="top" constant="100" id="JsZ-Y0-xJR"/>
+                                    <constraint firstItem="T78-Od-tUJ" firstAttribute="top" secondItem="OX5-MN-s6C" secondAttribute="top" constant="80" id="JsZ-Y0-xJR"/>
                                     <constraint firstItem="Mm4-Qw-EcL" firstAttribute="bottom" secondItem="T78-Od-tUJ" secondAttribute="bottom" constant="250" id="KPo-BU-5jJ"/>
                                     <constraint firstItem="T78-Od-tUJ" firstAttribute="centerX" secondItem="OX5-MN-s6C" secondAttribute="centerX" id="NxD-C0-xn6"/>
                                     <constraint firstItem="T78-Od-tUJ" firstAttribute="leading" secondItem="OX5-MN-s6C" secondAttribute="leading" constant="20" id="WMf-f2-mfH"/>
-                                    <constraint firstAttribute="trailing" secondItem="T78-Od-tUJ" secondAttribute="trailing" constant="20" id="wX9-J6-2mX"/>
+                                    <constraint firstAttribute="trailing" secondItem="T78-Od-tUJ" secondAttribute="trailing" constant="5" id="wX9-J6-2mX"/>
                                     <constraint firstAttribute="bottom" secondItem="T78-Od-tUJ" secondAttribute="bottom" constant="301" id="yds-Dv-b6J"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Svx-KQ-Sos"/>
@@ -185,6 +194,15 @@
                             <constraint firstItem="OX5-MN-s6C" firstAttribute="centerY" secondItem="fRG-qI-yID" secondAttribute="centerY" id="aLE-yh-LtF"/>
                             <constraint firstItem="OX5-MN-s6C" firstAttribute="leading" secondItem="TFK-Yc-tNZ" secondAttribute="leading" id="k6O-oM-k3q"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" red="0.13209530880000001" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" red="1" green="0.65210430490000004" blue="0.9825144952" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="twb-7q-udg" id="yyG-w0-agG"/>
@@ -481,10 +499,10 @@
             </objects>
             <point key="canvasLocation" x="1663" y="133"/>
         </scene>
-        <!--View Controller-->
+        <!--ConversationsVC-->
         <scene sceneID="67Z-je-HKL">
             <objects>
-                <viewController id="LCk-O6-mhu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="conversationsSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LCk-O6-mhu" customClass="ConversationsVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bM5-3y-aMe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -516,10 +534,10 @@
             </objects>
             <point key="canvasLocation" x="2307.6335877862593" y="403.52112676056339"/>
         </scene>
-        <!--View Controller-->
+        <!--New MessageVC-->
         <scene sceneID="lwn-f8-zuG">
             <objects>
-                <viewController id="9MD-3Z-N0t" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newMessageSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9MD-3Z-N0t" customClass="NewMessageVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" ambiguous="YES" id="m62-k5-AOm">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
