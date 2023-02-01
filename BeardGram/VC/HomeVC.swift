@@ -54,7 +54,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         }
         contacts = searchContacts
         contactsTableView.reloadData()
-    }
+    }    
     
     @IBAction func addContactButtonClicked(_ sender: Any) {
     }
