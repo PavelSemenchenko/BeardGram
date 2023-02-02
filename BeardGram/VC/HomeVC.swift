@@ -93,6 +93,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
        // contactCell.contactNameLabel.text = contact.name
         return cell
     }
+    /*
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //let sBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let conversationVc = self.storyboard?.instantiateViewController(withIdentifier: "conversationsSB") as? ConversationsVC else {
@@ -101,5 +102,6 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         conversationVc.userId = allContacts[indexPath.row].id
         self.navigationController?.pushViewController(conversationVc, animated: true)
     }
+     */
     
 }

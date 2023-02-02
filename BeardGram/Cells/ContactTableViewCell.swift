@@ -20,7 +20,7 @@ class ContactTableViewCell: UITableViewCell {
     
     var data: Contact! {
         didSet {
-            prepareForReuse()
+            contactNameLabel.text = data.name
         }
     }
     var  contactRepository: ContactsRepository!

@@ -14,6 +14,6 @@ class ConversationsVC: UIViewController {
     
     @IBOutlet weak var recentMessagesTableView: UITableView!
     
-    var userId: String!
+    var userId: Int!
     
 }
