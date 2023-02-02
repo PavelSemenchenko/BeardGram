@@ -15,10 +15,10 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     
-    /*
-    var allContacts: [Contact] = [Contact(id: 0, name: "Tom", email: "1@2.com"),
-                                  Contact(id: 1, name: "John", email: "2@3.com"),
-                                  Contact(id: 2, name: "Sarah", email: "3@4.com"),]
+    
+    /*var allContacts: [Contact] = [Contact(id: "0", name: "Tom"),
+                                  Contact(id: "1", name: "John"),
+                                  Contact(id: "2", name: "Sarah")]
     */
     let contactsRepository: ContactsRepository = FirebaseContactsRepository()
     var allContacts: [Contact] = []
@@ -35,7 +35,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         contactsTableView.dataSource = self
         contactsTableView.delegate = self
         contactsTableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "contactCell")
-        reloadContacts()
+        //reloadContacts()
         print(allContacts)
     }
     func reloadContacts() {
