@@ -14,11 +14,14 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var contactsTableView: UITableView!
     
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
-    // let contactRepository = ContactsRepository()
+    
+    /*
     var allContacts: [Contact] = [Contact(id: 0, name: "Tom", email: "1@2.com"),
                                   Contact(id: 1, name: "John", email: "2@3.com"),
                                   Contact(id: 2, name: "Sarah", email: "3@4.com"),]
-    var contacts: [Contact] = []
+    */
+    let contactsRepository: ContactsRepository = FirebaseContactsRepository()
+    var allContacts: [Contact] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +35,18 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         contactsTableView.dataSource = self
         contactsTableView.delegate = self
         contactsTableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "contactCell")
-        contactsTableView.reloadData()
-        contacts = allContacts
+        reloadContacts()
+        print(allContacts)
+    }
+    func reloadContacts() {
+        contactsRepository.getAll { contacts in
+            self.allContacts = contacts
+            self.contactsTableView.reloadData()
+        }
     }
     
+    
+    /*
     @IBAction func searchContactFieldButton(_ sender: Any) {
         guard let searchName = searchContactsTextField.text?.lowercased() else { return }
         if searchName.isEmpty {
@@ -52,6 +63,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         contacts = searchContacts
         contactsTableView.reloadData()
     }
+    */
     
     @IBAction func addContactButtonClicked(_ sender: Any) {
     }
@@ -69,24 +81,24 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        contacts.count
+        allContacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
-        guard let contactCell = cell as? ContactTableViewCell else {
-            fatalError("Error")
-        }
-        let contact = contacts[indexPath.row]
-        contactCell.contactNameLabel.text = contact.name
-        return contactCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
+        
+        cell.data = allContacts[indexPath.row]
+        cell.contactRepository = contactsRepository
+        //let contact = allContacts[indexPath.row]
+       // contactCell.contactNameLabel.text = contact.name
+        return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        //let sBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let conversationVc = self.storyboard?.instantiateViewController(withIdentifier: "conversationsSB") as? ConversationsVC else {
             return
         }
-        conversationVc.userId = contacts[indexPath.row].id
+        conversationVc.userId = allContacts[indexPath.row].id
         self.navigationController?.pushViewController(conversationVc, animated: true)
     }
     

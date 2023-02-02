@@ -6,7 +6,6 @@
 //
 
 import Foundation
-// import Alamofire
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
@@ -14,14 +13,14 @@ import FirebaseFirestoreSwift
 struct Contact: Codable {
     @DocumentID var id: String?
     let name: String
-    let email: String
-    let authorId: String?
+    // let email: String
+    // let authorId: String?
 }
 
 protocol ContactsRepository {
-    func getAll(competion: @escaping ([Contact]) -> Void)
+    func getAll(completion: @escaping ([Contact]) -> Void)
     func getOne(userId: String, completion: @escaping ([Contact]) -> Void)
-    func create(name: String, email: String) -> Contact
+    // func create(name: String, email: String) -> Contact
     func delete(contactId: String)
     func update(value: Contact)
 }
@@ -36,15 +35,10 @@ class FirebaseContactsRepository: ContactsRepository {
         
     }
     
-    func create(name: String, email: String) -> Contact {
-        <#code#>
-    }
-    
-    
-    func getAll(competion: @escaping ([Contact]) -> Void) {
+    func getAll(completion: @escaping ([Contact]) -> Void) {
         contactsCollection.getDocuments { snapshot, _ in
             guard let docs = snapshot?.documents else {
-                competion([])
+                completion([])
                 return
             }
             var contacts: [Contact] = []
@@ -54,15 +48,16 @@ class FirebaseContactsRepository: ContactsRepository {
                 }
                 contacts.append(contact)
             }
+            completion(contacts)
         }
     }
     
     func delete(contactId: String) {
-        <#code#>
+        
     }
     
     func update(value: Contact) {
-        <#code#>
+        
     }
     
     // let fileStorageService: FileStorageService = FirebaseFileStorageService()
