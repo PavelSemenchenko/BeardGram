@@ -27,8 +27,13 @@ protocol ContactsRepository {
 }
 
 class FirebaseContactsRepository: ContactsRepository {
+    
+    lazy var contactsCollection: CollectionReference = {
+        return Firestore.firestore().collection("contacts")
+    }()
+    
     func getOne(userId: String, completion: @escaping ([Contact]) -> Void) {
-        <#code#>
+        
     }
     
     func create(name: String, email: String) -> Contact {
@@ -37,7 +42,19 @@ class FirebaseContactsRepository: ContactsRepository {
     
     
     func getAll(competion: @escaping ([Contact]) -> Void) {
-        contactsT
+        contactsCollection.getDocuments { snapshot, _ in
+            guard let docs = snapshot?.documents else {
+                competion([])
+                return
+            }
+            var contacts: [Contact] = []
+            for doc in docs {
+                guard let contact = try? doc.data(as: Contact.self) else {
+                    continue
+                }
+                contacts.append(contact)
+            }
+        }
     }
     
     func delete(contactId: String) {
