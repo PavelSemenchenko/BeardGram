@@ -23,7 +23,6 @@ class SignInVC: UIViewController, BaseAuthentication, UITextFieldDelegate{
         passwordTextField.delegate = self
         // keyboard Hiding
         registerForKeyboardNotifications()
-        
     }
     deinit {
         removeKeyboardNotifications()
@@ -46,7 +45,6 @@ class SignInVC: UIViewController, BaseAuthentication, UITextFieldDelegate{
     @objc func kbWillHide() {
         scrollView.contentOffset = CGPoint.zero
     }
-    
     
     func signIn() {
         guard let email = emailTextField.validateEmailTextField(errorLabel: errorEmailLabel) else {
@@ -108,7 +106,4 @@ public class GradientSignIn: UIView {
         updateLocations()
         updateColors()
     }
-    
-    
-    
 }

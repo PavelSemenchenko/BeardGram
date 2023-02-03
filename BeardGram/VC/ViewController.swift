@@ -8,16 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    
-
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // load func timer 3 sec
         Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(ViewController.Pop), userInfo: nil, repeats: false)
     }
-
+    
     @objc func Pop() {
         //self.navigationController?.popToRootViewController(animated: true)
         guard let wellcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "wellcomeId") as? WellcomeVC else {
@@ -35,11 +33,11 @@ public class Gradient: UIView {
     @IBInspectable var endLocation:   Double =   0.95 { didSet { updateLocations() }}
     @IBInspectable var horizontalMode:  Bool =  false { didSet { updatePoints() }}
     @IBInspectable var diagonalMode:    Bool =  false { didSet { updatePoints() }}
-
+    
     override public class var layerClass: AnyClass { CAGradientLayer.self }
-
+    
     var gradientLayer: CAGradientLayer { layer as! CAGradientLayer }
-
+    
     func updatePoints() {
         if horizontalMode {
             gradientLayer.startPoint = diagonalMode ? .init(x: 1, y: 0) : .init(x: 0, y: 0.5)
@@ -62,7 +60,5 @@ public class Gradient: UIView {
         updateColors()
     }
     
-    
-
 }
 

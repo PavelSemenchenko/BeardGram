@@ -75,7 +75,6 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
                 as? ConversationsVC else { return
         }
         self.navigationController?.pushViewController(mess, animated: true)
-        
     }
     
     @objc func logOutClicked() {
@@ -111,6 +110,4 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         //conversationVc.userId = contacts[indexPath.row].id
         self.navigationController?.pushViewController(conversationVc, animated: true)
     }
-     
-    
 }

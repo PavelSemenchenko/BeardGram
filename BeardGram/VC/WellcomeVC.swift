@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-// import CryptoKit
 import AuthenticationServices
 import FBSDKLoginKit
 
@@ -36,7 +35,6 @@ class WellcomeVC: UIViewController {
         self.navigationController?.pushViewController(signUp, animated: true)
     }
     
-    
     @IBAction func enterWithAppleButtonClicked(_ sender: Any) {
         let nonce = FirebaseAuthenticationService.randomNonceString()
         currentNonce = nonce
@@ -49,9 +47,7 @@ class WellcomeVC: UIViewController {
         authorizationController.delegate = self
         // authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
-        
     }
-    
     
     @IBAction func enterWithFacebookButtonClicked(_ sender: Any) {
         let loginButton = FBLoginButton()
@@ -60,9 +56,7 @@ class WellcomeVC: UIViewController {
             loginButton.delegate = self
             loginButton.loginTracking = .limited
         loginButton.nonce = FirebaseAuthenticationService.sha256(nonce)
-        
     }
-    
     
     @IBAction func loginButtonClicked(_ sender: Any) {
         guard let signUp = self.storyboard?
@@ -129,20 +123,14 @@ extension WellcomeVC: LoginButtonDelegate {
                         return
                     }
                     self.navigationController?.pushViewController(homeVC, animated: true)
-                    
                 }
             }
         }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginKit.FBLoginButton) {
-    
     }
-    
-    
 }
-
-
 @IBDesignable
 public class GradientWellcome: UIView {
     @IBInspectable var startColor:   UIColor = .black { didSet { updateColors() }}
@@ -177,7 +165,4 @@ public class GradientWellcome: UIView {
         updateLocations()
         updateColors()
     }
-    
-    
-    
 }

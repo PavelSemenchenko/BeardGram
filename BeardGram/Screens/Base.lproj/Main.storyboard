@@ -264,7 +264,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7i-UQ-giB">
-                                <rect key="frame" x="46.666666666666657" y="456" width="69" height="30"/>
+                                <rect key="frame" x="46.666666666666657" y="456" width="119" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="jKo-i4-d5v"/>
                                 </constraints>
@@ -274,7 +274,7 @@
                                     <action selector="enterWithAppleButtonClicked:" destination="Vre-yo-RWP" eventType="touchUpInside" id="uFs-9j-Rvr"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kRX-PX-9f9" customClass="FBSDKLoginButton">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRX-PX-9f9" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="173.66666666666666" y="456" width="51" height="35"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -285,11 +285,14 @@
                             <constraint firstItem="ICj-va-KaU" firstAttribute="centerX" secondItem="iTd-JN-aTj" secondAttribute="centerX" id="3aO-oB-MKU"/>
                             <constraint firstItem="iTd-JN-aTj" firstAttribute="trailing" secondItem="ICj-va-KaU" secondAttribute="trailing" constant="50" id="3rs-VC-DEg"/>
                             <constraint firstItem="ICj-va-KaU" firstAttribute="leading" secondItem="iTd-JN-aTj" secondAttribute="leading" constant="50" id="DJD-2t-Mix"/>
+                            <constraint firstItem="iTd-JN-aTj" firstAttribute="trailing" secondItem="kRX-PX-9f9" secondAttribute="trailing" constant="168.33333333333334" id="EPe-UK-R0d"/>
                             <constraint firstItem="xDQ-tz-MjH" firstAttribute="top" secondItem="xh0-CP-Nti" secondAttribute="bottom" constant="53" id="Fwu-OJ-bNM"/>
                             <constraint firstItem="xDQ-tz-MjH" firstAttribute="centerX" secondItem="iTd-JN-aTj" secondAttribute="centerX" id="Tsh-Bc-svl"/>
                             <constraint firstItem="xh0-CP-Nti" firstAttribute="top" secondItem="ICj-va-KaU" secondAttribute="bottom" constant="146" id="UNf-3x-L8i"/>
                             <constraint firstItem="xh0-CP-Nti" firstAttribute="centerX" secondItem="iTd-JN-aTj" secondAttribute="centerX" id="WsT-U8-4x0"/>
+                            <constraint firstItem="kRX-PX-9f9" firstAttribute="leading" secondItem="THS-xY-d28" secondAttribute="leading" constant="173.66666666666666" id="Xbc-fL-7Sx"/>
                             <constraint firstItem="y7i-UQ-giB" firstAttribute="top" secondItem="xh0-CP-Nti" secondAttribute="bottom" constant="9.6666666666666856" id="XgJ-U4-Xvr"/>
+                            <constraint firstItem="xDQ-tz-MjH" firstAttribute="top" secondItem="kRX-PX-9f9" secondAttribute="bottom" constant="8.3333333333332575" id="eKs-P7-IhK"/>
                             <constraint firstItem="kRX-PX-9f9" firstAttribute="top" secondItem="y7i-UQ-giB" secondAttribute="top" id="eWh-NE-aSL"/>
                             <constraint firstItem="ICj-va-KaU" firstAttribute="top" secondItem="iTd-JN-aTj" secondAttribute="top" constant="165" id="q1L-r4-EqY"/>
                             <constraint firstItem="y7i-UQ-giB" firstAttribute="leading" secondItem="xh0-CP-Nti" secondAttribute="leading" constant="-50" id="sVH-ti-nAS"/>

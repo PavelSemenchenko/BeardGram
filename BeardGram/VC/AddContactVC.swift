@@ -19,7 +19,6 @@ class AddContactVC: UIViewController, UINavigationControllerDelegate {
     let contactRepository: ContactsRepository = FirebaseContactsRepository()
     var onCreateCompletion: ((Contact?) -> Void)?
     
-    
     @IBAction func addContactButtonClicked(_ sender: Any) {
         guard let name = addNameTextField.text, name.count > 2 else {
             errorNameLabel.text = "Name must be longer"
@@ -34,5 +33,4 @@ class AddContactVC: UIViewController, UINavigationControllerDelegate {
         self.onCreateCompletion?(newContact)
         self.navigationController?.popViewController(animated: true)
     }
-    
 }

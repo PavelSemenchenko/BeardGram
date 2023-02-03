@@ -53,15 +53,6 @@ class SignUpVC: UIViewController, BaseAuthentication, UITextFieldDelegate {
     
     @IBAction func signUpButtonClicked(_ sender: Any) {
         validateFields()
-        /*
-        let optionalName = nameTextField.text
-        guard let name = optionalName, name.count > 1 else {
-            errorNameLabel.text = "Name is empty"
-            errorNameLabel.isHidden = false
-            return
-        }
-        errorNameLabel.isHidden = true
-        */
         let optionalEmail = emailTextField.text
         guard let email = optionalEmail, email.contains("@") else {
             emailTextField.layer.borderColor = UIColor.red.cgColor
@@ -102,12 +93,8 @@ class SignUpVC: UIViewController, BaseAuthentication, UITextFieldDelegate {
         guard let login = self.storyboard?.instantiateViewController(withIdentifier: "signInSB") as? SignInVC else { return
         }
         self.navigationController?.pushViewController(login, animated: true)
-        
     }
-    
 }
-
-
 @IBDesignable
 public class GradientSignUp: UIView {
     @IBInspectable var startColor:   UIColor = .black { didSet { updateColors() }}
@@ -142,7 +129,4 @@ public class GradientSignUp: UIView {
         updateLocations()
         updateColors()
     }
-    
-    
-    
 }
