@@ -22,7 +22,11 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Dialogs"
+        title = "Messages"
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "New message",
+                                                              style: UIBarButtonItem.Style.plain,
+                                                              target: self,
+                                                              action: #selector(newMessage))]
         recentMessagesTableView.dataSource = self
         recentMessagesTableView.delegate = self
         recentMessagesTableView.register(UINib(nibName: "DialogCell", bundle: nil), forCellReuseIdentifier: "dialogRow")
@@ -33,6 +37,14 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             self.dialogs = dialogs
             self.recentMessagesTableView.reloadData()
         }
+    }
+    @objc func newMessage() {
+        
+            guard let viewController = storyboard?.instantiateViewController(withIdentifier: "newMessageSB") else {
+                return
+            }
+            navigationController?.pushViewController(viewController, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

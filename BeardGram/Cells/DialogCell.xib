@@ -23,20 +23,25 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uux-yd-wU1">
-                        <rect key="frame" x="252" y="5" width="48" height="35"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMP-gG-Bvp">
+                        <rect key="frame" x="270" y="7.6666666666666679" width="30" height="30.000000000000004"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="3Ah-2Y-aaa"/>
+                            <constraint firstAttribute="height" constant="30" id="gNO-Pm-wmS"/>
+                        </constraints>
+                        <color key="tintColor" red="0.74509803919999995" green="0.20392156859999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="filled" image="trash" catalog="system"/>
+                        <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
                         <connections>
-                            <action selector="deleteClecked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cVp-bB-2Kp"/>
+                            <action selector="deleteClecked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="i2o-e6-bws"/>
                         </connections>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Vrd-WY-jga" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="3CH-Ez-TNX"/>
                     <constraint firstItem="Vrd-WY-jga" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="53S-hb-NaZ"/>
-                    <constraint firstItem="uux-yd-wU1" firstAttribute="centerY" secondItem="Vrd-WY-jga" secondAttribute="centerY" id="Y8M-bC-jWW"/>
-                    <constraint firstAttribute="trailing" secondItem="uux-yd-wU1" secondAttribute="trailing" constant="20" symbolic="YES" id="dwo-4q-HKF"/>
+                    <constraint firstItem="BMP-gG-Bvp" firstAttribute="centerY" secondItem="Vrd-WY-jga" secondAttribute="centerY" id="6Xd-H8-Z1Q"/>
+                    <constraint firstAttribute="trailing" secondItem="BMP-gG-Bvp" secondAttribute="trailing" constant="20" id="ENs-ES-0Qd"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
