@@ -13,19 +13,35 @@ import FirebaseFirestoreSwift
 struct Contact: Codable {
     @DocumentID var id: String?
     let name: String
-    // let email: String
-    // let authorId: String?
+    let email: String
+    let authorId: String?
 }
 
 protocol ContactsRepository {
     func getAll(completion: @escaping ([Contact]) -> Void)
     func getOne(userId: String, completion: @escaping ([Contact]) -> Void)
-    // func create(name: String, email: String) -> Contact
+    func create(name: String, email: String) -> Contact
     func delete(contactId: String)
     func update(value: Contact)
 }
 
 class FirebaseContactsRepository: ContactsRepository {
+    
+    func create(name: String, email: String) -> Contact {
+        guard let currentUserId = Auth.auth().currentUser?.uid else {
+            fatalError("no permissions")
+        }
+        var contact = Contact(name: name, email: email, authorId: currentUserId)
+        guard let reference = try? contactsCollection.addDocument(from: contact) else {
+            fatalError("failed to create new user")
+        }
+        let coontactId = reference.documentID
+        contact.id = coontactId
+        try? contactsCollection.document(coontactId).setData(from: contact)
+        
+        return contact
+    }
+    
     
     lazy var contactsCollection: CollectionReference = {
         return Firestore.firestore().collection("contacts")

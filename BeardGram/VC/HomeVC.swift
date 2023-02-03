@@ -12,7 +12,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         
     @IBOutlet weak var searchContactsTextField: UITextField!
     @IBOutlet weak var contactsTableView: UITableView!
-    
+        
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     
     /*var allContacts: [Contact] = [Contact(id: "0", name: "Tom"),
@@ -47,8 +47,6 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         
     }
     
-    
-    
     @IBAction func searchContactFieldButton(_ sender: Any) {
         guard let searchName = searchContactsTextField.text?.lowercased() else { return }
         if searchName.isEmpty {
@@ -57,7 +55,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             return
         }
         var searchContacts: [Contact] = []
-        for contact in contacts {
+        for contact in allContacts {
             if contact.name.lowercased().contains(searchName) {
                 searchContacts.append(contact)
             }
@@ -66,10 +64,17 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         contactsTableView.reloadData()
     }
     
-    
     @IBAction func addContactButtonClicked(_ sender: Any) {
+        let sbAddContact = UIStoryboard(name: "AddContactSB", bundle: nil)
+        let ctrAddContact = sbAddContact.instantiateViewController(withIdentifier: "addContact") as! AddContactVC
+        ctrAddContact.onCreateCompletion = { newContact in
+            if let contact = newContact {
+                self.allContacts.append(contact)
+                self.contactsTableView.reloadData()
+            }
+        }
+        self.navigationController?.pushViewController(ctrAddContact, animated: true)
     }
-    
     
     @objc func logOutClicked() {
         authenticationService.logOut()
