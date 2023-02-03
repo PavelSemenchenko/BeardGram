@@ -39,7 +39,6 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             self.contacts = allContacts
             self.contactsTableView.reloadData()
         }
-        
     }
     
     @IBAction func searchContactFieldButton(_ sender: Any) {

@@ -32,12 +32,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         recentMessagesTableView.register(UINib(nibName: "DialogCell", bundle: nil), forCellReuseIdentifier: "dialogRow")
         reloadDialogs()
     }
-    func reloadDialogs() {
-        dialogsRepository.getAll { dialogs in
-            self.dialogs = dialogs
-            self.recentMessagesTableView.reloadData()
-        }
-    }
+    
     @objc func newMessage() {
         
             guard let viewController = storyboard?.instantiateViewController(withIdentifier: "newMessageSB") else {
@@ -46,7 +41,29 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             navigationController?.pushViewController(viewController, animated: true)
         
     }
+    func reloadDialogs() {
+        dialogsRepository.getAll { allDialogs in
+            self.dialogs = allDialogs
+            self.recentMessagesTableView.reloadData()
+        }
+    }
     
+    @IBAction func searchMessageTextField(_ sender: Any) {
+        guard let searchText = searchMessageTextField.text?.lowercased() else { return }
+        if searchText.isEmpty {
+            dialogs = allDialogs
+            recentMessagesTableView.reloadData()
+            return
+        }
+        var searchMessages: [Dialog] = []
+        for dialog in allDialogs {
+            if dialog.title.lowercased().contains(searchText) {
+                searchMessages.append(dialog)
+            }
+            dialogs = searchMessages
+            recentMessagesTableView.reloadData()
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dialogs.count
     }
