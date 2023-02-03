@@ -8,23 +8,28 @@
 import Foundation
 import UIKit
 
+/*
 enum NewDialogMode {
     case create
     case edit
-}
-class NewMessageVC: UIViewController {
+}*/
+
+class NewMessageVC: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var newMessageView: UIView!
     @IBOutlet weak var newMessageTextField: UITextField!
+    @IBOutlet weak var errorMessageLabel: UILabel!
     
     let dialogsRepository: DialogsRepository  = FirebaseDialogsRepository()
-    var onCreateCompletion: ((Dialog?) -> Void)
-    var onUpdateCompletion: ((Dialog?) -> Void)
-    var mode: NewDialogMode = NewDialogMode.create
-    var editDialog: Dialog?
+    var onCreateCompletion: ((Dialog?) -> Void)?
+    
+    //var onUpdateCompletion: ((Dialog?) -> Void)
+    // var mode: NewDialogMode = NewDialogMode.create
+    // var editDialog: Dialog?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
         if mode == NewDialogMode.create {
             title = "Create new message"
         } else {
@@ -32,12 +37,21 @@ class NewMessageVC: UIViewController {
         }
         
         newMessageTextField.text = editDialog?.title
+         */
     }
     
     
     @IBAction func sendNewMessageButtonCLicked(_ sender: Any) {
+        guard let title = newMessageTextField.text, title.count > 3 else {
+            errorMessageLabel.text = "Text can`t be empty"
+            return
+        }
+        let newMessage = dialogsRepository.create(title: title)
+        self.onCreateCompletion?(newMessage)
+        
+        self.navigationController?.popViewController(animated: true)
     }
-    
+    /*
     @objc func onCreateClicked() {
         guard let title = newMessageTextField.text, title.count > 3 else {
             return
@@ -55,5 +69,5 @@ class NewMessageVC: UIViewController {
         dialogsRepository.update(value: updateDialog)
         self.onUpdateCompletion(updateDialog)
         self.navigationController?.popViewController(animated: true)
-    }
+    }*/
 }

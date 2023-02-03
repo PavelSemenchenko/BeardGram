@@ -17,11 +17,14 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     let dialogsRepository: DialogsRepository = FirebaseDialogsRepository()
     var dialogs: [Dialog] = []
+    var allDialogs: [Dialog] = []
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Dialogs"
+        recentMessagesTableView.dataSource = self
+        recentMessagesTableView.delegate = self
         recentMessagesTableView.register(UINib(nibName: "DialogCell", bundle: nil), forCellReuseIdentifier: "dialogRow")
         reloadDialogs()
     }
