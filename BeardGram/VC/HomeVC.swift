@@ -15,13 +15,13 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     
-    
     /*var allContacts: [Contact] = [Contact(id: "0", name: "Tom"),
                                   Contact(id: "1", name: "John"),
                                   Contact(id: "2", name: "Sarah")]
     */
     let contactsRepository: ContactsRepository = FirebaseContactsRepository()
-    var allContacts: [Contact] = []
+    var contacts: [Contact] = []
+    var allContacts : [Contact] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,22 +31,24 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
                                                               style: UIBarButtonItem.Style.plain,
                                                               target: self,
                                                               action: #selector(logOutClicked))]
-        //  отображаем массив через ячейку
+       
         contactsTableView.dataSource = self
         contactsTableView.delegate = self
         contactsTableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "contactCell")
-        //reloadContacts()
-        print(allContacts)
+        
+        reloadContacts()
+        print(contacts)
     }
     func reloadContacts() {
-        contactsRepository.getAll { contacts in
-            self.allContacts = contacts
+        contactsRepository.getAll { allContacts in
+            self.contacts = allContacts
             self.contactsTableView.reloadData()
         }
+        
     }
     
     
-    /*
+    
     @IBAction func searchContactFieldButton(_ sender: Any) {
         guard let searchName = searchContactsTextField.text?.lowercased() else { return }
         if searchName.isEmpty {
@@ -55,7 +57,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             return
         }
         var searchContacts: [Contact] = []
-        for contact in allContacts {
+        for contact in contacts {
             if contact.name.lowercased().contains(searchName) {
                 searchContacts.append(contact)
             }
@@ -63,7 +65,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         contacts = searchContacts
         contactsTableView.reloadData()
     }
-    */
+    
     
     @IBAction func addContactButtonClicked(_ sender: Any) {
     }
@@ -81,27 +83,27 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        allContacts.count
+        contacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
         
-        cell.data = allContacts[indexPath.row]
+        cell.data = contacts[indexPath.row]
         cell.contactRepository = contactsRepository
         //let contact = allContacts[indexPath.row]
        // contactCell.contactNameLabel.text = contact.name
         return cell
     }
-    /*
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //let sBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let conversationVc = self.storyboard?.instantiateViewController(withIdentifier: "conversationsSB") as? ConversationsVC else {
             return
         }
-        conversationVc.userId = allContacts[indexPath.row].id
+        conversationVc.userId = contacts[indexPath.row].id
         self.navigationController?.pushViewController(conversationVc, animated: true)
     }
-     */
+     
     
 }
