@@ -24,7 +24,7 @@ protocol DialogsRepository {
     func update(value: Dialog)
 }
 
-class FirebaseDialogRepository: DialogsRepository {
+class FirebaseDialogsRepository: DialogsRepository {
     func getAll(completion: @escaping ([Dialog]) -> Void) {
         dialogsCollection.getDocuments { snapshot, _ in
             guard let docs = snapshot?.documents else {
