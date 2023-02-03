@@ -49,6 +49,7 @@ class WellcomeVC: UIViewController {
         authorizationController.delegate = self
         // authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
+        
     }
     
     

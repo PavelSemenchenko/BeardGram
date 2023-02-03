@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dialogRow" id="KGk-i7-Jjw" customClass="DialogCell" customModule="BeardGram" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vrd-WY-jga">
+                        <rect key="frame" x="36" y="12" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMP-gG-Bvp">
+                        <rect key="frame" x="270" y="7.6666666666666679" width="30" height="30.000000000000004"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="3Ah-2Y-aaa"/>
+                            <constraint firstAttribute="height" constant="30" id="gNO-Pm-wmS"/>
+                        </constraints>
+                        <color key="tintColor" red="0.74509803919999995" green="0.20392156859999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                        <connections>
+                            <action selector="deleteClecked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="i2o-e6-bws"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Vrd-WY-jga" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="3CH-Ez-TNX"/>
+                    <constraint firstItem="Vrd-WY-jga" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="53S-hb-NaZ"/>
+                    <constraint firstItem="BMP-gG-Bvp" firstAttribute="centerY" secondItem="Vrd-WY-jga" secondAttribute="centerY" id="6Xd-H8-Z1Q"/>
+                    <constraint firstAttribute="trailing" secondItem="BMP-gG-Bvp" secondAttribute="trailing" constant="20" id="ENs-ES-0Qd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="titleLabel" destination="Vrd-WY-jga" id="AWy-H6-ARd"/>
+            </connections>
+            <point key="canvasLocation" x="-9" y="-11"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="trash" catalog="system" width="117" height="128"/>
+    </resources>
+</document>
