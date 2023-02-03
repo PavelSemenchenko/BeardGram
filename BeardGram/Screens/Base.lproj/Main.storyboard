@@ -477,12 +477,22 @@
                                             <action selector="addContactButtonClicked:" destination="59I-Nv-fXS" eventType="touchUpInside" id="bQD-yt-I3v"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hul-4P-KJ7">
+                                        <rect key="frame" x="261.33333333333331" y="55" width="129.66666666666669" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="message" catalog="system" title="Messages"/>
+                                        <connections>
+                                            <action selector="messagesButtonClicked:" destination="59I-Nv-fXS" eventType="touchUpInside" id="50T-XD-Oag"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="o6J-Qk-F21" firstAttribute="leading" secondItem="jXm-E5-qKA" secondAttribute="leading" id="FqO-1i-aWa"/>
+                                    <constraint firstItem="Hul-4P-KJ7" firstAttribute="centerY" secondItem="o6J-Qk-F21" secondAttribute="centerY" id="Kpp-7e-gpd"/>
                                     <constraint firstAttribute="trailing" secondItem="jXm-E5-qKA" secondAttribute="trailing" constant="10" id="KxE-ge-uCF"/>
                                     <constraint firstItem="o6J-Qk-F21" firstAttribute="top" secondItem="jXm-E5-qKA" secondAttribute="bottom" constant="16" id="anw-IQ-jIE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hul-4P-KJ7" secondAttribute="trailing" id="bsy-RV-pt1"/>
                                     <constraint firstItem="jXm-E5-qKA" firstAttribute="leading" secondItem="Kwb-Lo-3S7" secondAttribute="leading" constant="10" id="hAz-YK-ebh"/>
                                     <constraint firstItem="jXm-E5-qKA" firstAttribute="top" secondItem="Kwb-Lo-3S7" secondAttribute="top" constant="5" id="mWy-Lq-qJ1"/>
                                 </constraints>
@@ -508,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0L-8F-kOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660" y="137"/>
+            <point key="canvasLocation" x="1645" y="256"/>
         </scene>
         <!--ConversationsVC-->
         <scene sceneID="67Z-je-HKL">
@@ -562,13 +572,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44L-ER-YUG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2307.6335877862593" y="403.52112676056339"/>
+            <point key="canvasLocation" x="2276" y="471"/>
         </scene>
         <!--New MessageVC-->
         <scene sceneID="lwn-f8-zuG">
             <objects>
                 <viewController storyboardIdentifier="newMessageSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9MD-3Z-N0t" customClass="NewMessageVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="m62-k5-AOm">
+                    <view key="view" contentMode="scaleToFill" id="m62-k5-AOm">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -631,7 +641,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0FS-Ia-i5x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2938.1679389312976" y="577.46478873239437"/>
+            <point key="canvasLocation" x="2276" y="-188"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dVk-Kn-rgq">
@@ -653,6 +663,7 @@
     <resources>
         <image name="logo black" width="512" height="512"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="message" catalog="system" width="128" height="116"/>
         <image name="person.badge.plus" catalog="system" width="128" height="125"/>
         <image name="send_message" width="21.333333969116211" height="21.333333969116211"/>
         <systemColor name="systemBackgroundColor">

@@ -13,7 +13,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var searchMessageTextField: UITextField!
     @IBOutlet weak var recentMessagesTableView: UITableView!
     
-    var userId: String!
+    //var userId: String!
     
     let dialogsRepository: DialogsRepository = FirebaseDialogsRepository()
     var dialogs: [Dialog] = []

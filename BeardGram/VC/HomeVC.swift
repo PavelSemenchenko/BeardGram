@@ -76,6 +76,14 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         self.navigationController?.pushViewController(ctrAddContact, animated: true)
     }
     
+    @IBAction func messagesButtonClicked(_ sender: Any) {
+        guard let mess = self.storyboard?.instantiateViewController(withIdentifier: "newMessageSB")
+                as? NewMessageVC else { return
+        }
+        self.navigationController?.pushViewController(mess, animated: true)
+        
+    }
+    
     @objc func logOutClicked() {
         authenticationService.logOut()
         if navigationController?.viewControllers.count == 1 {
@@ -106,7 +114,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         guard let conversationVc = self.storyboard?.instantiateViewController(withIdentifier: "conversationsSB") as? ConversationsVC else {
             return
         }
-        conversationVc.userId = contacts[indexPath.row].id
+        //conversationVc.userId = contacts[indexPath.row].id
         self.navigationController?.pushViewController(conversationVc, animated: true)
     }
      

@@ -18,7 +18,7 @@ struct Dialog: Codable {
 }
 
 protocol DialogsRepository {
-    func getAll(completion: @escaping ([Dialog]) -> Void)
+    func getAll(/*userId: Int,*/ completion: @escaping ([Dialog]) -> Void)
     func create(title: String) -> Dialog
     func delete(dialogId: String)
     func update(value: Dialog)
