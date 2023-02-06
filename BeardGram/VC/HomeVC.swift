@@ -17,6 +17,8 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     let contactsRepository: ContactsRepository = FirebaseContactsRepository()
     
+    let profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
+    
     var contacts: [Contact] = []
     var allContacts : [Contact] = []
     
@@ -49,11 +51,11 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             contactsTableView.reloadData()
             return
         }
-        let pro = ProfilesRepository()
+        let pro = profilesRepository
         pro.search(name: searchName) { result in
             var searchContacts: [Contact] = []
-            contacts = searchContacts
-            contactsTableView.reloadData()
+            self.contacts = searchContacts
+            self.contactsTableView.reloadData()
         }
         
     }
