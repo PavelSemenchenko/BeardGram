@@ -16,12 +16,13 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     
     let contactsRepository: ContactsRepository = FirebaseContactsRepository()
+    
     var contacts: [Contact] = []
     var allContacts : [Contact] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Contacts list"
+        title = "Friends list"
         navigationItem.setHidesBackButton(true, animated: true)
         navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "LogOut",
                                                               style: UIBarButtonItem.Style.plain,
@@ -48,14 +49,13 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             contactsTableView.reloadData()
             return
         }
-        var searchContacts: [Contact] = []
-        for contact in allContacts {
-            if contact.name.lowercased().contains(searchName) {
-                searchContacts.append(contact)
-            }
+        let pro = ProfilesRepository()
+        pro.search(name: searchName) { result in
+            var searchContacts: [Contact] = []
+            contacts = searchContacts
+            contactsTableView.reloadData()
         }
-        contacts = searchContacts
-        contactsTableView.reloadData()
+        
     }
     
     @IBAction func addContactButtonClicked(_ sender: Any) {

@@ -14,6 +14,12 @@ class GlobalSearchVC: UIViewController {
     
     @IBOutlet weak var globalSearchTableView: UITableView!
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Global users list"
+    }
+    
     @IBAction func globalSearchButtonClicked(_ sender: Any) {
     }
     
