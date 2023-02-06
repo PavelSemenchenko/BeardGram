@@ -599,7 +599,7 @@
                                             <action selector="sendNewMessageButtonCLicked:" destination="9MD-3Z-N0t" eventType="touchUpInside" id="RDE-qp-x8f"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SNJ-vf-kfP">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SNJ-vf-kfP" customClass="MessageTextField" customModule="BeardGram" customModuleProvider="target">
                                         <rect key="frame" x="20" y="160" width="200" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="T3U-6a-9g1"/>
@@ -622,7 +622,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="SNJ-vf-kfP" firstAttribute="leading" secondItem="0uE-mn-gwR" secondAttribute="leading" constant="20" id="1Oq-7b-PDV"/>
                                     <constraint firstItem="szH-Ag-n0d" firstAttribute="top" secondItem="0uE-mn-gwR" secondAttribute="top" constant="10" id="5Yx-r5-GDb"/>
@@ -647,7 +647,7 @@
                     <connections>
                         <outlet property="errorMessageLabel" destination="Nnl-kW-fVk" id="IuW-ib-fuT"/>
                         <outlet property="newMessageTextField" destination="SNJ-vf-kfP" id="daD-bP-T6X"/>
-                        <outlet property="newMessageView" destination="0uE-mn-gwR" id="pNL-1Z-f76"/>
+                        <outlet property="newMessageView" destination="0uE-mn-gwR" id="fdm-wl-nNu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0FS-Ia-i5x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -682,9 +682,6 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

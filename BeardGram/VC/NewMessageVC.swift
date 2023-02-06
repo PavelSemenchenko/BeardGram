@@ -16,6 +16,15 @@ class NewMessageVC: UIViewController, UINavigationControllerDelegate {
     
     let dialogsRepository: DialogsRepository  = FirebaseDialogsRepository()
     var onCreateCompletion: ((Dialog?) -> Void)?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        newMessageView.layer.shadowOpacity = 1
+        newMessageView.layer.shadowRadius = 12.0
+        newMessageView.layer.shadowOffset = CGSize.zero
+        newMessageView.layer.shadowColor = UIColor.gray.cgColor
+        
+    }
    
     @IBAction func sendNewMessageButtonCLicked(_ sender: Any) {
         guard let title = newMessageTextField.text, title.count > 3 else {

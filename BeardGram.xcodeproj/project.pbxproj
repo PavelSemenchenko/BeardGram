@@ -36,6 +36,7 @@
 		2A8E4AF4298D48FC004AF4D7 /* DialogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A8E4AF2298D48FC004AF4D7 /* DialogCell.xib */; };
 		2ABA64AF298AA355008F4383 /* NewMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABA64AE298AA355008F4383 /* NewMessageVC.swift */; };
 		2ABA64B1298AA3A1008F4383 /* ConversationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABA64B0298AA3A1008F4383 /* ConversationsVC.swift */; };
+		2AD8D30929916FEC00677ED5 /* MessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD8D30829916FEC00677ED5 /* MessageTextField.swift */; };
 		6DFD0B8D2981EC880043A50B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD0B8C2981EC880043A50B /* GoogleService-Info.plist */; };
 		B145D7E890E40841E74EC044 /* Pods_BeardGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4E8DB41D40C99C571A22B9 /* Pods_BeardGram.framework */; };
 		ED15B9612D3FEACF3E8B423D /* Pods_BeardGram_BeardGramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04725EAE9C236AC60C5583EE /* Pods_BeardGram_BeardGramUITests.framework */; };
@@ -95,6 +96,7 @@
 		2ABA64AE298AA355008F4383 /* NewMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageVC.swift; sourceTree = "<group>"; };
 		2ABA64B0298AA3A1008F4383 /* ConversationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsVC.swift; sourceTree = "<group>"; };
 		2ABA64B2298ADAC2008F4383 /* BeardGram.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeardGram.entitlements; sourceTree = "<group>"; };
+		2AD8D30829916FEC00677ED5 /* MessageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextField.swift; sourceTree = "<group>"; };
 		2D2B30F9709BA5885D9DB335 /* Pods-BeardGram-BeardGramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeardGram-BeardGramUITests.release.xcconfig"; path = "Target Support Files/Pods-BeardGram-BeardGramUITests/Pods-BeardGram-BeardGramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6DFD0B89298158E30043A50B /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		6DFD0B8A298158EE0043A50B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				2A412A6D297F39A200E33979 /* EmailTextField.swift */,
 				2A412A6F297F3A4100E33979 /* PasswordTextField.swift */,
 				2A412A71297F3A6300E33979 /* NameTextField.swift */,
+				2AD8D30829916FEC00677ED5 /* MessageTextField.swift */,
 			);
 			path = Fields;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				2A412A2A297F294C00E33979 /* SignUpVC.swift in Sources */,
 				2A8C855D298957F1002A411D /* ContactsRepository.swift in Sources */,
 				2A4129F6297F0DEC00E33979 /* SceneDelegate.swift in Sources */,
+				2AD8D30929916FEC00677ED5 /* MessageTextField.swift in Sources */,
 				2A412A70297F3A4100E33979 /* PasswordTextField.swift in Sources */,
 				2A412A69297F370E00E33979 /* Authentication.swift in Sources */,
 			);
