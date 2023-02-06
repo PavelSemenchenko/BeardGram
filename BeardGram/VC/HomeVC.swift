@@ -110,4 +110,12 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         //conversationVc.userId = contacts[indexPath.row].id
         self.navigationController?.pushViewController(conversationVc, animated: true)
     }
+    
+    @IBAction func globalSearchButtonClicked(_ sender: Any) {
+        guard let globalSearch = self.storyboard?.instantiateViewController(withIdentifier: "globalSearchSB") as? GlobalSearchVC else {
+            return
+        }
+        self.navigationController?.pushViewController(globalSearch, animated: true)
+    }
+    
 }

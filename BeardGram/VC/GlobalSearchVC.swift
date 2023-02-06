@@ -10,4 +10,11 @@ import UIKit
 
 class GlobalSearchVC: UIViewController {
     
+    @IBOutlet weak var globalSearchTextField: UITextField!
+    
+    @IBOutlet weak var globalSearchTableView: UITableView!
+    
+    @IBAction func globalSearchButtonClicked(_ sender: Any) {
+    }
+    
 }
