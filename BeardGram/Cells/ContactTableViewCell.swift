@@ -18,12 +18,12 @@ class ContactTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    var data: Contact! {
+    var data: Profile! {
         didSet {
             contactNameLabel.text = data.name
         }
     }
-    var  contactRepository: ContactsRepository!
+    var  profilesRepository: ProfilesRepository!
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

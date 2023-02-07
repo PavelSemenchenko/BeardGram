@@ -37,6 +37,9 @@
 		2ABA64AF298AA355008F4383 /* NewMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABA64AE298AA355008F4383 /* NewMessageVC.swift */; };
 		2ABA64B1298AA3A1008F4383 /* ConversationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABA64B0298AA3A1008F4383 /* ConversationsVC.swift */; };
 		2AD8D30929916FEC00677ED5 /* MessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD8D30829916FEC00677ED5 /* MessageTextField.swift */; };
+		2AD8D30B2991843300677ED5 /* ProfileAddInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD8D30A2991843300677ED5 /* ProfileAddInfo.swift */; };
+		2AD8D30D299189DB00677ED5 /* GlobalSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD8D30C299189DB00677ED5 /* GlobalSearchVC.swift */; };
+		2AD8D30F2991974300677ED5 /* ProfilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD8D30E2991974300677ED5 /* ProfilesRepository.swift */; };
 		6DFD0B8D2981EC880043A50B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD0B8C2981EC880043A50B /* GoogleService-Info.plist */; };
 		B145D7E890E40841E74EC044 /* Pods_BeardGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4E8DB41D40C99C571A22B9 /* Pods_BeardGram.framework */; };
 		ED15B9612D3FEACF3E8B423D /* Pods_BeardGram_BeardGramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04725EAE9C236AC60C5583EE /* Pods_BeardGram_BeardGramUITests.framework */; };
@@ -97,6 +100,9 @@
 		2ABA64B0298AA3A1008F4383 /* ConversationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsVC.swift; sourceTree = "<group>"; };
 		2ABA64B2298ADAC2008F4383 /* BeardGram.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeardGram.entitlements; sourceTree = "<group>"; };
 		2AD8D30829916FEC00677ED5 /* MessageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextField.swift; sourceTree = "<group>"; };
+		2AD8D30A2991843300677ED5 /* ProfileAddInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddInfo.swift; sourceTree = "<group>"; };
+		2AD8D30C299189DB00677ED5 /* GlobalSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSearchVC.swift; sourceTree = "<group>"; };
+		2AD8D30E2991974300677ED5 /* ProfilesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesRepository.swift; sourceTree = "<group>"; };
 		2D2B30F9709BA5885D9DB335 /* Pods-BeardGram-BeardGramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeardGram-BeardGramUITests.release.xcconfig"; path = "Target Support Files/Pods-BeardGram-BeardGramUITests/Pods-BeardGram-BeardGramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6DFD0B89298158E30043A50B /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		6DFD0B8A298158EE0043A50B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -219,6 +225,8 @@
 				2ABA64AE298AA355008F4383 /* NewMessageVC.swift */,
 				2ABA64B0298AA3A1008F4383 /* ConversationsVC.swift */,
 				2A8E4AEB298D2FA2004AF4D7 /* AddContactVC.swift */,
+				2AD8D30A2991843300677ED5 /* ProfileAddInfo.swift */,
+				2AD8D30C299189DB00677ED5 /* GlobalSearchVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -256,6 +264,7 @@
 			children = (
 				2A8C855C298957F1002A411D /* ContactsRepository.swift */,
 				2A8E4AEF298D3FA2004AF4D7 /* DialogsRepository.swift */,
+				2AD8D30E2991974300677ED5 /* ProfilesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -583,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A412A72297F3A6300E33979 /* NameTextField.swift in Sources */,
+				2AD8D30D299189DB00677ED5 /* GlobalSearchVC.swift in Sources */,
 				2A8E4AEC298D2FA2004AF4D7 /* AddContactVC.swift in Sources */,
 				2A412A26297F1B2500E33979 /* WellcomeVC.swift in Sources */,
 				2A8E4AF3298D48FC004AF4D7 /* DialogCell.swift in Sources */,
@@ -597,12 +607,14 @@
 				2A412A67297F370200E33979 /* BaseAuthentication.swift in Sources */,
 				2A412A6B297F371A00E33979 /* Filestorage.swift in Sources */,
 				2A4129F4297F0DEC00E33979 /* AppDelegate.swift in Sources */,
+				2AD8D30B2991843300677ED5 /* ProfileAddInfo.swift in Sources */,
 				2A412A2A297F294C00E33979 /* SignUpVC.swift in Sources */,
 				2A8C855D298957F1002A411D /* ContactsRepository.swift in Sources */,
 				2A4129F6297F0DEC00E33979 /* SceneDelegate.swift in Sources */,
 				2AD8D30929916FEC00677ED5 /* MessageTextField.swift in Sources */,
 				2A412A70297F3A4100E33979 /* PasswordTextField.swift in Sources */,
 				2A412A69297F370E00E33979 /* Authentication.swift in Sources */,
+				2AD8D30F2991974300677ED5 /* ProfilesRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
