@@ -10,56 +10,53 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct Contact: Codable {
-    @DocumentID var id: String?
-    let name: String
-    let email: String
-    let authorId: String?
-}
-
 protocol ContactsRepository {
-    func getAll(completion: @escaping ([Contact]) -> Void)
-    func getOne(userId: String, completion: @escaping ([Contact]) -> Void)
-    func create(name: String, email: String) -> Contact
+    func getAll(completion: @escaping ([Profile]) -> Void)
+    func append(profile: Profile) -> Profile
     func delete(contactId: String)
-    func update(value: Contact)
+    func update(value: Profile)
+    func search(name: String, completion: @escaping ([Profile]) -> Void)
 }
 
 class FirebaseContactsRepository: ContactsRepository {
     
-    func create(name: String, email: String) -> Contact {
-        guard let currentUserId = Auth.auth().currentUser?.uid else {
+    func append(profile: Profile) -> Profile {
+        guard let currentUserId = Auth.auth().currentUser?.uid,
+              let profileId = profile.id else {
             fatalError("no permissions")
         }
-        var contact = Contact(name: name, email: email, authorId: currentUserId)
-        guard let reference = try? contactsCollection.addDocument(from: contact) else {
-            fatalError("failed to create new user")
-        }
+        //var contact = Contact(id: profile.id, name: profile.name)
+        try? contactsCollection.document(currentUserId)
+            .collection("contacts")
+            .document(profileId)
+            .setData(from: profile)
+        return profile
+        
+        /*
         let coontactId = reference.documentID
         contact.id = coontactId
         try? contactsCollection.document(coontactId).setData(from: contact)
         
         return contact
+         */
     }
-    
     
     lazy var contactsCollection: CollectionReference = {
-        return Firestore.firestore().collection("contacts")
+        return Firestore.firestore().collection("profiles")
     }()
-    
-    func getOne(userId: String, completion: @escaping ([Contact]) -> Void) {
-        
-    }
-    
-    func getAll(completion: @escaping ([Contact]) -> Void) {
-        contactsCollection.getDocuments { snapshot, _ in
+       
+    func getAll(completion: @escaping ([Profile]) -> Void) {
+        guard let currentUserId = Auth.auth().currentUser?.uid else {
+            fatalError("no permissions")
+        }
+        contactsCollection.document(currentUserId).collection("contacts").getDocuments { snapshot, _ in
             guard let docs = snapshot?.documents else {
                 completion([])
                 return
             }
-            var contacts: [Contact] = []
+            var contacts: [Profile] = []
             for doc in docs {
-                guard let contact = try? doc.data(as: Contact.self) else {
+                guard let contact = try? doc.data(as: Profile.self) else {
                     continue
                 }
                 contacts.append(contact)
@@ -69,15 +66,32 @@ class FirebaseContactsRepository: ContactsRepository {
     }
     
     func delete(contactId: String) {
-        
     }
     
-    func update(value: Contact) {
-        
+    func update(value: Profile) {
     }
     
-    // let fileStorageService: FileStorageService = FirebaseFileStorageService()
-    
-    
+    func search(name: String, completion: @escaping ([Profile]) -> Void) {
+        guard let currentUserId = Auth.auth().currentUser?.uid else {
+            fatalError("no permissions")
+        }
+        let query = contactsCollection.document(currentUserId).collection("contacts").whereField("name", isEqualTo: name)
+        query.getDocuments { snapshot, _ in
+            guard let docs = snapshot?.documents else {
+                completion([])
+                return
+            }
+            var items: [Profile] = []
+            for doc in docs {
+                guard let profile = try? doc.data(as: Profile.self) else {
+                    continue
+                }
+                if profile.id != Auth.auth().currentUser?.uid {
+                    items.append(profile)
+                }
+            }
+            completion(items)
+        }
+    }
     
 }

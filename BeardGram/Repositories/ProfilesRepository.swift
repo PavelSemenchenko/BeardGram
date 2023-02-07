@@ -30,7 +30,7 @@ class FirebaseProfilesRepository: ProfilesRepository {
     }
     
     func search(name: String, completion: @escaping ([Profile]) -> Void) {
-        let query = profilesCollection.whereField("name", isEqualTo: name).order(by: "name")
+        let query = profilesCollection.whereField("name", isEqualTo: name)
         
         query.getDocuments { snapshot, _ in
             guard let docs = snapshot?.documents else {
@@ -42,7 +42,9 @@ class FirebaseProfilesRepository: ProfilesRepository {
                 guard let profile = try? doc.data(as: Profile.self) else {
                     continue
                 }
-                items.append(profile)
+                if profile.id != Auth.auth().currentUser?.uid {
+                    items.append(profile)
+                }
             }
             completion(items)
         }

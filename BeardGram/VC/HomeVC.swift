@@ -17,10 +17,10 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     let contactsRepository: ContactsRepository = FirebaseContactsRepository()
     
-    let profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
+    // let profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
     
-    var contacts: [Contact] = []
-    var allContacts : [Contact] = []
+    var contacts: [Profile] = []
+    var allContacts : [Profile] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +51,8 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             contactsTableView.reloadData()
             return
         }
-        let pro = profilesRepository
-        pro.search(name: searchName) { result in
-            var searchContacts: [Contact] = []
+        contactsRepository.search(name: searchName) { result in
+            var searchContacts: [Profile] = []
             self.contacts = searchContacts
             self.contactsTableView.reloadData()
         }
@@ -98,7 +97,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
         
         cell.data = contacts[indexPath.row]
-        cell.contactRepository = contactsRepository
+        //cell.contactRepository = contactsRepository
         //let contact = allContacts[indexPath.row]
        // contactCell.contactNameLabel.text = contact.name
         return cell

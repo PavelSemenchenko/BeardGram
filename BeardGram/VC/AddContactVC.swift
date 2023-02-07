@@ -17,7 +17,7 @@ class AddContactVC: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var errorEmailLabel: UILabel!
     
     let contactRepository: ContactsRepository = FirebaseContactsRepository()
-    var onCreateCompletion: ((Contact?) -> Void)?
+    var onCreateCompletion: ((Profile?) -> Void)?
     
     @IBAction func addContactButtonClicked(_ sender: Any) {
         guard let name = addNameTextField.text, name.count > 2 else {
@@ -29,8 +29,8 @@ class AddContactVC: UIViewController, UINavigationControllerDelegate {
             errorEmailLabel.text = "Enter correct email"
             return
         }
-        let newContact = contactRepository.create(name: name, email: email)
-        self.onCreateCompletion?(newContact)
+        //let newContact = contactRepository.create(name: name, email: email)
+        //self.onCreateCompletion?(newContact)
         self.navigationController?.popViewController(animated: true)
     }
 }
