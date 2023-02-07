@@ -546,12 +546,12 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6J-Qk-F21">
-                                        <rect key="frame" x="10" y="55" width="144" height="35"/>
+                                        <rect key="frame" x="10" y="55" width="128.33333333333334" height="35"/>
                                         <color key="tintColor" systemColor="tintColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="person.badge.plus" catalog="system" title="Add Contact"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Global search"/>
                                         <connections>
-                                            <action selector="addContactButtonClicked:" destination="59I-Nv-fXS" eventType="touchUpInside" id="bQD-yt-I3v"/>
+                                            <action selector="globalSearchButtonClicked:" destination="59I-Nv-fXS" eventType="touchUpInside" id="csU-oO-p1Y"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hul-4P-KJ7">
@@ -562,8 +562,8 @@
                                             <action selector="messagesButtonClicked:" destination="59I-Nv-fXS" eventType="touchUpInside" id="50T-XD-Oag"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cb3-GR-AUn">
-                                        <rect key="frame" x="198" y="55" width="128.33333333333337" height="35"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cb3-GR-AUn">
+                                        <rect key="frame" x="182.33333333333331" y="55" width="128.33333333333331" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Global search"/>
                                         <connections>
@@ -821,7 +821,6 @@
         <image name="logo black" width="512" height="512"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="message" catalog="system" width="128" height="116"/>
-        <image name="person.badge.plus" catalog="system" width="128" height="125"/>
         <image name="send_message" width="21.333333969116211" height="21.333333969116211"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
