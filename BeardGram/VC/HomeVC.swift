@@ -81,7 +81,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @objc func logOutClicked() {
         authenticationService.logOut()
         if navigationController?.viewControllers.count == 1 {
-            guard let viewController = storyboard?.instantiateViewController(withIdentifier: "signInSB") else {
+            guard let viewController = storyboard?.instantiateViewController(withIdentifier: "wellcomeId") else {
                 return
             }
             navigationController?.pushViewController(viewController, animated: true)

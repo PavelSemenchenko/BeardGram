@@ -10,10 +10,21 @@ import UIKit
 
 class ProfileAddInfo: UIViewController {
     
+    @IBOutlet weak var profileAddNameTextField: NameTextField!
+    
     let profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    @IBAction func continueRegButtonClicked(_ sender: Any) {
+        onContinue()
+    }
     // need button
     func onContinue(){
-        profilesRepository.createProfile(name: "Paule")
+        guard let name = profileAddNameTextField.text else {
+            return
+        }
+        profilesRepository.createProfile(name: name)
     }
 }

@@ -11,6 +11,9 @@ class ProfileTableViewCell: UITableViewCell {
 
     @IBOutlet weak var profileNameLabel: UILabel!
     
+    //let contactRepository: ContactsRepository = FirebaseContactsRepository()
+    var profilesRepository: ProfilesRepository!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,8 +23,6 @@ class ProfileTableViewCell: UITableViewCell {
             profileNameLabel.text = data.name
         }
     }
-
-    var profilesRepository: ProfilesRepository!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -30,5 +31,10 @@ class ProfileTableViewCell: UITableViewCell {
     }
     
     @IBAction func appendProfileToFriendsButtonClicked(_ sender: Any) {
+        guard let name = profileNameLabel.text else {
+            return
+        }
+        //let updProfile = contactRepository.append(profile: Profile(name: name))
+        // and go home screen
     }
 }
