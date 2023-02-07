@@ -12,6 +12,7 @@ class ProfileAddInfo: UIViewController {
     
     let profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
     
+    // need button
     func onContinue(){
         profilesRepository.createProfile(name: "Paule")
     }

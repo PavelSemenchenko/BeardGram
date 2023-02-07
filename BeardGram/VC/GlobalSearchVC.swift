@@ -22,7 +22,7 @@ class GlobalSearchVC: UIViewController {
         super.viewDidLoad()
         title = "Global users list"
         globalSearchTableView.dataSource = self
-        globalSearchTableView.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "profileCell")
+        globalSearchTableView.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "profileCell")
     }
     
     @IBAction func globalSearchButtonClicked(_ sender: Any) {
