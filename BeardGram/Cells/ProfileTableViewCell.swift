@@ -34,6 +34,8 @@ class ProfileTableViewCell: UITableViewCell {
         guard let name = profileNameLabel.text else {
             return
         }
+        // need to add this uID searched user to contacts of current user
+        
         //let updProfile = contactRepository.append(profile: Profile(name: name))
         // and go home screen
     }
