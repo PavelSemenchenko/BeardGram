@@ -19,6 +19,10 @@ class ProfileAddInfo: UIViewController {
     }
     @IBAction func continueRegButtonClicked(_ sender: Any) {
         onContinue()
+        guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "homeSB") as? HomeVC else {
+            return
+        }
+        self.navigationController?.pushViewController(homeVC, animated: true)
     }
     // need button
     func onContinue(){
