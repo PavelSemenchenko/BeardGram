@@ -10,9 +10,10 @@ import UIKit
 class ProfileTableViewCell: UITableViewCell {
 
     @IBOutlet weak var profileNameLabel: UILabel!
-    
-    //let contactRepository: ContactsRepository = FirebaseContactsRepository()
-    var profilesRepository: ProfilesRepository!
+   
+    let contactRepository: ContactsRepository = FirebaseContactsRepository()
+    var onAddFriendCompletion: ((Profile?) -> Void)?
+    //var profilesRepository: ProfilesRepository!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,9 +35,18 @@ class ProfileTableViewCell: UITableViewCell {
         guard let name = profileNameLabel.text else {
             return
         }
-        // need to add this uID searched user to contacts of current user
+        guard let id = data.id else {
+            return
+        }
+        let addFiend = contactRepository.append(profile: Profile.init(id: id, name: name))
+        self.onAddFriendCompletion?(addFiend)
         
-        //let updProfile = contactRepository.append(profile: Profile(name: name))
-        // and go home screen
+        /*
+        guard let homeTableContacts = HomeVC() else {
+            return
+        }
+        homeTableContacts.contactsTableView.reloadData()
+        */
+        
     }
 }

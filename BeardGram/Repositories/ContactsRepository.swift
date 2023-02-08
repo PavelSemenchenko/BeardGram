@@ -25,20 +25,12 @@ class FirebaseContactsRepository: ContactsRepository {
               let profileId = profile.id else {
             fatalError("no permissions")
         }
-        //var contact = Contact(id: profile.id, name: profile.name)
+       
         try? contactsCollection.document(currentUserId)
             .collection("contacts")
             .document(profileId)
             .setData(from: profile)
         return profile
-        
-        /*
-        let coontactId = reference.documentID
-        contact.id = coontactId
-        try? contactsCollection.document(coontactId).setData(from: contact)
-        
-        return contact
-         */
     }
     
     lazy var contactsCollection: CollectionReference = {
