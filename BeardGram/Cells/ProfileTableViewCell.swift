@@ -10,8 +10,9 @@ import UIKit
 class ProfileTableViewCell: UITableViewCell {
 
     @IBOutlet weak var profileNameLabel: UILabel!
-   
-    let contactRepository: ContactsRepository = FirebaseContactsRepository()
+    //var contacts: [Profile] = []
+    //var allContacts : [Profile] = []
+    let contactsRepository: ContactsRepository = FirebaseContactsRepository()
     var onAddFriendCompletion: ((Profile?) -> Void)?
     //var profilesRepository: ProfilesRepository!
     
@@ -38,15 +39,18 @@ class ProfileTableViewCell: UITableViewCell {
         guard let id = data.id else {
             return
         }
-        let addFiend = contactRepository.append(profile: Profile.init(id: id, name: name))
+        let addFiend = contactsRepository.append(profile: Profile.init(id: id, name: name))
         self.onAddFriendCompletion?(addFiend)
         
         /*
-        guard let homeTableContacts = HomeVC() else {
-            return
-        }
+        let homeTableContacts = HomeVC()
         homeTableContacts.contactsTableView.reloadData()
-        */
         
+        contactsRepository.getAll { allContacts in
+            self.contacts = allContacts
+            homeTableContacts.reloadContacts()
+            contactsTableView.reloadData()
+        }
+        */
     }
 }

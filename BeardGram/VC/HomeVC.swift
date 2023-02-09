@@ -45,6 +45,14 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
     
     @IBAction func searchContactFieldButton(_ sender: Any) {
+        guard let searchName = searchContactsTextField.text else {
+            return
+        }
+        contactsRepository.search(name: searchName) { result in
+            self.contacts = result
+            self.contactsTableView.reloadData()
+        }
+        /*
         guard let searchName = searchContactsTextField.text?.lowercased() else { return }
         if searchName.isEmpty {
             contacts = allContacts
@@ -55,7 +63,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             var searchContacts: [Profile] = []
             self.contacts = searchContacts
             self.contactsTableView.reloadData()
-        }
+        }*/
         
     }
     
@@ -116,6 +124,18 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         guard let globalSearch = self.storyboard?.instantiateViewController(withIdentifier: "globalSearchSB") as? GlobalSearchVC else {
             return
         }
+        // try do completion
+        /*
+        let sbAddFriend = UIStoryboard(name: "profileCell", bundle: nil)
+        let vcAddFriend = sbAddFriend.instantiateViewController(withIdentifier: "profileCell") as! ProfileTableViewCell
+        vcAddFriend.onAddFriendCompletion = { newFriend in
+            if let addFriend = newFriend {
+                self.allContacts.append(addFriend)
+                self.contactsTableView.reloadData()
+            }
+                
+        }*/
+        
         self.navigationController?.pushViewController(globalSearch, animated: true)
     }
     
