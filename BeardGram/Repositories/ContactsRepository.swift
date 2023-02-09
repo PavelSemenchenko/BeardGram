@@ -13,7 +13,7 @@ import FirebaseFirestoreSwift
 protocol ContactsRepository {
     func getAll(completion: @escaping ([Profile]) -> Void)
     func append(profile: Profile) -> Profile
-    func delete(contactId: String)
+    func delete(profile: Profile)
     func update(value: Profile)
     func search(name: String, completion: @escaping ([Profile]) -> Void)
 }
@@ -57,7 +57,14 @@ class FirebaseContactsRepository: ContactsRepository {
         }
     }
     
-    func delete(contactId: String) {
+    func delete(profile: Profile) {
+        guard let currentUserId = Auth.auth().currentUser?.uid,
+              let profileId = profile.id else {
+            fatalError("no permissions")
+        }
+        contactsCollection.document(currentUserId)
+            .collection("contacts")
+            .document(profileId).delete()
     }
     
     func update(value: Profile) {

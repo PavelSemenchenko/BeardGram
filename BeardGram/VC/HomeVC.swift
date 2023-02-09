@@ -17,8 +17,6 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     let contactsRepository: ContactsRepository = FirebaseContactsRepository()
     
-    // let profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
-    
     var contacts: [Profile] = []
     var allContacts : [Profile] = []
     
@@ -66,6 +64,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         }*/
         
     }
+    
     
     @IBAction func addContactButtonClicked(_ sender: Any) {
         let sbAddContact = UIStoryboard(name: "AddContactSB", bundle: nil)

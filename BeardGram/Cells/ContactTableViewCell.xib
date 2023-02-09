@@ -23,9 +23,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPj-6a-BYk">
+                        <rect key="frame" x="229" y="5" width="75" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                        <connections>
+                            <action selector="deleteFriendButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lUz-DF-yKf"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="FPj-6a-BYk" firstAttribute="centerY" secondItem="XDU-SZ-UmK" secondAttribute="centerY" id="Exl-dn-SVn"/>
                     <constraint firstItem="XDU-SZ-UmK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="NXQ-7z-Zcd"/>
+                    <constraint firstItem="FPj-6a-BYk" firstAttribute="leading" secondItem="XDU-SZ-UmK" secondAttribute="trailing" constant="157" id="Z6B-Fy-NjC"/>
                     <constraint firstItem="XDU-SZ-UmK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="wzi-ad-sw4"/>
                 </constraints>
             </tableViewCellContentView>
@@ -36,4 +46,7 @@
             <point key="canvasLocation" x="113" y="-11"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="trash" catalog="system" width="117" height="128"/>
+    </resources>
 </document>

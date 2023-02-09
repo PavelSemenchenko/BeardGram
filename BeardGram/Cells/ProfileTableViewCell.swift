@@ -33,6 +33,11 @@ class ProfileTableViewCell: UITableViewCell {
     }
     
     @IBAction func appendProfileToFriendsButtonClicked(_ sender: Any) {
+        addFriend()
+        
+    }
+    
+    func addFriend() {
         guard let name = profileNameLabel.text else {
             return
         }
@@ -42,15 +47,5 @@ class ProfileTableViewCell: UITableViewCell {
         let addFiend = contactsRepository.append(profile: Profile.init(id: id, name: name))
         self.onAddFriendCompletion?(addFiend)
         
-        /*
-        let homeTableContacts = HomeVC()
-        homeTableContacts.contactsTableView.reloadData()
-        
-        contactsRepository.getAll { allContacts in
-            self.contacts = allContacts
-            homeTableContacts.reloadContacts()
-            contactsTableView.reloadData()
-        }
-        */
     }
 }
