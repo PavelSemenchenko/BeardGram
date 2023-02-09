@@ -570,6 +570,14 @@
                                             <action selector="globalSearchButtonClicked:" destination="59I-Nv-fXS" eventType="touchUpInside" id="Nxq-K1-uzQ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L17-WE-01N">
+                                        <rect key="frame" x="332" y="4.6666666666666643" width="49" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="clear" catalog="system"/>
+                                        <connections>
+                                            <action selector="searchCloseButtonClicked:" destination="59I-Nv-fXS" eventType="touchUpInside" id="kCQ-fX-5IS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -578,10 +586,12 @@
                                     <constraint firstAttribute="trailing" secondItem="jXm-E5-qKA" secondAttribute="trailing" constant="10" id="KxE-ge-uCF"/>
                                     <constraint firstItem="cb3-GR-AUn" firstAttribute="top" secondItem="o6J-Qk-F21" secondAttribute="top" id="Uif-cj-v6z"/>
                                     <constraint firstItem="o6J-Qk-F21" firstAttribute="top" secondItem="jXm-E5-qKA" secondAttribute="bottom" constant="16" id="anw-IQ-jIE"/>
+                                    <constraint firstAttribute="trailing" secondItem="L17-WE-01N" secondAttribute="trailing" constant="10" id="bqT-Fx-vy4"/>
                                     <constraint firstAttribute="trailing" secondItem="Hul-4P-KJ7" secondAttribute="trailing" id="bsy-RV-pt1"/>
                                     <constraint firstItem="jXm-E5-qKA" firstAttribute="leading" secondItem="Kwb-Lo-3S7" secondAttribute="leading" constant="10" id="hAz-YK-ebh"/>
                                     <constraint firstItem="cb3-GR-AUn" firstAttribute="leading" secondItem="o6J-Qk-F21" secondAttribute="trailing" constant="44" id="ltt-gX-1ac"/>
                                     <constraint firstItem="jXm-E5-qKA" firstAttribute="top" secondItem="Kwb-Lo-3S7" secondAttribute="top" constant="5" id="mWy-Lq-qJ1"/>
+                                    <constraint firstItem="L17-WE-01N" firstAttribute="centerY" secondItem="jXm-E5-qKA" secondAttribute="centerY" id="vgL-0b-wkR"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -818,6 +828,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clear" catalog="system" width="128" height="114"/>
         <image name="logo black" width="512" height="512"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="message" catalog="system" width="128" height="116"/>
