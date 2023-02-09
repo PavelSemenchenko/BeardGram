@@ -555,7 +555,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hul-4P-KJ7">
-                                        <rect key="frame" x="338.66666666666669" y="55" width="52.333333333333314" height="35"/>
+                                        <rect key="frame" x="331.66666666666669" y="55" width="52.333333333333314" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="message" catalog="system"/>
                                         <connections>
@@ -588,7 +588,7 @@
                                     <constraint firstItem="cb3-GR-AUn" firstAttribute="top" secondItem="o6J-Qk-F21" secondAttribute="top" id="Uif-cj-v6z"/>
                                     <constraint firstItem="o6J-Qk-F21" firstAttribute="top" secondItem="jXm-E5-qKA" secondAttribute="bottom" constant="16" id="anw-IQ-jIE"/>
                                     <constraint firstAttribute="trailing" secondItem="L17-WE-01N" secondAttribute="trailing" constant="10" id="bqT-Fx-vy4"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hul-4P-KJ7" secondAttribute="trailing" id="bsy-RV-pt1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hul-4P-KJ7" secondAttribute="trailing" constant="7" id="bsy-RV-pt1"/>
                                     <constraint firstItem="jXm-E5-qKA" firstAttribute="leading" secondItem="Kwb-Lo-3S7" secondAttribute="leading" constant="10" id="hAz-YK-ebh"/>
                                     <constraint firstItem="cb3-GR-AUn" firstAttribute="leading" secondItem="o6J-Qk-F21" secondAttribute="trailing" constant="44" id="ltt-gX-1ac"/>
                                     <constraint firstItem="jXm-E5-qKA" firstAttribute="top" secondItem="Kwb-Lo-3S7" secondAttribute="top" constant="5" id="mWy-Lq-qJ1"/>
