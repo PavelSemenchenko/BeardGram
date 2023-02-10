@@ -41,7 +41,7 @@ class FirebaseContactsRepository: ContactsRepository {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
             fatalError("no permissions")
         }
-        contactsCollection.document(currentUserId).collection("contacts").getDocuments { snapshot, _ in
+        contactsCollection.document(currentUserId).collection("contacts").addSnapshotListener { snapshot, _ in
             guard let docs = snapshot?.documents else {
                 completion([])
                 return
