@@ -712,7 +712,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="HoP-Tl-Y95" firstAttribute="leading" secondItem="vu9-Lt-BSq" secondAttribute="trailing" constant="10" id="0Gd-ZT-Gya"/>
                                     <constraint firstAttribute="trailing" secondItem="HoP-Tl-Y95" secondAttribute="trailing" constant="10" id="IVL-iP-Sj6"/>
