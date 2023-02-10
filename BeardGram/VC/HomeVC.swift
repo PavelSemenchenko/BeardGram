@@ -12,7 +12,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         
     @IBOutlet weak var searchContactsTextField: UITextField!
     @IBOutlet weak var contactsTableView: UITableView!
-        
+    
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     
     let contactsRepository: ContactsRepository = FirebaseContactsRepository()
@@ -133,19 +133,14 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         guard let globalSearch = self.storyboard?.instantiateViewController(withIdentifier: "globalSearchSB") as? GlobalSearchVC else {
             return
         }
-        // try do completion
-        /*
-        let sbAddFriend = UIStoryboard(name: "profileCell", bundle: nil)
-        let vcAddFriend = sbAddFriend.instantiateViewController(withIdentifier: "profileCell") as! ProfileTableViewCell
-        vcAddFriend.onAddFriendCompletion = { newFriend in
-            if let addFriend = newFriend {
-                self.allContacts.append(addFriend)
-                self.contactsTableView.reloadData()
-            }
-                
-        }*/
+        globalSearch.onAddFriendCompletion = { newFriend in
+                }
         
         self.navigationController?.pushViewController(globalSearch, animated: true)
+    }
+    
+    @IBAction func reloadTableButtonClicked(_ sender: Any) {
+        reloadContacts()
     }
     
 }

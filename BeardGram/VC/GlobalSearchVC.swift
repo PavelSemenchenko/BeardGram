@@ -13,7 +13,7 @@ class GlobalSearchVC: UIViewController {
     @IBOutlet weak var globalSearchTextField: UITextField!
     
     @IBOutlet weak var globalSearchTableView: UITableView!
-    
+    var onAddFriendCompletion: ((Profile?) -> Void)?
     let profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
     
     var profiles: [Profile] = []
