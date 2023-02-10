@@ -10,9 +10,11 @@ import UIKit
 class ProfileTableViewCell: UITableViewCell {
 
     @IBOutlet weak var profileNameLabel: UILabel!
-    
-    //let contactRepository: ContactsRepository = FirebaseContactsRepository()
-    var profilesRepository: ProfilesRepository!
+    //var contacts: [Profile] = []
+    //var allContacts : [Profile] = []
+    let contactsRepository: ContactsRepository = FirebaseContactsRepository()
+    var onAddFriendCompletion: ((Profile?) -> Void)?
+    //var profilesRepository: ProfilesRepository!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,10 +33,19 @@ class ProfileTableViewCell: UITableViewCell {
     }
     
     @IBAction func appendProfileToFriendsButtonClicked(_ sender: Any) {
+        addFriend()
+        
+    }
+    
+    func addFriend() {
         guard let name = profileNameLabel.text else {
             return
         }
-        //let updProfile = contactRepository.append(profile: Profile(name: name))
-        // and go home screen
+        guard let id = data.id else {
+            return
+        }
+        let addFiend = contactsRepository.append(profile: Profile.init(id: id, name: name))
+        self.onAddFriendCompletion?(addFiend)
+        
     }
 }

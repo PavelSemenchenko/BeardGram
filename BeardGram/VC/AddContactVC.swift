@@ -30,8 +30,7 @@ class AddContactVC: UIViewController, UINavigationControllerDelegate {
             return
         }
         let updContact = contactRepository.append(profile: Profile(name: name))
-        //let newContact = contactRepository.create(name: name, email: email)
-        //self.onCreateCompletion?(newContact)
+        
         self.navigationController?.popViewController(animated: true)
     }
 }

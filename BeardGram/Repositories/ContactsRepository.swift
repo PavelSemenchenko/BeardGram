@@ -13,7 +13,7 @@ import FirebaseFirestoreSwift
 protocol ContactsRepository {
     func getAll(completion: @escaping ([Profile]) -> Void)
     func append(profile: Profile) -> Profile
-    func delete(contactId: String)
+    func delete(profile: Profile)
     func update(value: Profile)
     func search(name: String, completion: @escaping ([Profile]) -> Void)
 }
@@ -25,20 +25,12 @@ class FirebaseContactsRepository: ContactsRepository {
               let profileId = profile.id else {
             fatalError("no permissions")
         }
-        //var contact = Contact(id: profile.id, name: profile.name)
+       
         try? contactsCollection.document(currentUserId)
             .collection("contacts")
             .document(profileId)
             .setData(from: profile)
         return profile
-        
-        /*
-        let coontactId = reference.documentID
-        contact.id = coontactId
-        try? contactsCollection.document(coontactId).setData(from: contact)
-        
-        return contact
-         */
     }
     
     lazy var contactsCollection: CollectionReference = {
@@ -65,7 +57,14 @@ class FirebaseContactsRepository: ContactsRepository {
         }
     }
     
-    func delete(contactId: String) {
+    func delete(profile: Profile) {
+        guard let currentUserId = Auth.auth().currentUser?.uid,
+              let profileId = profile.id else {
+            fatalError("no permissions")
+        }
+        contactsCollection.document(currentUserId)
+            .collection("contacts")
+            .document(profileId).delete()
     }
     
     func update(value: Profile) {

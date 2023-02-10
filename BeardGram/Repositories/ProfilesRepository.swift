@@ -26,7 +26,8 @@ class FirebaseProfilesRepository: ProfilesRepository {
             fatalError("You need to be authenticated")
         }
         let profile = Profile(name: name)
-        try? profilesCollection.document(currentUserId).setData(from: profile)
+        try? profilesCollection.document(currentUserId)
+            .setData(from: profile)
     }
     
     func search(name: String, completion: @escaping ([Profile]) -> Void) {

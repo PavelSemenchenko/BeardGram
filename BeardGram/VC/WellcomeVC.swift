@@ -19,6 +19,7 @@ class WellcomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.setHidesBackButton(true, animated: true)
         /*
         let nonce = FirebaseAuthenticationService.randomNonceString()
         currentNonce = nonce

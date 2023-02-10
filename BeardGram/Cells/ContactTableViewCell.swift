@@ -9,7 +9,7 @@ import UIKit
 
 class ContactTableViewCell: UITableViewCell {
     
-    
+    let contactsRepository: ContactsRepository = FirebaseContactsRepository()
     @IBOutlet weak var contactNameLabel: UILabel!
     
     override func awakeFromNib() {
@@ -29,6 +29,17 @@ class ContactTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    var onDeleteCompletion: ((Profile) -> Void)?
+    
+    @IBAction func deleteFriendButtonClicked(_ sender: Any) {
+        deleteFriend()
+    }
+    func deleteFriend(){
+        guard let id = data.id else {
+            return
+        }
+        contactsRepository.delete(profile: Profile.init(name: id))
     }
     
 }

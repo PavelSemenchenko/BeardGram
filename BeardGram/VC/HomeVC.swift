@@ -12,12 +12,10 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         
     @IBOutlet weak var searchContactsTextField: UITextField!
     @IBOutlet weak var contactsTableView: UITableView!
-        
+    
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     
     let contactsRepository: ContactsRepository = FirebaseContactsRepository()
-    
-    // let profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
     
     var contacts: [Profile] = []
     var allContacts : [Profile] = []
@@ -44,7 +42,25 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         }
     }
     
+    @IBAction func searchCloseButtonClicked(_ sender: Any) {
+        searchContactsTextField.text = ""
+        reloadContacts()
+    }
     @IBAction func searchContactFieldButton(_ sender: Any) {
+        guard let searchName = searchContactsTextField.text else { return }
+        if searchName.isEmpty {
+            reloadContacts()
+            return
+        }
+        /*
+        guard let searchName = searchContactsTextField.text else {
+            return
+        }*/
+        contactsRepository.search(name: searchName) { result in
+            self.contacts = result
+            self.contactsTableView.reloadData()
+        }
+        /*
         guard let searchName = searchContactsTextField.text?.lowercased() else { return }
         if searchName.isEmpty {
             contacts = allContacts
@@ -55,10 +71,11 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             var searchContacts: [Profile] = []
             self.contacts = searchContacts
             self.contactsTableView.reloadData()
-        }
+        }*/
         
     }
     
+    /*
     @IBAction func addContactButtonClicked(_ sender: Any) {
         let sbAddContact = UIStoryboard(name: "AddContactSB", bundle: nil)
         let ctrAddContact = sbAddContact.instantiateViewController(withIdentifier: "addContact") as! AddContactVC
@@ -69,7 +86,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             }
         }
         self.navigationController?.pushViewController(ctrAddContact, animated: true)
-    }
+    }*/
     
     @IBAction func messagesButtonClicked(_ sender: Any) {
         guard let mess = self.storyboard?.instantiateViewController(withIdentifier: "conversationsSB")
@@ -116,7 +133,14 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         guard let globalSearch = self.storyboard?.instantiateViewController(withIdentifier: "globalSearchSB") as? GlobalSearchVC else {
             return
         }
+        globalSearch.onAddFriendCompletion = { newFriend in
+                }
+        
         self.navigationController?.pushViewController(globalSearch, animated: true)
+    }
+    
+    @IBAction func reloadTableButtonClicked(_ sender: Any) {
+        reloadContacts()
     }
     
 }
