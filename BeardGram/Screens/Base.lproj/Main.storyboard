@@ -309,7 +309,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xh0-CP-Nti">
-                                <rect key="frame" x="96.666666666666686" y="414.33333333333331" width="200" height="32"/>
+                                <rect key="frame" x="96.666666666666686" y="415.33333333333331" width="200" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Yr7-s5-eEU"/>
                                     <constraint firstAttribute="height" constant="32" id="tsK-As-dVN"/>
@@ -321,7 +321,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDQ-tz-MjH">
-                                <rect key="frame" x="96.666666666666686" y="499.33333333333326" width="200" height="32"/>
+                                <rect key="frame" x="96.666666666666686" y="500.33333333333326" width="200" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="4pQ-B8-ok5"/>
                                     <constraint firstAttribute="height" constant="32" id="SAW-JD-6hs"/>
@@ -333,12 +333,58 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICj-va-KaU">
-                                <rect key="frame" x="50" y="224" width="293" height="44.333333333333314"/>
+                                <rect key="frame" x="50" y="224" width="293" height="45.333333333333314"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="In beard we trust">
+                                    <fragment content="In">
                                         <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" metaFont="system" size="37"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="37" name="Charter-Roman"/>
+                                            <font key="NSOriginalFont" size="37" name="Beirut"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="37" name="Charter-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="beard">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="37" name="Charter-Roman"/>
+                                            <font key="NSOriginalFont" size="37" name="Beirut"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="37" name="Charter-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="we">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="37" name="Charter-Roman"/>
+                                            <font key="NSOriginalFont" size="37" name="Beirut"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="37" name="Charter-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="trust">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="37" name="Charter-Roman"/>
+                                            <font key="NSOriginalFont" size="37" name="Beirut"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -346,7 +392,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7i-UQ-giB">
-                                <rect key="frame" x="96.666666666666686" y="456" width="69" height="32"/>
+                                <rect key="frame" x="96.666666666666686" y="457" width="69" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="S4F-nO-m0h"/>
                                 </constraints>
@@ -357,7 +403,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRX-PX-9f9" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="173.66666666666666" y="456" width="122.99999999999997" height="32"/>
+                                <rect key="frame" x="173.66666666666666" y="457" width="122.99999999999997" height="32"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="A4N-bB-BrR"/>
@@ -422,7 +468,7 @@
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="error Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19F-RO-Onu">
                                                 <rect key="frame" x="177" y="100" width="130" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Password :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQU-N6-dFP">
@@ -457,12 +503,13 @@
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="error Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmB-dF-OgS">
                                                 <rect key="frame" x="177" y="204" width="130" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="bmB-dF-OgS" firstAttribute="leading" secondItem="19F-RO-Onu" secondAttribute="leading" id="48g-l9-uco"/>
                                             <constraint firstItem="19F-RO-Onu" firstAttribute="leading" secondItem="eCG-Rw-BN2" secondAttribute="trailing" constant="76" id="8cT-cx-jdo"/>
                                             <constraint firstItem="bmB-dF-OgS" firstAttribute="centerY" secondItem="RQU-N6-dFP" secondAttribute="centerY" id="9Fr-pN-D2Z"/>
                                             <constraint firstItem="RQU-N6-dFP" firstAttribute="top" secondItem="475-P7-0sB" secondAttribute="bottom" constant="32" id="Bkt-bG-8P6"/>
@@ -471,7 +518,6 @@
                                             <constraint firstItem="19F-RO-Onu" firstAttribute="centerY" secondItem="eCG-Rw-BN2" secondAttribute="centerY" id="H3N-eN-zgV"/>
                                             <constraint firstItem="475-P7-0sB" firstAttribute="top" secondItem="eCG-Rw-BN2" secondAttribute="bottom" constant="16" id="Hrh-1I-Pox"/>
                                             <constraint firstItem="sse-Ad-vvZ" firstAttribute="centerX" secondItem="437-Gp-JZr" secondAttribute="centerX" constant="100" id="QSR-U6-IRl"/>
-                                            <constraint firstItem="bmB-dF-OgS" firstAttribute="leading" secondItem="RQU-N6-dFP" secondAttribute="trailing" constant="-38" id="Rvj-2Q-NSz"/>
                                             <constraint firstItem="sse-Ad-vvZ" firstAttribute="top" secondItem="437-Gp-JZr" secondAttribute="bottom" constant="23" id="Sev-w5-z6B"/>
                                             <constraint firstItem="eCG-Rw-BN2" firstAttribute="top" secondItem="xKT-zi-D6B" secondAttribute="top" constant="100" id="Y2c-yU-qNA"/>
                                             <constraint firstItem="kQE-CM-qDJ" firstAttribute="top" secondItem="RQU-N6-dFP" secondAttribute="bottom" constant="16" id="cMN-eH-IdZ"/>
@@ -868,6 +914,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
