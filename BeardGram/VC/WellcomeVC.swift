@@ -19,10 +19,17 @@ class WellcomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if let token = AccessToken.current,
                 !token.isExpired {
                 // User is logged in, do work such as go to next view controller.
             }
+        NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: OperationQueue.main) { (notification) in
+            
+            // Print out access token
+            print("FB Access Token: \(String(describing: AccessToken.current?.tokenString))")
+        }
+        
         navigationItem.setHidesBackButton(true, animated: true)
         /*
         let nonce = FirebaseAuthenticationService.randomNonceString()
