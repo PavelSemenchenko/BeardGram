@@ -15,7 +15,9 @@ class NewMessageVC: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var errorMessageLabel: UILabel!
     
     let dialogsRepository: DialogsRepository  = FirebaseDialogsRepository()
-    var onCreateCompletion: ((Dialog?) -> Void)?
+    var recipientId: String = "sK9DgapXvObXVAXVZSFgq07w9Kt2"
+
+    //var onCreateCompletion: ((Dialog?) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +33,9 @@ class NewMessageVC: UIViewController, UINavigationControllerDelegate {
             errorMessageLabel.text = "Text can`t be empty"
             return
         }
-        let newMessage = dialogsRepository.create(title: title)
-        self.onCreateCompletion?(newMessage)
+        dialogsRepository.sendText(message: title, recipientId: recipientId)
+        //let newMessage = dialogsRepository.create(title: title)
+        //self.onCreateCompletion?(newMessage)
         
         self.navigationController?.popViewController(animated: true)
     }

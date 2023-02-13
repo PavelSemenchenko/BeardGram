@@ -18,15 +18,16 @@ struct Dialog: Codable {
 }
 
 protocol DialogsRepository {
-    func getAll(/*userId: Int,*/ completion: @escaping ([Dialog]) -> Void)
-    func create(title: String) -> Dialog
-    func delete(dialogId: String)
-    func update(value: Dialog)
+    func getAll(completion: @escaping ([Dialog]) -> Void)
 }
 
 class FirebaseDialogsRepository: DialogsRepository {
     func getAll(completion: @escaping ([Dialog]) -> Void) {
-        dialogsCollection.getDocuments { snapshot, _ in
+        guard let currentUserId = Auth.auth().currentUser?.uid else {
+            fatalError("need authenticate")
+        }
+        Firestore.firestore().collection("profiles").document(currentUserId)
+            .collection("dialogs").addSnapshotListener { snapshot, _ in
             guard let docs = snapshot?.documents else {
                 completion([])
                 return
@@ -68,6 +69,53 @@ class FirebaseDialogsRepository: DialogsRepository {
     lazy var dialogsCollection: CollectionReference = {
         return Firestore.firestore().collection("dialogs")
     }()
+}
+
+struct BGMessage : Codable {
+    @DocumentID var id: String?
+    let text: String
+    @ServerTimestamp var published: Date?
+    var created: Date?
+}
+protocol MessageRepository {
+    func sendText(message: String, recipientId: String)
+}
+
+class FirebaseMessageRepository: MessageRepository {
     
+    func getAll(repicientId: String, completion: @escaping ([BGMessage]) -> Void) {
+        guard let currentUserId = Auth.auth().currentUser?.uid else {
+            fatalError("Need to be authenticated")
+        }
+        
+        Firestore.firestore().collection("profiles").document(currentUserId)
+                             .collection("dialogs").document(repicientId)
+                             .collection("message").addSnapshotListener { snapshot, _ in
+            guard let docs = snapshot?.documents else {
+                completion([])
+                return
+            }
+            var dialogs: [BGMessage] = []
+            for doc in docs {
+                guard let dialog = try? doc.data(as: BGMessage.self) else {
+                    continue
+                }
+                dialogs.append(dialog)
+            }
+            completion(dialogs)
+        }
+    }
     
+    func sendText(message: String, recipientId: String) {
+        guard let currentUserId = Auth.auth().currentUser?.uid else {
+            fatalError("Need to be authenticated")
+        }
+        try? Firestore.firestore().collection("profiles").document(currentUserId)
+                                  .collection("dialogs").document(recipientId)
+                                  .collection("messages").addDocument(from: message)
+        
+        try? Firestore.firestore().collection("profiles").document(currentUserId)
+                                  .collection("dialogs").document(recipientId)
+                                  .collection("messages").addDocument(from: message)
+    }
 }
