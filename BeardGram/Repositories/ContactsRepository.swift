@@ -41,7 +41,7 @@ class FirebaseContactsRepository: ContactsRepository {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
             fatalError("no permissions")
         }
-        contactsCollection.document(currentUserId).collection("contacts").getDocuments { snapshot, _ in
+        contactsCollection.document(currentUserId).collection("contacts").addSnapshotListener { snapshot, _ in
             guard let docs = snapshot?.documents else {
                 completion([])
                 return
@@ -74,7 +74,12 @@ class FirebaseContactsRepository: ContactsRepository {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
             fatalError("no permissions")
         }
-        let query = contactsCollection.document(currentUserId).collection("contacts").whereField("name", isEqualTo: name)
+        let query = contactsCollection.document(currentUserId)
+                                      .collection("contacts")
+                                      .order(by: "name")
+                                      .start(at: [name])
+                                      .end(at: ["\(name)\u{f8ff}"])
+            //.whereField("name", isEqualTo: name)
         query.getDocuments { snapshot, _ in
             guard let docs = snapshot?.documents else {
                 completion([])

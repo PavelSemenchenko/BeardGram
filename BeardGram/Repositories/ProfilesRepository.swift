@@ -31,7 +31,10 @@ class FirebaseProfilesRepository: ProfilesRepository {
     }
     
     func search(name: String, completion: @escaping ([Profile]) -> Void) {
-        let query = profilesCollection.whereField("name", isEqualTo: name)
+        let query = profilesCollection.order(by: "name")
+                                      .start(at: [name])
+                                      .end(at: ["\(name)\u{f8ff}"])
+        //whereField("name", isEqualTo: name)
         
         query.getDocuments { snapshot, _ in
             guard let docs = snapshot?.documents else {

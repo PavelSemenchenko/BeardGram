@@ -36,10 +36,10 @@ class ContactTableViewCell: UITableViewCell {
         deleteFriend()
     }
     func deleteFriend(){
-        guard let id = data.id else {
+        guard data.id != nil else {
             return
         }
-        contactsRepository.delete(profile: Profile.init(name: id))
+        contactsRepository.delete(profile: data)
     }
     
 }

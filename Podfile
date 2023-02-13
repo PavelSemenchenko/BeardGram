@@ -8,6 +8,7 @@ target 'BeardGram' do
   pod 'FirebaseAnalytics'
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '10.4.0'
+  pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
   pod 'Alamofire'
   
