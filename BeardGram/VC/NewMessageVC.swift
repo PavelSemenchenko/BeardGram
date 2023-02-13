@@ -15,7 +15,7 @@ class NewMessageVC: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var errorMessageLabel: UILabel!
     
     let dialogsRepository: MessageRepository  = FirebaseMessageRepository()
-    var recipientId: String = "sK9DgapXvObXVAXVZSFgq07w9Kt2"
+    var recipientId: String = "COVHA3cNQDcfFvbAcQlDkKaHzIc2"
 
     //var onCreateCompletion: ((Dialog?) -> Void)?
     

@@ -22,9 +22,11 @@ protocol DialogsRepository {
 
 class FirebaseDialogsRepository: DialogsRepository {
     func getAll(completion: @escaping ([Dialog]) -> Void) {
+        
         guard let currentUserId = Auth.auth().currentUser?.uid else {
             fatalError("need authenticate")
         }
+        
         Firestore.firestore().collection("profiles").document(currentUserId)
             .collection("dialogs").order(by: "lastModified", descending: true)
             .addSnapshotListener { snapshot, _ in

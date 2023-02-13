@@ -55,7 +55,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         }
         var searchMessages: [Dialog] = []
         for dialog in allDialogs {
-            if dialog.title.lowercased().contains(searchText) {
+            if dialog.lastMessage.lowercased().contains(searchText) {
                 searchMessages.append(dialog)
             }
             dialogs = searchMessages
