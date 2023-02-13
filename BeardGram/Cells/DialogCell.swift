@@ -13,7 +13,7 @@ class DialogCell: UITableViewCell {
     
     var dialog: Dialog! {
         didSet {
-            titleLabel.text = dialog.title
+            titleLabel.text = dialog.lastMessage
         }
     }
     var onDeleteCompletion: ((Dialog) -> Void)?

@@ -11,10 +11,9 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct Dialog: Codable {
-    @DocumentID var id: String?
-    let title: String
-    @ServerTimestamp var created: Date?
-    let authorId: String
+    @DocumentID var userId: String?
+    let lastMessage: String
+    @ServerTimestamp var lastModified: Date?
 }
 
 protocol DialogsRepository {
@@ -27,7 +26,8 @@ class FirebaseDialogsRepository: DialogsRepository {
             fatalError("need authenticate")
         }
         Firestore.firestore().collection("profiles").document(currentUserId)
-            .collection("dialogs").addSnapshotListener { snapshot, _ in
+            .collection("dialogs").order(by: "lastModified", descending: true)
+            .addSnapshotListener { snapshot, _ in
             guard let docs = snapshot?.documents else {
                 completion([])
                 return
@@ -42,7 +42,7 @@ class FirebaseDialogsRepository: DialogsRepository {
             completion(dialogs)
         }
     }
-    
+    /*
     func create(title: String) -> Dialog {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
             fatalError("need authenticate")
@@ -68,14 +68,13 @@ class FirebaseDialogsRepository: DialogsRepository {
     
     lazy var dialogsCollection: CollectionReference = {
         return Firestore.firestore().collection("dialogs")
-    }()
+    }()*/
 }
 
 struct BGMessage : Codable {
     @DocumentID var id: String?
     let text: String
-    @ServerTimestamp var published: Date?
-    var created: Date?
+    @ServerTimestamp var created: Date?
 }
 protocol MessageRepository {
     func sendText(message: String, recipientId: String)
@@ -90,7 +89,7 @@ class FirebaseMessageRepository: MessageRepository {
         
         Firestore.firestore().collection("profiles").document(currentUserId)
                              .collection("dialogs").document(repicientId)
-                             .collection("message").addSnapshotListener { snapshot, _ in
+                             .collection("message").order(by: "created").addSnapshotListener { snapshot, _ in
             guard let docs = snapshot?.documents else {
                 completion([])
                 return
@@ -110,6 +109,7 @@ class FirebaseMessageRepository: MessageRepository {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
             fatalError("Need to be authenticated")
         }
+        let message = BGMessage(text: message, created: Date())
         try? Firestore.firestore().collection("profiles").document(currentUserId)
                                   .collection("dialogs").document(recipientId)
                                   .collection("messages").addDocument(from: message)
@@ -117,5 +117,13 @@ class FirebaseMessageRepository: MessageRepository {
         try? Firestore.firestore().collection("profiles").document(currentUserId)
                                   .collection("dialogs").document(recipientId)
                                   .collection("messages").addDocument(from: message)
+        
+        let dialog = Dialog(lastMessage: message.text)
+        
+        try? Firestore.firestore().collection("profiles").document(currentUserId)
+                                  .collection("dialogs").document(recipientId).setData(from: dialog)
+        
+        try? Firestore.firestore().collection("profiles").document(recipientId)
+                                  .collection("dialogs").document(currentUserId).setData(from: dialog)
     }
 }
