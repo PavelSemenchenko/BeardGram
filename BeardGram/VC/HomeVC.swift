@@ -89,8 +89,8 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }*/
     
     @IBAction func messagesButtonClicked(_ sender: Any) {
-        guard let mess = self.storyboard?.instantiateViewController(withIdentifier: "conversationsSB")
-                as? ConversationsVC else { return
+        guard let mess = self.storyboard?.instantiateViewController(withIdentifier: "recentMessagesSB")
+                as? RecentMessagesVC else { return
         }
         self.navigationController?.pushViewController(mess, animated: true)
     }

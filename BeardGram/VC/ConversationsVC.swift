@@ -26,11 +26,13 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Messages"
+        title = "Conversation"
+        /*
         navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "New message",
                                                               style: UIBarButtonItem.Style.plain,
                                                               target: self,
                                                               action: #selector(newMessage))]
+         */
         recentMessagesTableView.dataSource = self
         recentMessagesTableView.delegate = self
         recentMessagesTableView.register(UINib(nibName: "DialogCell", bundle: nil), forCellReuseIdentifier: "dialogRow")

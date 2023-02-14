@@ -743,12 +743,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oK3-eh-dUO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3018" y="-404"/>
+            <point key="canvasLocation" x="2627" y="-402"/>
         </scene>
-        <!--View Controller-->
+        <!--Recent MessagesVC-->
         <scene sceneID="J5j-SR-wFo">
             <objects>
-                <viewController id="xgV-29-H7n" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="recentMessagesSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xgV-29-H7n" customClass="RecentMessagesVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oNt-nF-zFk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -770,7 +770,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWq-w2-MbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3018" y="915"/>
+            <point key="canvasLocation" x="3256" y="753"/>
         </scene>
         <!--ConversationsVC-->
         <scene sceneID="67Z-je-HKL">
@@ -850,7 +850,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="2h6-TW-PDg" firstAttribute="centerY" secondItem="Jpm-Uh-3EO" secondAttribute="centerY" id="0SY-9t-Mlr"/>
                                     <constraint firstItem="2h6-TW-PDg" firstAttribute="leading" secondItem="2z0-4h-gCo" secondAttribute="leading" constant="48" id="7D0-Va-xtC"/>
@@ -887,7 +887,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44L-ER-YUG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3019" y="256"/>
+            <point key="canvasLocation" x="3256" y="90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dVk-Kn-rgq">
