@@ -39,11 +39,13 @@ class RecentMessagesVC: UIViewController, UITableViewDataSource, UITableViewDele
             fatalError("cell is wrong")
         }
         cell.dialog = dialogs[indexPath.row]
+        /*
         cell.onDeleteCompletion = { dialogToDelete in
             //self.dialogsRepository.delete(dialogId: dialogToDelete.id!)
             //self.dialogs.remove(at: indexPath.row)
             self.recentMessagesTableView.reloadData()
         }
+        */
         return cell
     }
 }

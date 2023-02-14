@@ -79,7 +79,9 @@ struct BGMessage : Codable {
     @ServerTimestamp var created: Date?
 }
 protocol MessageRepository {
+    func getAll(repicientId: String, completion: @escaping ([BGMessage]) -> Void)
     func sendText(message: String, recipientId: String)
+    
 }
 
 class FirebaseMessageRepository: MessageRepository {

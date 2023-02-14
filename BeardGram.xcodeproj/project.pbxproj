@@ -28,10 +28,10 @@
 		2A72A3932992D8C9002ADB60 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A72A3912992D8C9002ADB60 /* ProfileTableViewCell.swift */; };
 		2A72A3942992D8C9002ADB60 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A72A3922992D8C9002ADB60 /* ProfileTableViewCell.xib */; };
 		2A7E218F29885B3C00229ACA /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7E218E29885B3C00229ACA /* SignInVC.swift */; };
-		2A8367A2299C0450003A83CB /* SenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8367A0299C0450003A83CB /* SenderTableViewCell.swift */; };
-		2A8367A3299C0450003A83CB /* SenderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A8367A1299C0450003A83CB /* SenderTableViewCell.xib */; };
-		2A8367A6299C0469003A83CB /* ReciverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8367A4299C0469003A83CB /* ReciverTableViewCell.swift */; };
-		2A8367A7299C0469003A83CB /* ReciverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A8367A5299C0469003A83CB /* ReciverTableViewCell.xib */; };
+		2A8367A2299C0450003A83CB /* SenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8367A0299C0450003A83CB /* SenderCell.swift */; };
+		2A8367A3299C0450003A83CB /* SenderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A8367A1299C0450003A83CB /* SenderCell.xib */; };
+		2A8367A6299C0469003A83CB /* ReciverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8367A4299C0469003A83CB /* ReciverCell.swift */; };
+		2A8367A7299C0469003A83CB /* ReciverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A8367A5299C0469003A83CB /* ReciverCell.xib */; };
 		2A8367AA299C27A5003A83CB /* RecentMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8367A9299C27A5003A83CB /* RecentMessagesVC.swift */; };
 		2A8C855D298957F1002A411D /* ContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8C855C298957F1002A411D /* ContactsRepository.swift */; };
 		2A8C856129895E29002A411D /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8C855F29895E29002A411D /* ContactTableViewCell.swift */; };
@@ -95,10 +95,10 @@
 		2A72A3912992D8C9002ADB60 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		2A72A3922992D8C9002ADB60 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		2A7E218E29885B3C00229ACA /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		2A8367A0299C0450003A83CB /* SenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderTableViewCell.swift; sourceTree = "<group>"; };
-		2A8367A1299C0450003A83CB /* SenderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SenderTableViewCell.xib; sourceTree = "<group>"; };
-		2A8367A4299C0469003A83CB /* ReciverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciverTableViewCell.swift; sourceTree = "<group>"; };
-		2A8367A5299C0469003A83CB /* ReciverTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReciverTableViewCell.xib; sourceTree = "<group>"; };
+		2A8367A0299C0450003A83CB /* SenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderCell.swift; sourceTree = "<group>"; };
+		2A8367A1299C0450003A83CB /* SenderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SenderCell.xib; sourceTree = "<group>"; };
+		2A8367A4299C0469003A83CB /* ReciverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciverCell.swift; sourceTree = "<group>"; };
+		2A8367A5299C0469003A83CB /* ReciverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReciverCell.xib; sourceTree = "<group>"; };
 		2A8367A9299C27A5003A83CB /* RecentMessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessagesVC.swift; sourceTree = "<group>"; };
 		2A8C855C298957F1002A411D /* ContactsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRepository.swift; sourceTree = "<group>"; };
 		2A8C855F29895E29002A411D /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
@@ -278,10 +278,10 @@
 		2A83679F299C0429003A83CB /* MessagesCells */ = {
 			isa = PBXGroup;
 			children = (
-				2A8367A0299C0450003A83CB /* SenderTableViewCell.swift */,
-				2A8367A1299C0450003A83CB /* SenderTableViewCell.xib */,
-				2A8367A4299C0469003A83CB /* ReciverTableViewCell.swift */,
-				2A8367A5299C0469003A83CB /* ReciverTableViewCell.xib */,
+				2A8367A0299C0450003A83CB /* SenderCell.swift */,
+				2A8367A1299C0450003A83CB /* SenderCell.xib */,
+				2A8367A4299C0469003A83CB /* ReciverCell.swift */,
+				2A8367A5299C0469003A83CB /* ReciverCell.xib */,
 				2A8E4AF1298D48FC004AF4D7 /* DialogCell.swift */,
 				2A8E4AF2298D48FC004AF4D7 /* DialogCell.xib */,
 			);
@@ -466,11 +466,11 @@
 				2A412A00297F0DEE00E33979 /* LaunchScreen.storyboard in Resources */,
 				6DFD0B8D2981EC880043A50B /* GoogleService-Info.plist in Resources */,
 				2A4129FD297F0DEE00E33979 /* Assets.xcassets in Resources */,
-				2A8367A3299C0450003A83CB /* SenderTableViewCell.xib in Resources */,
+				2A8367A3299C0450003A83CB /* SenderCell.xib in Resources */,
 				2A8E4AF4298D48FC004AF4D7 /* DialogCell.xib in Resources */,
 				2A72A3942992D8C9002ADB60 /* ProfileTableViewCell.xib in Resources */,
 				2A4129FB297F0DEC00E33979 /* Main.storyboard in Resources */,
-				2A8367A7299C0469003A83CB /* ReciverTableViewCell.xib in Resources */,
+				2A8367A7299C0469003A83CB /* ReciverCell.xib in Resources */,
 				2A8C856229895E29002A411D /* ContactTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,7 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A412A72297F3A6300E33979 /* NameTextField.swift in Sources */,
-				2A8367A6299C0469003A83CB /* ReciverTableViewCell.swift in Sources */,
+				2A8367A6299C0469003A83CB /* ReciverCell.swift in Sources */,
 				2AD8D30D299189DB00677ED5 /* GlobalSearchVC.swift in Sources */,
 				2A412A26297F1B2500E33979 /* WellcomeVC.swift in Sources */,
 				2A8E4AF3298D48FC004AF4D7 /* DialogCell.swift in Sources */,
@@ -650,7 +650,7 @@
 				2A4129F4297F0DEC00E33979 /* AppDelegate.swift in Sources */,
 				2AD8D30B2991843300677ED5 /* ProfileAddInfo.swift in Sources */,
 				2A412A2A297F294C00E33979 /* SignUpVC.swift in Sources */,
-				2A8367A2299C0450003A83CB /* SenderTableViewCell.swift in Sources */,
+				2A8367A2299C0450003A83CB /* SenderCell.swift in Sources */,
 				2A8C855D298957F1002A411D /* ContactsRepository.swift in Sources */,
 				2A8367AA299C27A5003A83CB /* RecentMessagesVC.swift in Sources */,
 				2A4129F6297F0DEC00E33979 /* SceneDelegate.swift in Sources */,

@@ -16,9 +16,11 @@ class DialogCell: UITableViewCell {
             titleLabel.text = dialog.lastMessage
         }
     }
+    /*
     var onDeleteCompletion: ((Dialog) -> Void)?
     
     @IBAction func deleteClecked(_ sender: Any) {
         onDeleteCompletion?(dialog)
     }
+    */
 }

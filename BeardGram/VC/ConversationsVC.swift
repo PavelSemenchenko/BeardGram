@@ -16,40 +16,25 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     @IBOutlet weak var recentMessagesTableView: UITableView!
     
-    let dialogsRepository: DialogsRepository = FirebaseDialogsRepository()
     let messageRepository: MessageRepository = FirebaseMessageRepository()
-    var dialogs: [Dialog] = []
-    var allDialogs: [Dialog] = []
-    // let authenticationService: AuthenticationService = FirebaseAuthenticationService()
+    var bgMessage: [BGMessage] = []
+    var allbgMessages: [BGMessage] = []
     
     var recipientId: String = "fMPzRnaqKQRN43cSuP1cDbtCkln2"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Conversation"
-        /*
-        navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "New message",
-                                                              style: UIBarButtonItem.Style.plain,
-                                                              target: self,
-                                                              action: #selector(newMessage))]
-         */
+       
         recentMessagesTableView.dataSource = self
         recentMessagesTableView.delegate = self
-        recentMessagesTableView.register(UINib(nibName: "DialogCell", bundle: nil), forCellReuseIdentifier: "dialogRow")
+        recentMessagesTableView.register(UINib(nibName: "SenderCell", bundle: nil), forCellReuseIdentifier: "senderRow")
         reloadDialogs()
     }
     
-    @objc func newMessage() {
-        
-            guard let viewController = storyboard?.instantiateViewController(withIdentifier: "newMessageSB") else {
-                return
-            }
-            navigationController?.pushViewController(viewController, animated: true)
-        
-    }
     func reloadDialogs() {
-        dialogsRepository.getAll { allDialogs in
-            self.dialogs = allDialogs
+        messageRepository.getAll(repicientId: recipientId) { allbgMessages in
+            self.bgMessage = allbgMessages
             self.recentMessagesTableView.reloadData()
         }
     }
@@ -64,7 +49,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBAction func attachmentButtonClicked(_ sender: Any) {
     }
     
-    
+    /*
     @IBAction func searchMessageTextField(_ sender: Any) {
         guard let searchText = searchMessageTextField.text?.lowercased() else { return }
         if searchText.isEmpty {
@@ -81,20 +66,22 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             recentMessagesTableView.reloadData()
         }
     }
+     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dialogs.count
+        return bgMessage.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "dialogRow", for: indexPath) as? DialogCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "senderRow", for: indexPath) as? SenderCell else {
             fatalError("cell is wrong")
         }
-        cell.dialog = dialogs[indexPath.row]
-        cell.onDeleteCompletion = { dialogToDelete in
+        cell.bgMessage = bgMessage[indexPath.row]
+        
+        /*cell.onDeleteCompletion = { dialogToDelete in
             //self.dialogsRepository.delete(dialogId: dialogToDelete.id!)
             //self.dialogs.remove(at: indexPath.row)
             self.recentMessagesTableView.reloadData()
-        }
+        }*/
         return cell
     }
 }
