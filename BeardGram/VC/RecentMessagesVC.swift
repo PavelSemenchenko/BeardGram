@@ -8,6 +8,42 @@
 import Foundation
 import UIKit
 
-class RecentMessagesVC: UIViewController {
+class RecentMessagesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var recentMessagesTableView: UITableView!
+    var dialogs: [Dialog] = []
+    var allDialogs: [Dialog] = []
+    let dialogsRepository: DialogsRepository = FirebaseDialogsRepository()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Recent Messages"
+        recentMessagesTableView.dataSource = self
+        recentMessagesTableView.delegate = self
+        recentMessagesTableView.register(UINib(nibName: "DialogCell", bundle: nil), forCellReuseIdentifier: "dialogRow")
+        reloadDialogs()
+    }
+    func reloadDialogs() {
+        dialogsRepository.getAll { allDialogs in
+            self.dialogs = allDialogs
+            self.recentMessagesTableView.reloadData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        dialogs.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "dialogRow", for: indexPath) as? DialogCell else {
+            fatalError("cell is wrong")
+        }
+        cell.dialog = dialogs[indexPath.row]
+        cell.onDeleteCompletion = { dialogToDelete in
+            //self.dialogsRepository.delete(dialogId: dialogToDelete.id!)
+            //self.dialogs.remove(at: indexPath.row)
+            self.recentMessagesTableView.reloadData()
+        }
+        return cell
+    }
 }

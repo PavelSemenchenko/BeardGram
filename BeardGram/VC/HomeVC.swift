@@ -22,7 +22,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Friends list"
+        title = "Friends"
         navigationItem.setHidesBackButton(true, animated: true)
         navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "LogOut",
                                                               style: UIBarButtonItem.Style.plain,

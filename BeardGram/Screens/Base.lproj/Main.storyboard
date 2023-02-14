@@ -626,7 +626,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L17-WE-01N">
-                                        <rect key="frame" x="332" y="5" width="49" height="34.333333333333336"/>
+                                        <rect key="frame" x="332" y="4.6666666666666643" width="49" height="34.666666666666664"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="clear" catalog="system"/>
@@ -767,6 +767,9 @@
                             <constraint firstItem="153-VW-cb2" firstAttribute="top" secondItem="RFN-6M-bnN" secondAttribute="top" id="yGG-4F-EmE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recentMessagesTableView" destination="153-VW-cb2" id="it1-eW-x8I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWq-w2-MbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
