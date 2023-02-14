@@ -11,7 +11,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct Dialog: Codable {
-    @DocumentID var userId: String?
+    @DocumentID var userId: String? // recipient Id
     let lastMessage: String
     @ServerTimestamp var lastModified: Date?
 }
@@ -96,14 +96,14 @@ class FirebaseMessageRepository: MessageRepository {
                 completion([])
                 return
             }
-            var dialogs: [BGMessage] = []
+            var contacts: [BGMessage] = []
             for doc in docs {
-                guard let dialog = try? doc.data(as: BGMessage.self) else {
+                guard let contact = try? doc.data(as: BGMessage.self) else {
                     continue
                 }
-                dialogs.append(dialog)
+                contacts.append(contact)
             }
-            completion(dialogs)
+            completion(contacts)
         }
     }
     
@@ -111,17 +111,18 @@ class FirebaseMessageRepository: MessageRepository {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
             fatalError("Need to be authenticated")
         }
-        let message = BGMessage(text: message, created: Date())
+        let message = BGMessage(text: message)
+        // add message to self
         try? Firestore.firestore().collection("profiles").document(currentUserId)
                                   .collection("dialogs").document(recipientId)
                                   .collection("messages").addDocument(from: message)
-        
-        try? Firestore.firestore().collection("profiles").document(currentUserId)
-                                  .collection("dialogs").document(recipientId)
+        // add message to recipient
+        try? Firestore.firestore().collection("profiles").document(recipientId)
+                                  .collection("dialogs").document(currentUserId)
                                   .collection("messages").addDocument(from: message)
         
         let dialog = Dialog(lastMessage: message.text)
-        
+        // update dialogs
         try? Firestore.firestore().collection("profiles").document(currentUserId)
                                   .collection("dialogs").document(recipientId).setData(from: dialog)
         

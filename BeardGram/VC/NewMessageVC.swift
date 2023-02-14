@@ -15,7 +15,7 @@ class NewMessageVC: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var errorMessageLabel: UILabel!
     
     let dialogsRepository: MessageRepository  = FirebaseMessageRepository()
-    var recipientId: String = "fMPzRnaqKQRN43cSuP1cDbtCkln2"
+    var recipientId: String = "p86Ip00Fa7M4OaBG2Eye2KugZEi1"
 
     //var onCreateCompletion: ((Dialog?) -> Void)?
     
@@ -34,8 +34,6 @@ class NewMessageVC: UIViewController, UINavigationControllerDelegate {
             return
         }
         dialogsRepository.sendText(message: title, recipientId: recipientId)
-        //let newMessage = dialogsRepository.create(title: title)
-        //self.onCreateCompletion?(newMessage)
         
         self.navigationController?.popViewController(animated: true)
     }

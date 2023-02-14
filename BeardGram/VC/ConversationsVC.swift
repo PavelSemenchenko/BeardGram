@@ -10,13 +10,19 @@ import UIKit
 
 class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var recipientNameTextLabel: UILabel!
     @IBOutlet weak var searchMessageTextField: UITextField!
+    @IBOutlet weak var newMessageTextField: MessageTextField!
+    
     @IBOutlet weak var recentMessagesTableView: UITableView!
     
     let dialogsRepository: DialogsRepository = FirebaseDialogsRepository()
+    let messageRepository: MessageRepository = FirebaseMessageRepository()
     var dialogs: [Dialog] = []
     var allDialogs: [Dialog] = []
-    let authenticationService: AuthenticationService = FirebaseAuthenticationService()
+    // let authenticationService: AuthenticationService = FirebaseAuthenticationService()
+    
+    var recipientId: String = "fMPzRnaqKQRN43cSuP1cDbtCkln2"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +51,17 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             self.recentMessagesTableView.reloadData()
         }
     }
+    
+    @IBAction func newMessageSendButtonClicked(_ sender: Any) {
+        guard let newMessage = newMessageTextField.text, newMessage.count > 1 else {
+            return
+        }
+        messageRepository.sendText(message: newMessage, recipientId: recipientId)
+    }
+    
+    @IBAction func attachmentButtonClicked(_ sender: Any) {
+    }
+    
     
     @IBAction func searchMessageTextField(_ sender: Any) {
         guard let searchText = searchMessageTextField.text?.lowercased() else { return }

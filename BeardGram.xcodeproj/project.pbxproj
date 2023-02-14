@@ -35,7 +35,6 @@
 		2A8C855D298957F1002A411D /* ContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8C855C298957F1002A411D /* ContactsRepository.swift */; };
 		2A8C856129895E29002A411D /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8C855F29895E29002A411D /* ContactTableViewCell.swift */; };
 		2A8C856229895E29002A411D /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A8C856029895E29002A411D /* ContactTableViewCell.xib */; };
-		2A8E4AEC298D2FA2004AF4D7 /* AddContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8E4AEB298D2FA2004AF4D7 /* AddContactVC.swift */; };
 		2A8E4AEE298D323F004AF4D7 /* AddContactSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8E4AED298D323F004AF4D7 /* AddContactSB.storyboard */; };
 		2A8E4AF0298D3FA2004AF4D7 /* DialogsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8E4AEF298D3FA2004AF4D7 /* DialogsRepository.swift */; };
 		2A8E4AF3298D48FC004AF4D7 /* DialogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8E4AF1298D48FC004AF4D7 /* DialogCell.swift */; };
@@ -103,7 +102,6 @@
 		2A8C855C298957F1002A411D /* ContactsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRepository.swift; sourceTree = "<group>"; };
 		2A8C855F29895E29002A411D /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		2A8C856029895E29002A411D /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
-		2A8E4AEB298D2FA2004AF4D7 /* AddContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactVC.swift; sourceTree = "<group>"; };
 		2A8E4AED298D323F004AF4D7 /* AddContactSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddContactSB.storyboard; sourceTree = "<group>"; };
 		2A8E4AEF298D3FA2004AF4D7 /* DialogsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsRepository.swift; sourceTree = "<group>"; };
 		2A8E4AF1298D48FC004AF4D7 /* DialogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogCell.swift; sourceTree = "<group>"; };
@@ -231,12 +229,11 @@
 			children = (
 				2A4129F7297F0DEC00E33979 /* ViewController.swift */,
 				2A412A29297F294C00E33979 /* SignUpVC.swift */,
+				2A7E218E29885B3C00229ACA /* SignInVC.swift */,
 				2A412A25297F1B2500E33979 /* WellcomeVC.swift */,
 				2A412A27297F245100E33979 /* HomeVC.swift */,
-				2A7E218E29885B3C00229ACA /* SignInVC.swift */,
 				2ABA64AE298AA355008F4383 /* NewMessageVC.swift */,
 				2ABA64B0298AA3A1008F4383 /* ConversationsVC.swift */,
-				2A8E4AEB298D2FA2004AF4D7 /* AddContactVC.swift */,
 				2AD8D30A2991843300677ED5 /* ProfileAddInfo.swift */,
 				2AD8D30C299189DB00677ED5 /* GlobalSearchVC.swift */,
 			);
@@ -289,6 +286,8 @@
 				2A8367A1299C0450003A83CB /* SenderTableViewCell.xib */,
 				2A8367A4299C0469003A83CB /* ReciverTableViewCell.swift */,
 				2A8367A5299C0469003A83CB /* ReciverTableViewCell.xib */,
+				2A8E4AF1298D48FC004AF4D7 /* DialogCell.swift */,
+				2A8E4AF2298D48FC004AF4D7 /* DialogCell.xib */,
 			);
 			path = MessagesCells;
 			sourceTree = "<group>";
@@ -308,8 +307,6 @@
 			children = (
 				2A83679F299C0429003A83CB /* MessagesCells */,
 				2A83679E299C03E8003A83CB /* UsersCells */,
-				2A8E4AF1298D48FC004AF4D7 /* DialogCell.swift */,
-				2A8E4AF2298D48FC004AF4D7 /* DialogCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -631,7 +628,6 @@
 				2A412A72297F3A6300E33979 /* NameTextField.swift in Sources */,
 				2A8367A6299C0469003A83CB /* ReciverTableViewCell.swift in Sources */,
 				2AD8D30D299189DB00677ED5 /* GlobalSearchVC.swift in Sources */,
-				2A8E4AEC298D2FA2004AF4D7 /* AddContactVC.swift in Sources */,
 				2A412A26297F1B2500E33979 /* WellcomeVC.swift in Sources */,
 				2A8E4AF3298D48FC004AF4D7 /* DialogCell.swift in Sources */,
 				2A412A28297F245100E33979 /* HomeVC.swift in Sources */,
