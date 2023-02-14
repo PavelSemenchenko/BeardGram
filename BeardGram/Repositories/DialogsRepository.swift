@@ -28,8 +28,8 @@ class FirebaseDialogsRepository: DialogsRepository {
         }
         
         Firestore.firestore().collection("profiles").document(currentUserId)
-            .collection("dialogs").order(by: "lastModified", descending: true)
-            .addSnapshotListener { snapshot, _ in
+                             .collection("dialogs").order(by: "lastModified", descending: true)
+                             .addSnapshotListener { snapshot, _ in
             guard let docs = snapshot?.documents else {
                 completion([])
                 return
@@ -78,13 +78,13 @@ struct BGMessage : Codable {
     let text: String
     @ServerTimestamp var created: Date?
 }
-protocol MessageRepository {
+protocol MessagesRepository {
     func getAll(repicientId: String, completion: @escaping ([BGMessage]) -> Void)
     func sendText(message: String, recipientId: String)
     
 }
 
-class FirebaseMessageRepository: MessageRepository {
+class FirebaseMessagesRepository: MessagesRepository {
     
     func getAll(repicientId: String, completion: @escaping ([BGMessage]) -> Void) {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
@@ -93,19 +93,20 @@ class FirebaseMessageRepository: MessageRepository {
         
         Firestore.firestore().collection("profiles").document(currentUserId)
                              .collection("dialogs").document(repicientId)
-                             .collection("message").order(by: "created").addSnapshotListener { snapshot, _ in
+                             .collection("message").order(by: "created")
+                             .addSnapshotListener { snapshot, _ in
             guard let docs = snapshot?.documents else {
                 completion([])
                 return
             }
-            var contacts: [BGMessage] = []
+            var bgMessages: [BGMessage] = []
             for doc in docs {
                 guard let contact = try? doc.data(as: BGMessage.self) else {
                     continue
                 }
-                contacts.append(contact)
+                bgMessages.append(contact)
             }
-            completion(contacts)
+            completion(bgMessages)
         }
     }
     

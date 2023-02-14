@@ -13,11 +13,10 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var recipientNameTextLabel: UILabel!
     @IBOutlet weak var searchMessageTextField: UITextField!
     @IBOutlet weak var newMessageTextField: MessageTextField!
-    
     @IBOutlet weak var recentMessagesTableView: UITableView!
     
-    let messageRepository: MessageRepository = FirebaseMessageRepository()
-    var bgMessage: [BGMessage] = []
+    let messageRepository: MessagesRepository = FirebaseMessagesRepository()
+    var bgMessages: [BGMessage] = []
     var allbgMessages: [BGMessage] = []
     
     var recipientId: String = "fMPzRnaqKQRN43cSuP1cDbtCkln2"
@@ -25,16 +24,14 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Conversation"
-       
         recentMessagesTableView.dataSource = self
         recentMessagesTableView.delegate = self
         recentMessagesTableView.register(UINib(nibName: "SenderCell", bundle: nil), forCellReuseIdentifier: "senderRow")
         reloadDialogs()
     }
-    
     func reloadDialogs() {
         messageRepository.getAll(repicientId: recipientId) { allbgMessages in
-            self.bgMessage = allbgMessages
+            self.bgMessages = allbgMessages
             self.recentMessagesTableView.reloadData()
         }
     }
@@ -68,14 +65,14 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
      */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bgMessage.count
+        return bgMessages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "senderRow", for: indexPath) as? SenderCell else {
             fatalError("cell is wrong")
         }
-        cell.bgMessage = bgMessage[indexPath.row]
+        cell.bgMessage = bgMessages[indexPath.row]
         
         /*cell.onDeleteCompletion = { dialogToDelete in
             //self.dialogsRepository.delete(dialogId: dialogToDelete.id!)
