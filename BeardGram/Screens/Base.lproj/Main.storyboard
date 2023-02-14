@@ -746,9 +746,39 @@
             <point key="canvasLocation" x="3049.6183206106871" y="255.63380281690141"/>
         </scene>
         <!--ConversationsVC-->
+        <scene sceneID="10l-r7-J1G">
+            <objects>
+                <viewController storyboardIdentifier="conversationsSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1kW-GC-Wri" customClass="ConversationsVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="drl-9K-F3i">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IJm-xp-Ww9">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cNr-oH-Pa1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cNr-oH-Pa1" firstAttribute="bottom" secondItem="IJm-xp-Ww9" secondAttribute="bottom" id="APf-An-Wml"/>
+                            <constraint firstItem="IJm-xp-Ww9" firstAttribute="top" secondItem="cNr-oH-Pa1" secondAttribute="top" id="njO-Xj-C6q"/>
+                            <constraint firstItem="cNr-oH-Pa1" firstAttribute="trailing" secondItem="IJm-xp-Ww9" secondAttribute="trailing" id="ueJ-XY-HbS"/>
+                            <constraint firstItem="IJm-xp-Ww9" firstAttribute="leading" secondItem="cNr-oH-Pa1" secondAttribute="leading" id="v3v-bm-O90"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="recentMessagesTableView" destination="IJm-xp-Ww9" id="Y3k-pG-s6Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Gi-gk-Bzh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3069.4656488549617" y="914.78873239436621"/>
+        </scene>
+        <!--MessagesVC-->
         <scene sceneID="67Z-je-HKL">
             <objects>
-                <viewController storyboardIdentifier="conversationsSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LCk-O6-mhu" customClass="ConversationsVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="messagesSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LCk-O6-mhu" customClass="MessagesVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bM5-3y-aMe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -763,9 +793,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="searchMessageTextField:" destination="LCk-O6-mhu" eventType="editingChanged" id="Kqn-cP-ZXg"/>
-                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICE-D2-dyL">
                                         <rect key="frame" x="16" y="13.666666666666671" width="96" height="21"/>
@@ -848,14 +875,10 @@
                             <constraint firstItem="2z0-4h-gCo" firstAttribute="top" secondItem="1om-bI-sjH" secondAttribute="bottom" constant="1" id="obZ-fQ-aPa"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="recentMessagesTableView" destination="1om-bI-sjH" id="kue-ch-HnT"/>
-                        <outlet property="searchMessageTextField" destination="4gb-lx-28D" id="FUQ-xq-6B6"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44L-ER-YUG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2690.8396946564885" y="913.38028169014092"/>
+            <point key="canvasLocation" x="3760" y="915"/>
         </scene>
         <!--New MessageVC-->
         <scene sceneID="lwn-f8-zuG">
@@ -929,7 +952,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0FS-Ia-i5x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2691" y="-385"/>
+            <point key="canvasLocation" x="3760" y="256"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dVk-Kn-rgq">
