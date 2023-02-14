@@ -626,7 +626,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L17-WE-01N">
-                                        <rect key="frame" x="332" y="4.6666666666666643" width="49" height="35"/>
+                                        <rect key="frame" x="332" y="5" width="49" height="34.333333333333329"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="clear" catalog="system"/>
@@ -901,6 +901,7 @@
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SNJ-vf-kfP" customClass="MessageTextField" customModule="BeardGram" customModuleProvider="target">
                                         <rect key="frame" x="20" y="160" width="200" height="64"/>
+                                        <color key="backgroundColor" red="0.74509803919999995" green="0.20392156859999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="T3U-6a-9g1"/>
                                             <constraint firstAttribute="height" constant="64" id="wc3-tw-ce2"/>
