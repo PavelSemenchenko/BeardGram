@@ -882,6 +882,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addingTextView" destination="2z0-4h-gCo" id="htQ-Hd-7Gj"/>
                         <outlet property="bgMessagesTableView" destination="1om-bI-sjH" id="sXy-4F-Aaq"/>
                         <outlet property="newMessageTextField" destination="2h6-TW-PDg" id="vfN-t0-cHT"/>
                         <outlet property="recipientNameTextLabel" destination="ICE-D2-dyL" id="NPJ-E1-XP7"/>
