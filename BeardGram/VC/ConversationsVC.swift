@@ -13,26 +13,26 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var recipientNameTextLabel: UILabel!
     @IBOutlet weak var searchMessageTextField: UITextField!
     @IBOutlet weak var newMessageTextField: MessageTextField!
-    @IBOutlet weak var recentMessagesTableView: UITableView!
+    @IBOutlet weak var bgMessagesTableView: UITableView!
     
     let messageRepository: MessagesRepository = FirebaseMessagesRepository()
     var bgMessages: [BGMessage] = []
     var allbgMessages: [BGMessage] = []
     
-    var recipientId: String = "p86Ip00Fa7M4OaBG2Eye2KugZEi1"
+    var recipientId: String = "sK9DgapXvObXVAXVZSFgq07w9Kt2"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Conversation"
-        recentMessagesTableView.dataSource = self
-        recentMessagesTableView.delegate = self
-        recentMessagesTableView.register(UINib(nibName: "SenderCell", bundle: nil), forCellReuseIdentifier: "senderRow")
+        bgMessagesTableView.dataSource = self
+        bgMessagesTableView.delegate = self
+        bgMessagesTableView.register(UINib(nibName: "SenderCell", bundle: nil), forCellReuseIdentifier: "senderRow")
         reloadMessages()
     }
     func reloadMessages() {
         messageRepository.getAll(repicientId: recipientId) { allbgMessages in
             self.bgMessages = allbgMessages
-            self.recentMessagesTableView.reloadData()
+            self.bgMessagesTableView.reloadData()
         }
     }
     

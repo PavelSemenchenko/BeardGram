@@ -882,8 +882,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bgMessagesTableView" destination="1om-bI-sjH" id="sXy-4F-Aaq"/>
                         <outlet property="newMessageTextField" destination="2h6-TW-PDg" id="vfN-t0-cHT"/>
-                        <outlet property="recentMessagesTableView" destination="1om-bI-sjH" id="oA6-7g-aqG"/>
                         <outlet property="recipientNameTextLabel" destination="ICE-D2-dyL" id="NPJ-E1-XP7"/>
                         <outlet property="searchMessageTextField" destination="4gb-lx-28D" id="exd-GL-VgO"/>
                     </connections>
