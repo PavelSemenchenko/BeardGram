@@ -19,7 +19,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     var bgMessages: [BGMessage] = []
     var allbgMessages: [BGMessage] = []
     
-    var recipientId: String = "fMPzRnaqKQRN43cSuP1cDbtCkln2"
+    var recipientId: String = "p86Ip00Fa7M4OaBG2Eye2KugZEi1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +27,9 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         recentMessagesTableView.dataSource = self
         recentMessagesTableView.delegate = self
         recentMessagesTableView.register(UINib(nibName: "SenderCell", bundle: nil), forCellReuseIdentifier: "senderRow")
-        reloadDialogs()
+        reloadMessages()
     }
-    func reloadDialogs() {
+    func reloadMessages() {
         messageRepository.getAll(repicientId: recipientId) { allbgMessages in
             self.bgMessages = allbgMessages
             self.recentMessagesTableView.reloadData()
