@@ -19,10 +19,15 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     var bgMessages: [BGMessage] = []
     var allbgMessages: [BGMessage] = []
     
+    var recipientName : ProfileTableViewCell = Profile
+    
     var recipientId: String = "sK9DgapXvObXVAXVZSFgq07w9Kt2"
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Conversation"
+        
+        recipientNameTextLabel.text = recipientName.data.name
+        
         bgMessagesTableView.dataSource = self
         bgMessagesTableView.delegate = self
         bgMessagesTableView.register(UINib(nibName: "SenderCell", bundle: nil), forCellReuseIdentifier: "senderRow")
