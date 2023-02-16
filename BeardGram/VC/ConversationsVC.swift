@@ -11,7 +11,6 @@ import UIKit
 class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var recipientNameTextLabel: UILabel!
-   // @IBOutlet weak var searchMessageTextField: UITextField!
     @IBOutlet weak var newMessageTextField: MessageTextField!
     @IBOutlet weak var bgMessagesTableView: UITableView!
     
@@ -19,14 +18,14 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     var bgMessages: [BGMessage] = []
     var allbgMessages: [BGMessage] = []
     
-    var recipientName : ProfileTableViewCell = Profile
+    //var recipientName : ProfileTableViewCell = Profile
     
     var recipientId: String = "sK9DgapXvObXVAXVZSFgq07w9Kt2"
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Conversation"
         
-        recipientNameTextLabel.text = recipientName.data.name
+        //recipientNameTextLabel.text = recipientName.data.name
         
         bgMessagesTableView.dataSource = self
         bgMessagesTableView.delegate = self
