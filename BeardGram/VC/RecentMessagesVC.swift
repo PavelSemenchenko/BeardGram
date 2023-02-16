@@ -48,4 +48,12 @@ class RecentMessagesVC: UIViewController, UITableViewDataSource, UITableViewDele
         */
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let conversationVc = self.storyboard?.instantiateViewController(withIdentifier: "conversationsSB") as? ConversationsVC else {
+            return
+        }
+        // need add id of the row users
+        //conversationVc.userId = contacts[indexPath.row].id
+        self.navigationController?.pushViewController(conversationVc, animated: true)
+    }
 }

@@ -786,16 +786,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ft0-eJ-R9q">
                                 <rect key="frame" x="0.0" y="59" width="393" height="48"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search in messages" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4gb-lx-28D">
-                                        <rect key="frame" x="128" y="8" width="257" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="D4O-7H-mcc"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICE-D2-dyL">
-                                        <rect key="frame" x="16" y="13.666666666666671" width="96" height="21"/>
+                                        <rect key="frame" x="16" y="13.666666666666673" width="96" height="20.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="96" id="5DE-C3-W1E"/>
                                         </constraints>
@@ -806,14 +798,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="ICE-D2-dyL" firstAttribute="height" secondItem="4gb-lx-28D" secondAttribute="height" multiplier="0.65625" id="Fay-bY-FC5"/>
+                                    <constraint firstItem="ICE-D2-dyL" firstAttribute="centerY" secondItem="Ft0-eJ-R9q" secondAttribute="centerY" id="3Ks-5x-JOd"/>
+                                    <constraint firstItem="ICE-D2-dyL" firstAttribute="top" secondItem="Ft0-eJ-R9q" secondAttribute="top" constant="13.666666666666671" id="GBu-Vw-0UA"/>
                                     <constraint firstAttribute="height" constant="48" id="Jsq-MF-3fh"/>
-                                    <constraint firstAttribute="trailing" secondItem="4gb-lx-28D" secondAttribute="trailing" constant="8" id="PWq-22-nzV"/>
-                                    <constraint firstItem="4gb-lx-28D" firstAttribute="top" secondItem="Ft0-eJ-R9q" secondAttribute="top" constant="8" id="cMq-7d-8SS"/>
-                                    <constraint firstItem="ICE-D2-dyL" firstAttribute="centerY" secondItem="4gb-lx-28D" secondAttribute="centerY" id="cgT-a7-frb"/>
-                                    <constraint firstItem="4gb-lx-28D" firstAttribute="leading" secondItem="Ft0-eJ-R9q" secondAttribute="leading" constant="128" id="kYI-Kw-smy"/>
                                     <constraint firstItem="ICE-D2-dyL" firstAttribute="leading" secondItem="Ft0-eJ-R9q" secondAttribute="leading" constant="16" id="ouq-Nz-4oY"/>
-                                    <constraint firstItem="4gb-lx-28D" firstAttribute="leading" secondItem="ICE-D2-dyL" secondAttribute="trailing" constant="16" id="seJ-yi-KHS"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1om-bI-sjH">
@@ -882,11 +870,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addingTextView" destination="2z0-4h-gCo" id="htQ-Hd-7Gj"/>
                         <outlet property="bgMessagesTableView" destination="1om-bI-sjH" id="sXy-4F-Aaq"/>
                         <outlet property="newMessageTextField" destination="2h6-TW-PDg" id="vfN-t0-cHT"/>
                         <outlet property="recipientNameTextLabel" destination="ICE-D2-dyL" id="NPJ-E1-XP7"/>
-                        <outlet property="searchMessageTextField" destination="4gb-lx-28D" id="exd-GL-VgO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44L-ER-YUG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

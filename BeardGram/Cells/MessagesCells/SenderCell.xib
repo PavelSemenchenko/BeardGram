@@ -60,9 +60,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="attachmentsStackView" destination="gBP-LL-f6w" id="Dws-yz-tPv"/>
-                <outlet property="messageTextLabel" destination="2Q3-rU-Pr2" id="t7u-HX-czR"/>
-                <outlet property="timeLabel" destination="r2Q-Qa-cj3" id="F9X-V3-abE"/>
+                <outlet property="attachmentsStackView" destination="gBP-LL-f6w" id="a62-eH-54Y"/>
+                <outlet property="messageTextLabel" destination="2Q3-rU-Pr2" id="7qK-vq-Ned"/>
+                <outlet property="timeLabel" destination="r2Q-Qa-cj3" id="X6h-VB-Bqt"/>
             </connections>
             <point key="canvasLocation" x="75.572519083969468" y="46.126760563380287"/>
         </tableViewCell>
