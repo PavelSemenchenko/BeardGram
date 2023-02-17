@@ -125,7 +125,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         guard let conversationVc = self.storyboard?.instantiateViewController(withIdentifier: "conversationsSB") as? ConversationsVC else {
             return
         }
-        //conversationVc.userId = contacts[indexPath.row].id
+        conversationVc.recipientId = contacts[indexPath.row].id
         self.navigationController?.pushViewController(conversationVc, animated: true)
     }
     

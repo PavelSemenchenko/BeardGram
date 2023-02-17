@@ -53,7 +53,7 @@ class RecentMessagesVC: UIViewController, UITableViewDataSource, UITableViewDele
             return
         }
         // need add id of the row users
-        //conversationVc.userId = contacts[indexPath.row].id
+        conversationVc.recipientId = dialogs[indexPath.row].userId
         self.navigationController?.pushViewController(conversationVc, animated: true)
     }
 }

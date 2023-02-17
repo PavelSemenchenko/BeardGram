@@ -30,7 +30,7 @@ class FirebaseMessagesRepository: MessagesRepository {
         
         Firestore.firestore().collection("profiles").document(currentUserId)
                              .collection("dialogs").document(repicientId)
-                             .collection("message").order(by: "created")
+                             .collection("messages").order(by: "created")
                              .addSnapshotListener { snapshot, _ in
             guard let docs = snapshot?.documents else {
                 completion([])

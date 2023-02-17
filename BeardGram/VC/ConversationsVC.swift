@@ -18,9 +18,9 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     var bgMessages: [BGMessage] = []
     var allbgMessages: [BGMessage] = []
     
-    //var recipientName : ProfileTableViewCell = Profile
+    var profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
     
-    var recipientId: String = "sK9DgapXvObXVAXVZSFgq07w9Kt2"
+    var recipientId: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Conversation"
@@ -31,6 +31,10 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         bgMessagesTableView.delegate = self
         bgMessagesTableView.register(UINib(nibName: "SenderCell", bundle: nil), forCellReuseIdentifier: "senderRow")
         reloadMessages()
+        
+        profilesRepository.getProfile(id: recipientId) { profile in
+            self.title = profile?.name
+        }
         /*
         registerForKeyboardNotifications()
     }

@@ -783,29 +783,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ft0-eJ-R9q">
-                                <rect key="frame" x="0.0" y="59" width="393" height="48"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICE-D2-dyL">
-                                        <rect key="frame" x="16" y="13.666666666666673" width="96" height="20.666666666666671"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="96" id="5DE-C3-W1E"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="ICE-D2-dyL" firstAttribute="centerY" secondItem="Ft0-eJ-R9q" secondAttribute="centerY" id="3Ks-5x-JOd"/>
-                                    <constraint firstItem="ICE-D2-dyL" firstAttribute="top" secondItem="Ft0-eJ-R9q" secondAttribute="top" constant="13.666666666666671" id="GBu-Vw-0UA"/>
-                                    <constraint firstAttribute="height" constant="48" id="Jsq-MF-3fh"/>
-                                    <constraint firstItem="ICE-D2-dyL" firstAttribute="leading" secondItem="Ft0-eJ-R9q" secondAttribute="leading" constant="16" id="ouq-Nz-4oY"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1om-bI-sjH">
-                                <rect key="frame" x="0.0" y="112" width="393" height="657"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2z0-4h-gCo">
@@ -857,14 +836,11 @@
                         <viewLayoutGuide key="safeArea" id="tj8-Br-AP4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ft0-eJ-R9q" firstAttribute="top" secondItem="tj8-Br-AP4" secondAttribute="top" id="4os-Mc-iC6"/>
                             <constraint firstItem="2z0-4h-gCo" firstAttribute="leading" secondItem="tj8-Br-AP4" secondAttribute="leading" id="5nK-bI-JlW"/>
                             <constraint firstItem="tj8-Br-AP4" firstAttribute="trailing" secondItem="1om-bI-sjH" secondAttribute="trailing" id="AHA-z7-fh4"/>
                             <constraint firstItem="1om-bI-sjH" firstAttribute="leading" secondItem="tj8-Br-AP4" secondAttribute="leading" id="JTC-lr-gnd"/>
-                            <constraint firstItem="1om-bI-sjH" firstAttribute="top" secondItem="Ft0-eJ-R9q" secondAttribute="bottom" constant="5" id="P1I-SV-cl7"/>
-                            <constraint firstItem="tj8-Br-AP4" firstAttribute="trailing" secondItem="Ft0-eJ-R9q" secondAttribute="trailing" id="ZRE-JX-MeZ"/>
                             <constraint firstItem="tj8-Br-AP4" firstAttribute="bottom" secondItem="2z0-4h-gCo" secondAttribute="bottom" id="inp-85-5JT"/>
-                            <constraint firstItem="Ft0-eJ-R9q" firstAttribute="leading" secondItem="tj8-Br-AP4" secondAttribute="leading" id="mpz-Hl-vzg"/>
+                            <constraint firstItem="1om-bI-sjH" firstAttribute="top" secondItem="tj8-Br-AP4" secondAttribute="top" id="lWJ-FF-d0X"/>
                             <constraint firstItem="tj8-Br-AP4" firstAttribute="trailing" secondItem="2z0-4h-gCo" secondAttribute="trailing" id="nb7-6T-eKB"/>
                             <constraint firstItem="2z0-4h-gCo" firstAttribute="top" secondItem="1om-bI-sjH" secondAttribute="bottom" constant="1" id="obZ-fQ-aPa"/>
                         </constraints>
@@ -872,7 +848,6 @@
                     <connections>
                         <outlet property="bgMessagesTableView" destination="1om-bI-sjH" id="sXy-4F-Aaq"/>
                         <outlet property="newMessageTextField" destination="2h6-TW-PDg" id="vfN-t0-cHT"/>
-                        <outlet property="recipientNameTextLabel" destination="ICE-D2-dyL" id="NPJ-E1-XP7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44L-ER-YUG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
