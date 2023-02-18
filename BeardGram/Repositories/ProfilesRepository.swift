@@ -18,9 +18,16 @@ struct Profile: Codable {
 protocol ProfilesRepository {
     func search(name: String, completion: @escaping ([Profile]) -> Void)
     func createProfile(name: String)
+    func getProfile(id: String, completion: @escaping (Profile?) -> Void)
 }
 
 class FirebaseProfilesRepository: ProfilesRepository {
+    func getProfile(id: String, completion: @escaping (Profile?) -> Void) {
+        profilesCollection.document(id).getDocument(as: Profile.self, completion: { result in
+            completion(try? result.get())
+        })
+    }
+    
     func createProfile(name: String) {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
             fatalError("You need to be authenticated")

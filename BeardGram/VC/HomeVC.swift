@@ -22,7 +22,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Friends list"
+        title = "Friends"
         navigationItem.setHidesBackButton(true, animated: true)
         navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "LogOut",
                                                               style: UIBarButtonItem.Style.plain,
@@ -89,8 +89,8 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }*/
     
     @IBAction func messagesButtonClicked(_ sender: Any) {
-        guard let mess = self.storyboard?.instantiateViewController(withIdentifier: "conversationsSB")
-                as? ConversationsVC else { return
+        guard let mess = self.storyboard?.instantiateViewController(withIdentifier: "recentMessagesSB")
+                as? RecentMessagesVC else { return
         }
         self.navigationController?.pushViewController(mess, animated: true)
     }
@@ -125,7 +125,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         guard let conversationVc = self.storyboard?.instantiateViewController(withIdentifier: "conversationsSB") as? ConversationsVC else {
             return
         }
-        //conversationVc.userId = contacts[indexPath.row].id
+        conversationVc.recipientId = contacts[indexPath.row].id
         self.navigationController?.pushViewController(conversationVc, animated: true)
     }
     

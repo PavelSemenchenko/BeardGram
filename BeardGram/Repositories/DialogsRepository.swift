@@ -11,22 +11,25 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct Dialog: Codable {
-    @DocumentID var id: String?
-    let title: String
-    @ServerTimestamp var created: Date?
-    let authorId: String
+    @DocumentID var userId: String? // recipient Id
+    let lastMessage: String
+    @ServerTimestamp var lastModified: Date?
 }
 
 protocol DialogsRepository {
-    func getAll(/*userId: Int,*/ completion: @escaping ([Dialog]) -> Void)
-    func create(title: String) -> Dialog
-    func delete(dialogId: String)
-    func update(value: Dialog)
+    func getAll(completion: @escaping ([Dialog]) -> Void)
 }
 
 class FirebaseDialogsRepository: DialogsRepository {
     func getAll(completion: @escaping ([Dialog]) -> Void) {
-        dialogsCollection.getDocuments { snapshot, _ in
+        
+        guard let currentUserId = Auth.auth().currentUser?.uid else {
+            fatalError("need authenticate")
+        }
+        
+        Firestore.firestore().collection("profiles").document(currentUserId)
+                             .collection("dialogs").order(by: "lastModified", descending: true)
+                             .addSnapshotListener { snapshot, _ in
             guard let docs = snapshot?.documents else {
                 completion([])
                 return
@@ -41,7 +44,7 @@ class FirebaseDialogsRepository: DialogsRepository {
             completion(dialogs)
         }
     }
-    
+    /*
     func create(title: String) -> Dialog {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
             fatalError("need authenticate")
@@ -67,7 +70,5 @@ class FirebaseDialogsRepository: DialogsRepository {
     
     lazy var dialogsCollection: CollectionReference = {
         return Firestore.firestore().collection("dialogs")
-    }()
-    
-    
+    }()*/
 }
