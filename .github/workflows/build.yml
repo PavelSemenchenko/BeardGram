@@ -22,6 +22,7 @@ jobs:
       - run: |
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp PavelSemenchenkoBeardGram.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+          cp PavelSemenchenkoBeardGramDevelopment.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
           
           security create-keychain -p "" PavelSemenchenkoBeardGram-build.keychain
           security import imagevideo.p12 -t agg -k ~/Library/Keychains/PavelSemenchenkoBeardGram-build.keychain -P "098qwe!@#" -A
