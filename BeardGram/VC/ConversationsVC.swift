@@ -10,6 +10,7 @@ import UIKit
 
 class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var recipientNameTextLabel: UILabel!
     @IBOutlet weak var newMessageTextField: MessageTextField!
     @IBOutlet weak var bgMessagesTableView: UITableView!
@@ -35,7 +36,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         profilesRepository.getProfile(id: recipientId) { profile in
             self.title = profile?.name
         }
-        /*
+        
         registerForKeyboardNotifications()
     }
     deinit {
@@ -54,11 +55,11 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @objc func kbWillShow(_ notification: Notification) {
         let userInfo = notification.userInfo
         let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        scrollView.contentOffset = CGPoint(x: 0.0, y: kbFrameSize.height/1.5)
+        scrollView.contentOffset = CGPoint(x: 0.0, y: kbFrameSize.height)
     }
     @objc func kbWillHide() {
         scrollView.contentOffset = CGPoint.zero
-    */
+    
     }
     
     func reloadMessages() {
