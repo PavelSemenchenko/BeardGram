@@ -67,7 +67,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             // Добавляем отступ снизу к scrollView, чтобы он прокручивался до уровня текстового поля
-            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height/2, right: 0)
             
             // Перемещаем scrollView, чтобы текстовое поле было видимым
             if let activeTextField = newMessageTextField {
