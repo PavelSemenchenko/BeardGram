@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var recipientNameTextLabel: UILabel!
@@ -26,8 +26,6 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         super.viewDidLoad()
         title = "Conversation"
         
-        //recipientNameTextLabel.text = recipientName.data.name
-        
         bgMessagesTableView.dataSource = self
         bgMessagesTableView.delegate = self
         bgMessagesTableView.register(UINib(nibName: "SenderCell", bundle: nil), forCellReuseIdentifier: "senderRow")
@@ -37,9 +35,18 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             self.title = profile?.name
         }
         
-        // registerForKeyboardNotifications()
+        //registerForKeyboardNotifications()
+        
+        // keyboard
+        cancelKeyboard()
     }
-    
+    func cancelKeyboard() {
+        self.scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+    }
+    @objc func hideKeyboard() {
+        self.scrollView.endEditing(true)
+    }
+    /*
     deinit {
         removeKeyboardNotifications()
     }
@@ -56,12 +63,12 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @objc func kbWillShow(_ notification: Notification) {
         let userInfo = notification.userInfo
         let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        scrollView.contentOffset = CGPoint(x: 0.0, y: kbFrameSize.height)
+        scrollView.contentOffset = CGPoint(x: 0.0, y: kbFrameSize.height/1.2)
     }
     @objc func kbWillHide() {
         scrollView.contentOffset = CGPoint.zero
     
-    }
+    }*/
     
     func reloadMessages() {
         messageRepository.getAll(repicientId: recipientId) { allbgMessages in
