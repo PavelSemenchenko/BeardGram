@@ -37,8 +37,9 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             self.title = profile?.name
         }
         
-        registerForKeyboardNotifications()
+        // registerForKeyboardNotifications()
     }
+    
     deinit {
         removeKeyboardNotifications()
     }

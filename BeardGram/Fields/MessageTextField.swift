@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class MessageTextField: UITextField {
+class MessageTextField: UITextField, UITextViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.shadowOpacity = 1
@@ -16,4 +16,5 @@ class MessageTextField: UITextField {
         layer.shadowOffset = CGSize.zero
         layer.shadowColor = UIColor.gray.cgColor
     }
+    
 }
