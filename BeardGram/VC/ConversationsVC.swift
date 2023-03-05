@@ -10,6 +10,7 @@ import UIKit
 
 class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
+    @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var recipientNameTextLabel: UILabel!
     @IBOutlet weak var newMessageTextField: MessageTextField!
@@ -69,10 +70,14 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             // Добавляем отступ снизу к scrollView, чтобы он прокручивался до уровня текстового поля
             scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height/2, right: 0)
             
+            // подымаем вью текста и кнопки
+            messageView.frame.origin.y -= keyboardSize.height
+            
             // Перемещаем scrollView, чтобы текстовое поле было видимым
             if let activeTextField = newMessageTextField {
                 let textFieldRect = activeTextField.convert(activeTextField.bounds, to: scrollView)
                 scrollView.scrollRectToVisible(textFieldRect, animated: true)
+                
             }
         }
     }
@@ -81,11 +86,11 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         // Удаляем отступ снизу у scrollView
         scrollView.contentInset = .zero
     }
-    private func textFieldDidBeginEditing(_ textField: MessageTextField) {
+    func textFieldDidBeginEditing(_ textField: MessageTextField) {
         newMessageTextField = textField
     }
 
-    private func textFieldDidEndEditing(_ textField: MessageTextField) {
+    func textFieldDidEndEditing(_ textField: MessageTextField) {
         newMessageTextField = nil
     }
 
