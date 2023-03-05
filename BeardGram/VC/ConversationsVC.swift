@@ -8,8 +8,10 @@
 import Foundation
 import UIKit
 
-class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
+    @IBOutlet weak var messageView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var recipientNameTextLabel: UILabel!
     @IBOutlet weak var newMessageTextField: MessageTextField!
     @IBOutlet weak var bgMessagesTableView: UITableView!
@@ -25,8 +27,6 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         super.viewDidLoad()
         title = "Conversation"
         
-        //recipientNameTextLabel.text = recipientName.data.name
-        
         bgMessagesTableView.dataSource = self
         bgMessagesTableView.delegate = self
         bgMessagesTableView.register(UINib(nibName: "SenderCell", bundle: nil), forCellReuseIdentifier: "senderRow")
@@ -35,31 +35,74 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         profilesRepository.getProfile(id: recipientId) { profile in
             self.title = profile?.name
         }
-        /*
+        
         registerForKeyboardNotifications()
+        
+        // keyboard
+        cancelKeyboard()
     }
+    func cancelKeyboard() {
+        self.scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+    }
+    @objc func hideKeyboard() {
+        self.scrollView.endEditing(true)
+    }
+    // kayboard hide end
+    
     deinit {
         removeKeyboardNotifications()
     }
+    // add listnener
     func registerForKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(kbWillShow),
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
                                                name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(kbWillHide),
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    // cancel listnener
     func removeKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    //
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            // Добавляем отступ снизу к scrollView, чтобы он прокручивался до уровня текстового поля
+            //scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height/2, right: 0)
+            
+            // подымаем вью текста и кнопки
+            messageView.frame.origin.y -= keyboardSize.height
+            bgMessagesTableView.frame.origin.y -= keyboardSize.height
+            
+            // Перемещаем scrollView, чтобы текстовое поле было видимым
+            if let activeTextField = newMessageTextField {
+                let textFieldRect = activeTextField.convert(activeTextField.bounds, to: scrollView)
+                scrollView.scrollRectToVisible(textFieldRect, animated: true)
+                
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        // Удаляем отступ снизу у scrollView
+        scrollView.contentInset = .zero
+    }
+    func textFieldDidBeginEditing(_ textField: MessageTextField) {
+        newMessageTextField = textField
+    }
+
+    func textFieldDidEndEditing(_ textField: MessageTextField) {
+        newMessageTextField = nil
+    }
+
+    // old scheme
+    /*
     @objc func kbWillShow(_ notification: Notification) {
         let userInfo = notification.userInfo
         let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        scrollView.contentOffset = CGPoint(x: 0.0, y: kbFrameSize.height/1.5)
-    }
-    @objc func kbWillHide() {
-        scrollView.contentOffset = CGPoint.zero
-    */
-    }
+        scrollView.contentOffset = CGPoint(x: 0.0, y: kbFrameSize.height/1.2)
+    }*/
+   
     
     func reloadMessages() {
         messageRepository.getAll(repicientId: recipientId) { allbgMessages in
