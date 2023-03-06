@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A327AF729B66F14005F440E /* AttachmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A327AF629B66F14005F440E /* AttachmentsVC.swift */; };
 		2A4129F4297F0DEC00E33979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4129F3297F0DEC00E33979 /* AppDelegate.swift */; };
 		2A4129F6297F0DEC00E33979 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4129F5297F0DEC00E33979 /* SceneDelegate.swift */; };
 		2A4129F8297F0DEC00E33979 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4129F7297F0DEC00E33979 /* ViewController.swift */; };
@@ -70,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		04725EAE9C236AC60C5583EE /* Pods_BeardGram_BeardGramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeardGram_BeardGramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A327AF629B66F14005F440E /* AttachmentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsVC.swift; sourceTree = "<group>"; };
 		2A4129F0297F0DEC00E33979 /* BeardGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeardGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A4129F3297F0DEC00E33979 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A4129F5297F0DEC00E33979 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				2A8367A9299C27A5003A83CB /* RecentMessagesVC.swift */,
 				2ABA64B0298AA3A1008F4383 /* ConversationsVC.swift */,
 				2AD8D30C299189DB00677ED5 /* GlobalSearchVC.swift */,
+				2A327AF629B66F14005F440E /* AttachmentsVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				2A8E4AF3298D48FC004AF4D7 /* DialogCell.swift in Sources */,
 				2A412A28297F245100E33979 /* HomeVC.swift in Sources */,
 				2A412A6E297F39A200E33979 /* EmailTextField.swift in Sources */,
+				2A327AF729B66F14005F440E /* AttachmentsVC.swift in Sources */,
 				2ABA64B1298AA3A1008F4383 /* ConversationsVC.swift in Sources */,
 				2A8C856129895E29002A411D /* ContactTableViewCell.swift in Sources */,
 				2A8E4AF0298D3FA2004AF4D7 /* DialogsRepository.swift in Sources */,
