@@ -14,7 +14,7 @@ class AttachmentsVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     @IBOutlet weak var addImageView: UIImageView!
     
-    var photoURL: URL?
+    var imageURL: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +29,17 @@ class AttachmentsVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
     
     @IBAction func sendImageButton(_ sender: Any) {
-        guard let img = photoURL else {
+        guard let img = imageURL else {
             return
         }
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        picker.dismiss(animated: false)
+        imageURL = info[.imageURL] as? URL
+        guard let image = imageURL else {
+            return
+        }
+        addImageView.af.setImage(withURL: image)
+    }
 }
