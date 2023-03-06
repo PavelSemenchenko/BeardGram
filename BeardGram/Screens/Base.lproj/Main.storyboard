@@ -854,6 +854,61 @@
             </objects>
             <point key="canvasLocation" x="3256" y="90"/>
         </scene>
+        <!--AttachmentsVC-->
+        <scene sceneID="rhy-5t-Kec">
+            <objects>
+                <viewController storyboardIdentifier="attachmentsSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nkp-rM-5jI" customClass="AttachmentsVC" customModule="BeardGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="knm-cK-ARo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ecS-zq-0TT">
+                                <rect key="frame" x="76" y="217" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="0UD-5u-xtX"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="tP9-OW-owK" appends="YES" id="5aW-3Y-Toe"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdW-4O-lpu">
+                                <rect key="frame" x="96.666666666666686" y="409" width="200" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Iuk-qW-CI8"/>
+                                    <constraint firstAttribute="width" constant="200" id="n58-Mt-xRw"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Send image"/>
+                                <connections>
+                                    <action selector="sendImageButton:" destination="nkp-rM-5jI" eventType="touchUpInside" id="qy8-MW-dFQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wgJ-WK-wlJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zdW-4O-lpu" firstAttribute="centerX" secondItem="wgJ-WK-wlJ" secondAttribute="centerX" id="6Dt-JM-0EZ"/>
+                            <constraint firstItem="zdW-4O-lpu" firstAttribute="top" secondItem="ecS-zq-0TT" secondAttribute="bottom" constant="64" id="HJQ-yI-W3S"/>
+                            <constraint firstItem="ecS-zq-0TT" firstAttribute="top" secondItem="wgJ-WK-wlJ" secondAttribute="top" constant="158" id="mck-eC-T0U"/>
+                            <constraint firstItem="wgJ-WK-wlJ" firstAttribute="trailing" secondItem="ecS-zq-0TT" secondAttribute="trailing" constant="77" id="rPc-Gz-hOj"/>
+                            <constraint firstItem="ecS-zq-0TT" firstAttribute="leading" secondItem="wgJ-WK-wlJ" secondAttribute="leading" constant="76" id="snA-49-JYG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addImageView" destination="ecS-zq-0TT" id="ISz-Xy-0wu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FQz-G5-bk6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="tP9-OW-owK">
+                    <connections>
+                        <action selector="addImageGestureRecogniserClicked:" destination="nkp-rM-5jI" id="Hrn-sf-4wE"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3912" y="89"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dVk-Kn-rgq">
             <objects>
@@ -886,6 +941,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

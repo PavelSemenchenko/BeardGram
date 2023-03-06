@@ -76,26 +76,12 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     @IBAction func attachmentButtonClicked(_ sender: Any) {
-    }
-    
-    /*
-    @IBAction func searchMessageTextField(_ sender: Any) {
-        guard let searchText = searchMessageTextField.text?.lowercased() else { return }
-        if searchText.isEmpty {
-            dialogs = allDialogs
-            recentMessagesTableView.reloadData()
+        guard let addImage = self.storyboard?.instantiateViewController(withIdentifier: "attachmentsSB") as? AttachmentsVC else {
             return
         }
-        var searchMessages: [Dialog] = []
-        for dialog in allDialogs {
-            if dialog.lastMessage.lowercased().contains(searchText) {
-                searchMessages.append(dialog)
-            }
-            dialogs = searchMessages
-            recentMessagesTableView.reloadData()
-        }
+        self.navigationController?.pushViewController(addImage, animated: true)
     }
-     */
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bgMessages.count
     }
