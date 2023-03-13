@@ -14,13 +14,17 @@ struct BGMessage : Codable {
     @DocumentID var id: String?
     let text: String
     @ServerTimestamp var created: Date?
+    fileprivate(set) var image: String = ""
 }
 protocol MessagesRepository {
     func getAll(repicientId: String, completion: @escaping ([BGMessage]) -> Void)
     func sendText(message: String, recipientId: String)
+    func sendImage(image: URL, recipientID: String)
 }
 
 class FirebaseMessagesRepository: MessagesRepository {
+    
+    
     
     func getAll(repicientId: String, completion: @escaping ([BGMessage]) -> Void) {
         
@@ -68,5 +72,12 @@ class FirebaseMessagesRepository: MessagesRepository {
         
         try? Firestore.firestore().collection("profiles").document(recipientId)
                                   .collection("dialogs").document(currentUserId).setData(from: dialog)
+    }
+    
+    func sendImage(image: URL, recipientID: String) {
+        guard let currentUserId = Auth.auth().currentUser?.uid else {
+            fatalError("Need to be authorised")
+        }
+        // let image = BGMessage(text: String, image: String) 
     }
 }

@@ -40,6 +40,6 @@ class AttachmentsVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         guard let image = imageURL else {
             return
         }
-        addImageView.af.setImage(withURL: image)
+        //addImageView.af.setImage(withURL: image)
     }
 }
