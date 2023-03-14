@@ -11,7 +11,8 @@ target 'BeardGram' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
   pod 'Alamofire'
-  pod 'Photos'
+  pod 'AlamofireImage', '~> 4.1'
+  pod 'FirebaseStorage'
   
 
   target 'BeardGramTests' do

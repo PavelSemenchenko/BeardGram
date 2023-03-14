@@ -7,8 +7,9 @@
 
 import Foundation
 import UIKit
-import Photos
-import PhotosUI
+// import Photos
+// import PhotosUI
+import AlamofireImage
 
 class AttachmentsVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -40,6 +41,6 @@ class AttachmentsVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         guard let image = imageURL else {
             return
         }
-        //addImageView.af.setImage(withURL: image)
+        addImageView.af.setImage(withURL: image)
     }
 }

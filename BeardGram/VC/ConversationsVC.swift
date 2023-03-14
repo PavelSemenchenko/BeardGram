@@ -20,6 +20,8 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     var profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
     
+    var images: [URL] = []
+    
     var recipientId: String!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,11 +71,25 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     @IBAction func newMessageSendButtonClicked(_ sender: Any) {
-        guard let newMessage = newMessageTextField.text, newMessage.count > 1 else {
+        if let newMessage = newMessageTextField.text, newMessage.count > 1 else {
+            newMessageTextField.text = ""
+            if images.isEmpty {
+                messageRepository.sendImages(message: newMessage, recipientId: recipientId)
+            } else {
+                messageRepository.sendImages(images: images, recipientID: recipientId)
+                images.removeAll()
+            }
             return
         }
-        messageRepository.sendText(message: newMessage, recipientId: recipientId)
+        if !images.isEmpty {
+            messageRepository.sendImages(images: images, recipientId: recipientId)
+            images.removeAll()
+        }
+       
     }
+    
+    
+    
     
     @IBAction func attachmentButtonClicked(_ sender: Any) {
         guard let addImage = self.storyboard?.instantiateViewController(withIdentifier: "attachmentsSB") as? AttachmentsVC else {
