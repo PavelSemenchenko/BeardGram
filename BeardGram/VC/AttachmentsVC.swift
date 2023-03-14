@@ -17,6 +17,8 @@ class AttachmentsVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     var imageURL: URL?
     
+    var onImageReady: ((imageURL?) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

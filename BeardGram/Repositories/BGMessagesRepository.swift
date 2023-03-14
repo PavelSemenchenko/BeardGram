@@ -69,13 +69,12 @@ class FirebaseMessagesRepository: MessagesRepository {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
             fatalError("Need to be authorised")
         }
-        // let image = BGMessage(text: String, image: String)
-        /*
+        
         photoService.upload(image: URL) { uploadedURL in
             var message = BGMessage(text: message)
             message.attachments = [BGAttachment(ref: uploadedURL, type: "image")]
             sendMessage(message: message, recipientId: recipientId, currentUserId: currentUserId)
-        }*/
+        }
     }
     
     private func sendMessage(message: BGMessage, recipientId: String, currentUserId: String) {

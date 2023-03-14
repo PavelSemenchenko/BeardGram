@@ -69,7 +69,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             self.bgMessagesTableView.reloadData()
         }
     }
-    /*
+    
     @IBAction func newMessageSendButtonClicked(_ sender: Any) {
         if let newMessage = newMessageTextField.text, newMessage.count > 1 {
             newMessageTextField.text = ""
@@ -86,7 +86,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             images.removeAll()
         }
        
-    }*/
+    }
     
     
     
@@ -94,6 +94,10 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBAction func attachmentButtonClicked(_ sender: Any) {
         guard let addImage = self.storyboard?.instantiateViewController(withIdentifier: "attachmentsSB") as? AttachmentsVC else {
             return
+        }
+        // need comletion
+        addImage.onImageReady = { imageURL in
+            self.images.append(imageURL)
         }
         self.navigationController?.pushViewController(addImage, animated: true)
     }
