@@ -74,7 +74,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         if let newMessage = newMessageTextField.text, newMessage.count > 1 {
             newMessageTextField.text = ""
             if images.isEmpty {
-                messageRepository.sendImages(images: [URL], recipientId: recipientId, message: newMessage)
+                messageRepository.sendImages(images: images, recipientId: recipientId, message: newMessage)
             } else {
                 messageRepository.sendImages(images: images, recipientId: recipientId, message: newMessage)
                 images.removeAll()
@@ -82,14 +82,11 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             return
         }
         if !images.isEmpty {
-            messageRepository.sendImages(images: images, recipientId: recipientId, message: <#String#>)
+            messageRepository.sendImages(images: images, recipientId: recipientId, message: "")
             images.removeAll()
         }
        
     }
-    
-    
-    
     
     @IBAction func attachmentButtonClicked(_ sender: Any) {
         guard let addImage = self.storyboard?.instantiateViewController(withIdentifier: "attachmentsSB") as? AttachmentsVC else {

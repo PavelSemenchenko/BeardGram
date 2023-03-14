@@ -20,6 +20,12 @@ class FirebaseFileStorageService: FileStorageService {
         // Путь где хранить файлы
         let photoRef = ref.child("путь где хранить фото")
         
+        /*
+        Firestore.firestore().collection("profiles").document(currentUserId)
+                                  .collection("dialogs").document(recipientId)
+                                  .collection("messages").addDocument(from: message)
+        */
+        
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         
