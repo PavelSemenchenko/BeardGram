@@ -18,7 +18,8 @@ class FirebaseFileStorageService: FileStorageService {
         let ref = storage.reference()
         
         // Путь где хранить файлы
-        let photoRef = ref.child("путь где хранить фото")
+        // жуно currentUserId, recipientId, uidPicture
+        let photoRef = ref.child("profiles/\(currentUserId)/dialogs/\(recipientId)/messages/\(uidPicture)")
         
         /*
         Firestore.firestore().collection("profiles").document(currentUserId)
