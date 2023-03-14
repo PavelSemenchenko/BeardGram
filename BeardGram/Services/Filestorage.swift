@@ -9,17 +9,19 @@ import Foundation
 import FirebaseStorage
 
 protocol FileStorageService {
-    func upload(image: URL, completion: @escaping (String?) -> Void)
+    func upload(image: URL, currentUserId: String, recipientId: String, uidPicture: String,
+                completion: @escaping (String?) -> Void)
 }
 
 class FirebaseFileStorageService: FileStorageService {
-    func upload(image: URL, completion: @escaping (String?) -> Void) {
+    func upload(image: URL, currentUserId: String, recipientId: String, uidPicture: String,
+                completion: @escaping (String?) -> Void) {
         let storage = Storage.storage()
         let ref = storage.reference()
         
         // Путь где хранить файлы
         // жуно currentUserId, recipientId, uidPicture
-        let photoRef = ref.child("profiles/\(currentUserId)/dialogs/\(recipientId)/messages/\(uidPicture)")
+        let photoRef = ref.child("profiles/\(currentUserId)/dialogs/\(recipientId)/messages/\(uidPicture).jpg")
         
         /*
         Firestore.firestore().collection("profiles").document(currentUserId)
