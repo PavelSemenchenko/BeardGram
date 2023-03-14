@@ -69,24 +69,24 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             self.bgMessagesTableView.reloadData()
         }
     }
-    
+    /*
     @IBAction func newMessageSendButtonClicked(_ sender: Any) {
-        if let newMessage = newMessageTextField.text, newMessage.count > 1 else {
+        if let newMessage = newMessageTextField.text, newMessage.count > 1 {
             newMessageTextField.text = ""
             if images.isEmpty {
-                messageRepository.sendImages(message: newMessage, recipientId: recipientId)
+                messageRepository.sendImages(images: [URL], recipientId: recipientId, message: newMessage)
             } else {
-                messageRepository.sendImages(images: images, recipientID: recipientId)
+                messageRepository.sendImages(images: images, recipientId: recipientId, message: newMessage)
                 images.removeAll()
             }
             return
         }
         if !images.isEmpty {
-            messageRepository.sendImages(images: images, recipientId: recipientId)
+            messageRepository.sendImages(images: images, recipientId: recipientId, message: <#String#>)
             images.removeAll()
         }
        
-    }
+    }*/
     
     
     
