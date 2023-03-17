@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseStorage
+import FirebaseAuth
 
 protocol FileStorageService {
     func upload(image: URL, currentUserId: String, recipientId: String, uidPicture: String,
@@ -16,6 +17,10 @@ protocol FileStorageService {
 class FirebaseFileStorageService: FileStorageService {
     func upload(image: URL, currentUserId: String, recipientId: String, uidPicture: String,
                 completion: @escaping (String?) -> Void) {
+        guard let currentUserId = Auth.auth().currentUser?.uid else {
+            fatalError("Need to be authenticated")
+        }
+        
         let storage = Storage.storage()
         let ref = storage.reference()
         

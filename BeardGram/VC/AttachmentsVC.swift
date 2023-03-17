@@ -16,8 +16,8 @@ class AttachmentsVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @IBOutlet weak var addImageView: UIImageView!
     
     var imageURL: URL?
-    
-    var onImageReady: ((imageURL?) -> Void)?
+    let imageRepository: MessagesRepository = FirebaseMessagesRepository()
+    var onImageReady: (([imageURL?]) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +33,10 @@ class AttachmentsVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     @IBAction func sendImageButton(_ sender: Any) {
         guard let img = imageURL else {
-            return
+            return 
         }
+        let imageURL = imageRepository.sendImages(images: img, recipientId: String, message: "")
+        self.onImageReady?(imageURL)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
