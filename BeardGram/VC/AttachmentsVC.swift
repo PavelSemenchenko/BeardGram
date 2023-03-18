@@ -17,7 +17,7 @@ class AttachmentsVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     var imageURL: URL?
     let imageRepository: MessagesRepository = FirebaseMessagesRepository()
-    var onImageReady: (([imageURL?]) -> Void)?
+    var onImageReady: ((URL) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +35,8 @@ class AttachmentsVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         guard let img = imageURL else {
             return 
         }
-        let imageURL = imageRepository.sendImages(images: img, recipientId: String, message: "")
-        self.onImageReady?(imageURL)
+        self.onImageReady?(img)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {

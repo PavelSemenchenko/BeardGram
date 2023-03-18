@@ -10,12 +10,12 @@ import FirebaseStorage
 import FirebaseAuth
 
 protocol FileStorageService {
-    func upload(image: URL, currentUserId: String, recipientId: String, uidPicture: String,
+    func upload(image: URL, currentUserId: String, recipientId: String, pictureId: String,
                 completion: @escaping (String?) -> Void)
 }
 
 class FirebaseFileStorageService: FileStorageService {
-    func upload(image: URL, currentUserId: String, recipientId: String, uidPicture: String,
+    func upload(image: URL, currentUserId: String, recipientId: String, pictureId: String,
                 completion: @escaping (String?) -> Void) {
         guard let currentUserId = Auth.auth().currentUser?.uid else {
             fatalError("Need to be authenticated")
@@ -26,7 +26,7 @@ class FirebaseFileStorageService: FileStorageService {
         
         // Путь где хранить файлы
         // жуно currentUserId, recipientId, uidPicture
-        let photoRef = ref.child("profiles/\(currentUserId)/dialogs/\(recipientId)/messages/\(uidPicture).jpg")
+        let photoRef = ref.child("users/\(currentUserId)/dialogs/\(recipientId)/messages/\(pictureId).jpg")
         
         /*
         Firestore.firestore().collection("profiles").document(currentUserId)

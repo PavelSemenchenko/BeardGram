@@ -64,7 +64,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     func reloadMessages() {
-        messageRepository.getAll(repicientId: recipientId) { allbgMessages in
+        messageRepository.getAll(recipientId: recipientId) { allbgMessages in
             self.bgMessages = allbgMessages
             self.bgMessagesTableView.reloadData()
         }
@@ -74,7 +74,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         if let newMessage = newMessageTextField.text, newMessage.count > 1 {
             newMessageTextField.text = ""
             if images.isEmpty {
-                messageRepository.sendImages(images: images, recipientId: recipientId, message: newMessage)
+                messageRepository.sendText(message: newMessage, recipientId: recipientId)
             } else {
                 messageRepository.sendImages(images: images, recipientId: recipientId, message: newMessage)
                 images.removeAll()
