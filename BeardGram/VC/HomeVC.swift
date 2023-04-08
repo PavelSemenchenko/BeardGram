@@ -31,7 +31,8 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
        
         contactsTableView.dataSource = self
         contactsTableView.delegate = self
-        contactsTableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "contactCell")
+        contactsTableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), 
+                                        forCellReuseIdentifier: "contactCell")
         
         reloadContacts()
     }

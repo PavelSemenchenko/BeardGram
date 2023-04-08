@@ -12,10 +12,12 @@ class SenderCell: UITableViewCell {
     @IBOutlet weak var messageTextLabel: UILabel!
     @IBOutlet weak var attachmentsStackView: UIStackView!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var attachnentImageView: UIImageView!
     
     var bgMessage: BGMessage! {
         didSet {
             messageTextLabel.text = bgMessage.text
+            attachmentsStackView.isHidden = true
             // timeLabel.text = bgMessage.created
         }
     }

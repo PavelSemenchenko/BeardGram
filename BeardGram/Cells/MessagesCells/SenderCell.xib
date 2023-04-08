@@ -61,6 +61,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="attachmentsStackView" destination="gBP-LL-f6w" id="a62-eH-54Y"/>
+                <outlet property="attachnentImageView" destination="iVN-WS-mud" id="Yqo-6d-Qs8"/>
                 <outlet property="messageTextLabel" destination="2Q3-rU-Pr2" id="7qK-vq-Ned"/>
                 <outlet property="timeLabel" destination="r2Q-Qa-cj3" id="X6h-VB-Bqt"/>
             </connections>

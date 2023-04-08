@@ -14,6 +14,9 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var newMessageTextField: MessageTextField!
     @IBOutlet weak var bgMessagesTableView: UITableView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var editingView: UIView!
+    
     let messageRepository: MessagesRepository = FirebaseMessagesRepository()
     var bgMessages: [BGMessage] = []
     var allbgMessages: [BGMessage] = []
@@ -37,7 +40,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         profilesRepository.getProfile(id: recipientId) { profile in
             self.title = profile?.name
         }
-        /*
+        
         registerForKeyboardNotifications()
     }
     deinit {
@@ -56,11 +59,14 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @objc func kbWillShow(_ notification: Notification) {
         let userInfo = notification.userInfo
         let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        scrollView.contentOffset = CGPoint(x: 0.0, y: kbFrameSize.height/1.5)
+        self.editingView.frame.origin.y -= 320
+        print("open")
+        // scrollView.contentOffset = CGPoint(x: 0.0, y: kbFrameSize.height/1.5)
     }
     @objc func kbWillHide() {
-        scrollView.contentOffset = CGPoint.zero
-    */
+        print("close")
+        self.editingView.frame.origin.y = 0
+        // scrollView.contentOffset = CGPoint.zero
     }
     
     func reloadMessages() {
