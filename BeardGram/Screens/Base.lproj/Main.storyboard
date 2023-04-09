@@ -845,6 +845,9 @@
                             <constraint firstItem="tj8-Br-AP4" firstAttribute="trailing" secondItem="2z0-4h-gCo" secondAttribute="trailing" id="nb7-6T-eKB"/>
                             <constraint firstItem="2z0-4h-gCo" firstAttribute="top" secondItem="1om-bI-sjH" secondAttribute="bottom" constant="1" id="obZ-fQ-aPa"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="CKz-uU-hWP" appends="YES" id="2RL-8X-NRW"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="bgMessagesTableView" destination="1om-bI-sjH" id="sXy-4F-Aaq"/>
@@ -854,6 +857,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44L-ER-YUG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="1cH-Bx-9ZD"/>
+                <tapGestureRecognizer id="CKz-uU-hWP"/>
             </objects>
             <point key="canvasLocation" x="3256" y="90"/>
         </scene>

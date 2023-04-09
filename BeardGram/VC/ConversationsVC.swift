@@ -44,6 +44,16 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         }
         
         registerForKeyboardNotifications()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+            view.addGestureRecognizer(tapGesture)
+
+            let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(hideKeyboard))
+            swipeGesture.direction = .down
+            view.addGestureRecognizer(swipeGesture)
+    }
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     deinit {
         removeKeyboardNotifications()
@@ -55,8 +65,11 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     func removeKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self)
+        /*
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+         */
     }
     @objc func kbWillShow(_ notification: Notification) {
         if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
@@ -76,7 +89,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
          */
     }
     @objc func kbWillHide() {
-        bottomConstraint.constant = 0
+        bottomConstraint.constant = 1
                 UIView.animate(withDuration: 0.3) {
                     self.view.layoutIfNeeded()
                 }
