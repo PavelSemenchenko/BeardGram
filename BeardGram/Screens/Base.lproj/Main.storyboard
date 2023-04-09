@@ -589,7 +589,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwb-Lo-3S7">
                                 <rect key="frame" x="1" y="54" width="391" height="103"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search in friends" textAlignment="natural" minimumFontSize="17" background="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jXm-E5-qKA">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search in friends" textAlignment="natural" minimumFontSize="17" background="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jXm-E5-qKA" customClass="MessageTextField" customModule="BeardGram" customModuleProvider="target">
                                         <rect key="frame" x="10" y="5" width="371" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="tMD-XN-zHj"/>
@@ -698,7 +698,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zl-cW-Gsd">
                                 <rect key="frame" x="0.0" y="64" width="393" height="90"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter global search name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vu9-Lt-BSq">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter global search name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vu9-Lt-BSq" customClass="MessageTextField" customModule="BeardGram" customModuleProvider="target">
                                         <rect key="frame" x="10" y="5" width="285" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -784,11 +784,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1om-bI-sjH">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="708"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2z0-4h-gCo">
-                                <rect key="frame" x="0.0" y="770" width="393" height="48"/>
+                                <rect key="frame" x="0.0" y="768" width="393" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpm-Uh-3EO">
                                         <rect key="frame" x="8" y="8" width="32" height="32"/>
@@ -835,11 +835,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tj8-Br-AP4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="2z0-4h-gCo" firstAttribute="leading" secondItem="tj8-Br-AP4" secondAttribute="leading" id="5nK-bI-JlW"/>
                             <constraint firstItem="tj8-Br-AP4" firstAttribute="trailing" secondItem="1om-bI-sjH" secondAttribute="trailing" id="AHA-z7-fh4"/>
                             <constraint firstItem="1om-bI-sjH" firstAttribute="leading" secondItem="tj8-Br-AP4" secondAttribute="leading" id="JTC-lr-gnd"/>
-                            <constraint firstItem="tj8-Br-AP4" firstAttribute="bottom" secondItem="2z0-4h-gCo" secondAttribute="bottom" id="inp-85-5JT"/>
+                            <constraint firstItem="tj8-Br-AP4" firstAttribute="bottom" secondItem="2z0-4h-gCo" secondAttribute="bottom" constant="2" id="TIC-fZ-Cab"/>
                             <constraint firstItem="1om-bI-sjH" firstAttribute="top" secondItem="tj8-Br-AP4" secondAttribute="top" id="lWJ-FF-d0X"/>
                             <constraint firstItem="tj8-Br-AP4" firstAttribute="trailing" secondItem="2z0-4h-gCo" secondAttribute="trailing" id="nb7-6T-eKB"/>
                             <constraint firstItem="2z0-4h-gCo" firstAttribute="top" secondItem="1om-bI-sjH" secondAttribute="bottom" constant="1" id="obZ-fQ-aPa"/>
@@ -847,6 +848,7 @@
                     </view>
                     <connections>
                         <outlet property="bgMessagesTableView" destination="1om-bI-sjH" id="sXy-4F-Aaq"/>
+                        <outlet property="bottomConstraint" destination="TIC-fZ-Cab" id="vIe-eb-GGu"/>
                         <outlet property="editingView" destination="2z0-4h-gCo" id="wix-SG-oKj"/>
                         <outlet property="newMessageTextField" destination="2h6-TW-PDg" id="vfN-t0-cHT"/>
                     </connections>

@@ -17,6 +17,8 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var editingView: UIView!
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     let messageRepository: MessagesRepository = FirebaseMessagesRepository()
     var bgMessages: [BGMessage] = []
     var allbgMessages: [BGMessage] = []
@@ -57,16 +59,32 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     @objc func kbWillShow(_ notification: Notification) {
-        let userInfo = notification.userInfo
-        let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        self.editingView.frame.origin.y -= 320
-        print("open")
-        // scrollView.contentOffset = CGPoint(x: 0.0, y: kbFrameSize.height/1.5)
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardHeight = keyboardFrame.cgRectValue.height
+            
+            bottomConstraint.constant = keyboardHeight
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
+            }
+        }
+        /*
+         let userInfo = notification.userInfo
+         let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+         editingView.frame.origin.y -= kbFrameSize.height/1.1
+         print("open")
+         // scrollView.contentOffset = CGPoint(x: 0.0, y: kbFrameSize.height/1.5)
+         */
     }
     @objc func kbWillHide() {
+        bottomConstraint.constant = 0
+                UIView.animate(withDuration: 0.3) {
+                    self.view.layoutIfNeeded()
+                }
+        /*
         print("close")
         self.editingView.frame.origin.y = 0
         // scrollView.contentOffset = CGPoint.zero
+         */
     }
     
     func reloadMessages() {
@@ -91,7 +109,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             messageRepository.sendImages(images: images, recipientId: recipientId, message: "")
             images.removeAll()
         }
-       
+        
     }
     
     @IBAction func attachmentButtonClicked(_ sender: Any) {
@@ -116,10 +134,10 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         cell.bgMessage = bgMessages[indexPath.row]
         
         /*cell.onDeleteCompletion = { dialogToDelete in
-            //self.dialogsRepository.delete(dialogId: dialogToDelete.id!)
-            //self.dialogs.remove(at: indexPath.row)
-            self.recentMessagesTableView.reloadData()
-        }*/
+         //self.dialogsRepository.delete(dialogId: dialogToDelete.id!)
+         //self.dialogs.remove(at: indexPath.row)
+         self.recentMessagesTableView.reloadData()
+         }*/
         return cell
     }
 }
