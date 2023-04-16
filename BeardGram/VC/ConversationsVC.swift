@@ -66,10 +66,6 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     func removeKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self)
-        /*
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-         */
     }
     @objc func kbWillShow(_ notification: Notification) {
         if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
@@ -80,24 +76,12 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 self.view.layoutIfNeeded()
             }
         }
-        /*
-         let userInfo = notification.userInfo
-         let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-         editingView.frame.origin.y -= kbFrameSize.height/1.1
-         print("open")
-         // scrollView.contentOffset = CGPoint(x: 0.0, y: kbFrameSize.height/1.5)
-         */
     }
     @objc func kbWillHide() {
         bottomConstraint.constant = 1
                 UIView.animate(withDuration: 0.3) {
                     self.view.layoutIfNeeded()
                 }
-        /*
-        print("close")
-        self.editingView.frame.origin.y = 0
-        // scrollView.contentOffset = CGPoint.zero
-         */
     }
     
     func reloadMessages() {
