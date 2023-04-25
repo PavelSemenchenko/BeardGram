@@ -41,6 +41,7 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         profilesRepository.getProfile(id: recipientId) { profile in
             self.title = profile?.name
+            print(profile?.name)
         }
         
         registerForKeyboardNotifications()

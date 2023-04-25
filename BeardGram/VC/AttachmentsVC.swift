@@ -7,8 +7,6 @@
 
 import Foundation
 import UIKit
-// import Photos
-// import PhotosUI
 import AlamofireImage
 
 class AttachmentsVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
