@@ -129,12 +129,6 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             fatalError("cell is wrong")
         }
         cell.bgMessage = bgMessages[indexPath.row]
-        
-        /*cell.onDeleteCompletion = { dialogToDelete in
-         //self.dialogsRepository.delete(dialogId: dialogToDelete.id!)
-         //self.dialogs.remove(at: indexPath.row)
-         self.recentMessagesTableView.reloadData()
-         }*/
         return cell
     }
 }
