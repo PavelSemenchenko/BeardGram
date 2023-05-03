@@ -72,20 +72,12 @@ class FirebaseContactsRepository: ContactsRepository {
                                       .end(at: ["\(name)\u{f8ff}"])
             //.whereField("name", isEqualTo: name)
         query.getDocuments { snapshot, _ in
-            guard let docs = snapshot?.documents else {
-                completion([])
-                return
+            
+            let items: [Profile] = snapshotToArray(snapshot)
+            let filtered = items.filter { item in
+                item.id != Auth.auth().currentUser?.uid
             }
-            var items: [Profile] = []
-            for doc in docs {
-                guard let profile = try? doc.data(as: Profile.self) else {
-                    continue
-                }
-                if profile.id != Auth.auth().currentUser?.uid {
-                    items.append(profile)
-                }
-            }
-            completion(items)
+            completion(filtered)
         }
     }
     
