@@ -44,31 +44,4 @@ class FirebaseDialogsRepository: DialogsRepository {
             completion(dialogs)
         }
     }
-    /*
-    func create(title: String) -> Dialog {
-        guard let currentUserId = Auth.auth().currentUser?.uid else {
-            fatalError("need authenticate")
-        }
-        var dialog = Dialog(title: title, authorId: currentUserId)
-        guard let reference = try? dialogsCollection.addDocument(from: dialog) else {
-            fatalError("failed to create")
-        }
-        dialog.id = reference.documentID
-        return dialog
-    }
-    
-    func delete(dialogId: String) {
-        dialogsCollection.document(dialogId).delete()
-    }
-    
-    func update(value: Dialog) {
-        guard let documentId = value.id else {
-            return
-        }
-        try? dialogsCollection.document(documentId).setData(from: value)
-    }
-    
-    lazy var dialogsCollection: CollectionReference = {
-        return Firestore.firestore().collection("dialogs")
-    }()*/
 }

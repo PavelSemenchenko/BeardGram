@@ -10,6 +10,20 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+func snapshotToArray<E>(_ snapshot: QuerySnapshot?) -> [E] where E: Codable {
+    guard let docs = snapshot?.documents else {
+        return []
+    }
+    var items: [E] = []
+    for doc in docs {
+        guard let contact = try? doc.data(as: E.self) else {
+            continue
+        }
+        items.append(contact)
+    }
+    return items
+}
+
 struct BGMessage : Codable {
     @DocumentID var id: String?
     let text: String
@@ -103,12 +117,6 @@ class FirebaseMessagesRepository: MessagesRepository {
                 print(error)
             }
         }
-        /*
-         photoService.upload(image: URL) { uploadedURL in
-         var message = BGMessage(text: message)
-         message.attachments = [BGAttachment(ref: uploadedURL, type: "image")]
-         sendMessage(message: message, recipientId: recipientId, currentUserId: currentUserId)
-         }*/
     }
     
     private func sendMessage(message: BGMessage, recipientId: String, currentUserId: String) {
