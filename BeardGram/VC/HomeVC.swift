@@ -53,41 +53,11 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             reloadContacts()
             return
         }
-        /*
-        guard let searchName = searchContactsTextField.text else {
-            return
-        }*/
         contactsRepository.search(name: searchName) { result in
             self.contacts = result
             self.contactsTableView.reloadData()
         }
-        /*
-        guard let searchName = searchContactsTextField.text?.lowercased() else { return }
-        if searchName.isEmpty {
-            contacts = allContacts
-            contactsTableView.reloadData()
-            return
-        }
-        contactsRepository.search(name: searchName) { result in
-            var searchContacts: [Profile] = []
-            self.contacts = searchContacts
-            self.contactsTableView.reloadData()
-        }*/
-        
     }
-    
-    /*
-    @IBAction func addContactButtonClicked(_ sender: Any) {
-        let sbAddContact = UIStoryboard(name: "AddContactSB", bundle: nil)
-        let ctrAddContact = sbAddContact.instantiateViewController(withIdentifier: "addContact") as! AddContactVC
-        ctrAddContact.onCreateCompletion = { newContact in
-            if let contact = newContact {
-                self.allContacts.append(contact)
-                self.contactsTableView.reloadData()
-            }
-        }
-        self.navigationController?.pushViewController(ctrAddContact, animated: true)
-    }*/
     
     @IBAction func messagesButtonClicked(_ sender: Any) {
         guard let mess = self.storyboard?.instantiateViewController(withIdentifier: "recentMessagesSB")
@@ -115,14 +85,10 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
         
         cell.data = contacts[indexPath.row]
-        //cell.contactRepository = contactsRepository
-        //let contact = allContacts[indexPath.row]
-       // contactCell.contactNameLabel.text = contact.name
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let sBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let conversationVc = self.storyboard?.instantiateViewController(withIdentifier: "conversationsSB") as? ConversationsVC else {
             return
         }

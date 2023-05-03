@@ -39,8 +39,9 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         bgMessagesTableView.register(UINib(nibName: "SenderCell", bundle: nil), forCellReuseIdentifier: "senderRow")
         reloadMessages()
         
-        profilesRepository.getProfile(id: recipientId) { profile in
-            self.title = profile?.name
+        profilesRepository.getProfile(id: recipientId) { [weak self ] profile in
+            self?.title = profile?.name
+            print(profile?.name)
         }
         
         registerForKeyboardNotifications()
@@ -129,12 +130,6 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             fatalError("cell is wrong")
         }
         cell.bgMessage = bgMessages[indexPath.row]
-        
-        /*cell.onDeleteCompletion = { dialogToDelete in
-         //self.dialogsRepository.delete(dialogId: dialogToDelete.id!)
-         //self.dialogs.remove(at: indexPath.row)
-         self.recentMessagesTableView.reloadData()
-         }*/
         return cell
     }
 }
