@@ -42,18 +42,9 @@ class FirebaseContactsRepository: ContactsRepository {
             fatalError("no permissions")
         }
         contactsCollection.document(currentUserId).collection("contacts").addSnapshotListener { snapshot, _ in
-            guard let docs = snapshot?.documents else {
-                completion([])
-                return
-            }
-            var contacts: [Profile] = []
-            for doc in docs {
-                guard let contact = try? doc.data(as: Profile.self) else {
-                    continue
-                }
-                contacts.append(contact)
-            }
-            completion(contacts)
+            let items: [Profile] = snapshotToArray(snapshot)
+            completion(items)
+            
         }
     }
     
