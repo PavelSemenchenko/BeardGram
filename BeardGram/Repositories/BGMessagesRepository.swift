@@ -12,10 +12,11 @@ import FirebaseFirestoreSwift
 
 // Создаем генерик тип универсальный 
 func snapshotToArray<E>(_ snapshot: QuerySnapshot?) -> [E] where E: Codable {
+    // разобрали снепшот - проверили есть ли в нем документы/ если нет
     guard let docs = snapshot?.documents else {
-        return []
+        return [] // вернули пустой массив
     }
-    var items: [E] = []
+    var items: [E] = [] // создали масим елементов Е
     for doc in docs {
         guard let contact = try? doc.data(as: E.self) else {
             continue
@@ -57,18 +58,9 @@ class FirebaseMessagesRepository: MessagesRepository {
             .collection("dialogs").document(recipientId)
             .collection("messages").order(by: "created")
             .addSnapshotListener { snapshot, _ in
-                guard let docs = snapshot?.documents else {
-                    completion([])
-                    return
-                }
-                var bgMessages: [BGMessage] = []
-                for doc in docs {
-                    guard let contact = try? doc.data(as: BGMessage.self) else {
-                        continue
-                    }
-                    bgMessages.append(contact)
-                }
-                completion(bgMessages)
+                
+                let items: [BGMessage] = snapshotToArray(snapshot)
+                completion(items)
             }
     }
     
