@@ -10,6 +10,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+// Создаем генерик тип универсальный 
 func snapshotToArray<E>(_ snapshot: QuerySnapshot?) -> [E] where E: Codable {
     guard let docs = snapshot?.documents else {
         return []
