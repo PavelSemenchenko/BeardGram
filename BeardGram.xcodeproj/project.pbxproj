@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043A8AA12A09732300DCDE9B /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A8AA02A09732300DCDE9B /* Navigation.swift */; };
 		2A327AF729B66F14005F440E /* AttachmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A327AF629B66F14005F440E /* AttachmentsVC.swift */; };
 		2A4129F4297F0DEC00E33979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4129F3297F0DEC00E33979 /* AppDelegate.swift */; };
 		2A4129F6297F0DEC00E33979 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4129F5297F0DEC00E33979 /* SceneDelegate.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		043A8AA02A09732300DCDE9B /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		04725EAE9C236AC60C5583EE /* Pods_BeardGram_BeardGramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeardGram_BeardGramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A327AF629B66F14005F440E /* AttachmentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsVC.swift; sourceTree = "<group>"; };
 		2A4129F0297F0DEC00E33979 /* BeardGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeardGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,6 +245,7 @@
 			children = (
 				2A412A68297F370E00E33979 /* Authentication.swift */,
 				2A412A6A297F371A00E33979 /* Filestorage.swift */,
+				043A8AA02A09732300DCDE9B /* Navigation.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				2A412A69297F370E00E33979 /* Authentication.swift in Sources */,
 				2A72A3932992D8C9002ADB60 /* ProfileTableViewCell.swift in Sources */,
 				2AD8D30F2991974300677ED5 /* ProfilesRepository.swift in Sources */,
+				043A8AA12A09732300DCDE9B /* Navigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

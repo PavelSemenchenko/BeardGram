@@ -14,8 +14,8 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var contactsTableView: UITableView!
     
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
-    
     let contactsRepository: ContactsRepository = FirebaseContactsRepository()
+    let navigation: Navigation = Navigation()
     
     var contacts: [Profile] = []
     var allContacts : [Profile] = []
@@ -60,10 +60,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
     
     @IBAction func messagesButtonClicked(_ sender: Any) {
-        guard let mess = self.storyboard?.instantiateViewController(withIdentifier: "recentMessagesSB")
-                as? RecentMessagesVC else { return
-        }
-        self.navigationController?.pushViewController(mess, animated: true)
+        navigation.openRecentMessages(self)
     }
     
     @objc func logOutClicked() {
@@ -89,21 +86,11 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let conversationVc = self.storyboard?.instantiateViewController(withIdentifier: "conversationsSB") as? ConversationsVC else {
-            return
-        }
-        conversationVc.recipientId = contacts[indexPath.row].id
-        self.navigationController?.pushViewController(conversationVc, animated: true)
+        navigation.openConversation(self, recipient: contacts[indexPath.row].id!)
     }
     
     @IBAction func globalSearchButtonClicked(_ sender: Any) {
-        guard let globalSearch = self.storyboard?.instantiateViewController(withIdentifier: "globalSearchSB") as? GlobalSearchVC else {
-            return
-        }
-        globalSearch.onAddFriendCompletion = { newFriend in
-                }
-        
-        self.navigationController?.pushViewController(globalSearch, animated: true)
+        navigation.openGlobalSearch(self)
     }
     
     @IBAction func reloadTableButtonClicked(_ sender: Any) {
