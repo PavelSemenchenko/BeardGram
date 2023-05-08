@@ -21,12 +21,13 @@ class Navigation {
         
     }
     func openConversation(_ host: UIViewController, recipient: String) {
-        
+//        регистрируем контроллер
         guard let vc = host.createById("conversationsSB") as? ConversationsVC else {
             return
         }
+//        передаем если нужно инфу
         vc.recipientId = recipient
-        
+//   выполяем действие перехода
         host.pushVC(vc)
         
     }
@@ -40,9 +41,11 @@ class Navigation {
 }
 
 extension UIViewController {
+//    инициализируем контроллер
     fileprivate func createById(_ identifier: String) -> UIViewController? {
         return storyboard?.instantiateViewController(withIdentifier: identifier)
     }
+//    действие перехода
     fileprivate func pushVC(_ vc: UIViewController) {
         navigationController?.pushViewController(vc, animated: true)
     }
