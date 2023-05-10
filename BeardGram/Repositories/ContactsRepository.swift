@@ -82,3 +82,31 @@ class FirebaseContactsRepository: ContactsRepository {
     }
     
 }
+
+class ContactsDummy: ContactsRepository {
+    func getAll(completion: @escaping ([Profile]) -> Void) {
+        var profiles: [Profile] = []
+        for i in 0..<10 {
+            profiles.append(Profile(name: "Super User \(i)"))
+        }
+        completion(profiles)
+    }
+    
+    func append(profile: Profile) -> Profile {
+        fatalError()
+    }
+    
+    func delete(profile: Profile) {
+        
+    }
+    
+    func update(value: Profile) {
+        
+    }
+    
+    func search(name: String, completion: @escaping ([Profile]) -> Void) {
+        
+    }
+    
+    
+}

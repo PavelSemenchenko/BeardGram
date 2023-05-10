@@ -15,6 +15,7 @@ class GlobalSearchVC: UIViewController {
     @IBOutlet weak var globalSearchTableView: UITableView!
     var onAddFriendCompletion: ((Profile?) -> Void)?
     var profilesRepository: ProfilesRepository!
+    var navigation: Navigation!
     
     var profiles: [Profile] = []
     

@@ -9,12 +9,24 @@ import Foundation
 import UIKit
 
 class Navigation {
+    func openHome(_ scene: SceneDelegate) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeSB") as! HomeVC
+//            homeViewController.contactsRepository = ContactsDummy()
+        homeViewController.contactsRepository = FirebaseContactsRepository()
+        homeViewController.authenticationService = FirebaseAuthenticationService()
+        homeViewController.navigation = Navigation()
+        let navigationViewController = UINavigationController(rootViewController: homeViewController)
+        scene.window?.rootViewController = navigationViewController
+        scene.window?.makeKeyAndVisible()
+    }
     func openGlobalSearch(_ host: UIViewController) {
         
         guard let vc = host.createById("globalSearchSB") as? GlobalSearchVC else {
             return
         }
         vc.profilesRepository = FirebaseProfilesRepository()
+        vc.navigation = Navigation()
         vc.onAddFriendCompletion = { newFriend in
         }
         

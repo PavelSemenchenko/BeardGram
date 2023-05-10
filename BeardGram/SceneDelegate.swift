@@ -19,11 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         if authenticationService.isAuthenticated() {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeSB")
-            let navigationViewController = UINavigationController(rootViewController: homeViewController)
-            window?.rootViewController = navigationViewController
-            window?.makeKeyAndVisible()
+            Navigation().openHome(self)
         }
     }
 

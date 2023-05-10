@@ -13,9 +13,9 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var searchContactsTextField: UITextField!
     @IBOutlet weak var contactsTableView: UITableView!
     
-    var authenticationService: AuthenticationService! = FirebaseAuthenticationService()
-    var contactsRepository: ContactsRepository! = FirebaseContactsRepository()
-    var navigation: Navigation! = Navigation()
+    var authenticationService: AuthenticationService!
+    var contactsRepository: ContactsRepository! 
+    var navigation: Navigation! 
     
     var contacts: [Profile] = []
     var allContacts : [Profile] = []
