@@ -12,10 +12,6 @@ class NavigationService {
     func openHome(_ scene: SceneDelegate) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeSB") as! HomeVC
-//            homeViewController.contactsRepository = ContactsDummy()
-        homeViewController.contactsRepository = FirebaseContactsRepository()
-        homeViewController.authenticationService = FirebaseAuthenticationService()
-        homeViewController.navigation = NavigationService()
         let navigationViewController = UINavigationController(rootViewController: homeViewController)
         scene.window?.rootViewController = navigationViewController
         scene.window?.makeKeyAndVisible()
@@ -24,10 +20,6 @@ class NavigationService {
         guard let vc = host.createById("homeSB") as? HomeVC else {
             return
         }
-//            vc.contactsRepository = ContactsDummy()
-        vc.contactsRepository = FirebaseContactsRepository()
-        vc.authenticationService = FirebaseAuthenticationService()
-        vc.navigation = NavigationService()
         host.pushVC(vc)
     }
     func openGlobalSearch(_ host: UIViewController) {
@@ -35,8 +27,6 @@ class NavigationService {
         guard let vc = host.createById("globalSearchSB") as? GlobalSearchVC else {
             return
         }
-        vc.profilesRepository = FirebaseProfilesRepository()
-        vc.navigation = NavigationService()
         vc.onAddFriendCompletion = { newFriend in
         }
         
@@ -44,13 +34,13 @@ class NavigationService {
         
     }
     func openConversation(_ host: UIViewController, recipient: String) {
-//        регистрируем контроллер
+        //        регистрируем контроллер
         guard let vc = host.createById("conversationsSB") as? ConversationsVC else {
             return
         }
-//        передаем если нужно инфу
+        //        передаем если нужно инфу
         vc.recipientId = recipient
-//   выполяем действие перехода
+        //   выполяем действие перехода
         host.pushVC(vc)
         
     }
@@ -70,11 +60,11 @@ class NavigationService {
 }
 
 extension UIViewController {
-//    инициализируем контроллер
+    //    инициализируем контроллер
     fileprivate func createById(_ identifier: String) -> UIViewController? {
         return storyboard?.instantiateViewController(withIdentifier: identifier)
     }
-//    действие перехода
+    //    действие перехода
     fileprivate func pushVC(_ vc: UIViewController) {
         navigationController?.pushViewController(vc, animated: true)
     }
