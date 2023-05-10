@@ -14,6 +14,7 @@ class Navigation {
         guard let vc = host.createById("globalSearchSB") as? GlobalSearchVC else {
             return
         }
+        vc.profilesRepository = FirebaseProfilesRepository()
         vc.onAddFriendCompletion = { newFriend in
         }
         
@@ -37,6 +38,12 @@ class Navigation {
                 as? RecentMessagesVC else { return
         }
         host.pushVC(vc)
+    }
+    func back(_ host: UIViewController) {
+        host.navigationController?.popViewController(animated: true)
+    }
+    func backToRoot(_ host: UIViewController) {
+        host.navigationController?.popToRootViewController(animated: true)
     }
 }
 

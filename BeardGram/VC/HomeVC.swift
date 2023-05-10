@@ -13,9 +13,9 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var searchContactsTextField: UITextField!
     @IBOutlet weak var contactsTableView: UITableView!
     
-    let authenticationService: AuthenticationService = FirebaseAuthenticationService()
-    let contactsRepository: ContactsRepository = FirebaseContactsRepository()
-    let navigation: Navigation = Navigation()
+    var authenticationService: AuthenticationService! = FirebaseAuthenticationService()
+    var contactsRepository: ContactsRepository! = FirebaseContactsRepository()
+    var navigation: Navigation! = Navigation()
     
     var contacts: [Profile] = []
     var allContacts : [Profile] = []
@@ -71,7 +71,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
             }
             navigationController?.pushViewController(viewController, animated: true)
         } else {
-            navigationController?.popToRootViewController(animated: true)
+            navigation.backToRoot(self)
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

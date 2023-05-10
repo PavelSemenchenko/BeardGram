@@ -14,7 +14,7 @@ class GlobalSearchVC: UIViewController {
     
     @IBOutlet weak var globalSearchTableView: UITableView!
     var onAddFriendCompletion: ((Profile?) -> Void)?
-    let profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
+    var profilesRepository: ProfilesRepository!
     
     var profiles: [Profile] = []
     
