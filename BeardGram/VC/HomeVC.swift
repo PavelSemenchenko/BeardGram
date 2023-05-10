@@ -15,7 +15,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     lazy var authenticationService: AuthenticationService = Locator.authenticationService
     lazy var contactsRepository: ContactsRepository = Locator.contactsRepository
-    lazy var navigation: Navigation = Locator.navigation
+    lazy var navigation: NavigationService = Locator.navigation
     
     var contacts: [Profile] = []
     var allContacts : [Profile] = []

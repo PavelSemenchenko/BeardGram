@@ -8,14 +8,14 @@
 import Foundation
 import UIKit
 
-class Navigation {
+class NavigationService {
     func openHome(_ scene: SceneDelegate) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeViewController = storyboard.instantiateViewController(withIdentifier: "homeSB") as! HomeVC
 //            homeViewController.contactsRepository = ContactsDummy()
         homeViewController.contactsRepository = FirebaseContactsRepository()
         homeViewController.authenticationService = FirebaseAuthenticationService()
-        homeViewController.navigation = Navigation()
+        homeViewController.navigation = NavigationService()
         let navigationViewController = UINavigationController(rootViewController: homeViewController)
         scene.window?.rootViewController = navigationViewController
         scene.window?.makeKeyAndVisible()
@@ -27,7 +27,7 @@ class Navigation {
 //            vc.contactsRepository = ContactsDummy()
         vc.contactsRepository = FirebaseContactsRepository()
         vc.authenticationService = FirebaseAuthenticationService()
-        vc.navigation = Navigation()
+        vc.navigation = NavigationService()
         host.pushVC(vc)
     }
     func openGlobalSearch(_ host: UIViewController) {
@@ -36,7 +36,7 @@ class Navigation {
             return
         }
         vc.profilesRepository = FirebaseProfilesRepository()
-        vc.navigation = Navigation()
+        vc.navigation = NavigationService()
         vc.onAddFriendCompletion = { newFriend in
         }
         

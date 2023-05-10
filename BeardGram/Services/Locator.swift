@@ -11,7 +11,7 @@ class Locator {
     static let profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
     static let authenticationService: AuthenticationService = FirebaseAuthenticationService()
     static let contactsRepository: ContactsRepository = FirebaseContactsRepository()
-    static let navigation: Navigation = Navigation()
+    static let navigation: NavigationService = NavigationService()
     static let dialogsRepository: DialogsRepository = FirebaseDialogsRepository()
     static let messageRepository: MessagesRepository = FirebaseMessagesRepository()
 }

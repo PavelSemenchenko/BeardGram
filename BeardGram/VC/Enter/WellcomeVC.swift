@@ -11,8 +11,8 @@ import AuthenticationServices
 import FBSDKLoginKit
 
 class WellcomeVC: UIViewController {
-    let authenticationService: AuthenticationService = FirebaseAuthenticationService()
-    var navigation: Navigation!
+    lazy var authenticationService: AuthenticationService = Locator.authenticationService
+    lazy var navigation: NavigationService = Locator.navigation
     
     fileprivate var currentNonce: String?
     
@@ -104,7 +104,7 @@ extension WellcomeVC: ASAuthorizationControllerDelegate {
                     
 //                    не открывает -падает на пользователях!
 //                    navigation.openHome(self)
-                    Navigation().openHome(self)
+                    NavigationService().openHome(self)
                 }
             }
         }

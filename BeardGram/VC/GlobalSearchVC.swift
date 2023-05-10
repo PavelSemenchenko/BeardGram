@@ -15,7 +15,7 @@ class GlobalSearchVC: UIViewController {
     var onAddFriendCompletion: ((Profile?) -> Void)?
     
     lazy var profilesRepository: ProfilesRepository = Locator.profilesRepository
-    lazy var navigation: Navigation = Locator.navigation
+    lazy var navigation: NavigationService = Locator.navigation
     
     var profiles: [Profile] = []
     
