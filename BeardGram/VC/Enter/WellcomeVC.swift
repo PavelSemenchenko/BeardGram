@@ -12,6 +12,7 @@ import FBSDKLoginKit
 
 class WellcomeVC: UIViewController {
     let authenticationService: AuthenticationService = FirebaseAuthenticationService()
+    var navigation: Navigation!
     
     fileprivate var currentNonce: String?
     
@@ -100,10 +101,10 @@ extension WellcomeVC: ASAuthorizationControllerDelegate {
                     // скрин после получения имейла и имени
                 } else {
                     // если не новый пользователь - go Home
-                    guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "homeSB") as? HomeVC else {
-                        return
-                    }
-                    self.navigationController?.pushViewController(homeVC, animated: true)
+                    
+//                    не открывает -падает на пользователях!
+//                    navigation.openHome(self)
+                    Navigation().openHome(self)
                 }
             }
         }

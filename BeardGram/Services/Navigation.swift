@@ -20,6 +20,16 @@ class Navigation {
         scene.window?.rootViewController = navigationViewController
         scene.window?.makeKeyAndVisible()
     }
+    func openHome(_ host: UIViewController) {
+        guard let vc = host.createById("homeSB") as? HomeVC else {
+            return
+        }
+//            vc.contactsRepository = ContactsDummy()
+        vc.contactsRepository = FirebaseContactsRepository()
+        vc.authenticationService = FirebaseAuthenticationService()
+        vc.navigation = Navigation()
+        host.pushVC(vc)
+    }
     func openGlobalSearch(_ host: UIViewController) {
         
         guard let vc = host.createById("globalSearchSB") as? GlobalSearchVC else {
