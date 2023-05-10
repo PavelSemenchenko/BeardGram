@@ -13,7 +13,7 @@ class RecentMessagesVC: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet weak var recentMessagesTableView: UITableView!
     var dialogs: [Dialog] = []
     var allDialogs: [Dialog] = []
-    let dialogsRepository: DialogsRepository = FirebaseDialogsRepository()
+    lazy var dialogsRepository: DialogsRepository = Locator.dialogsRepository
     
     override func viewDidLoad() {
         super.viewDidLoad()

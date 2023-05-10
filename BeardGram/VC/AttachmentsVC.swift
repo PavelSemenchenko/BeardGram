@@ -13,8 +13,9 @@ class AttachmentsVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     @IBOutlet weak var addImageView: UIImageView!
     
+    lazy var imageRepository: MessagesRepository = Locator.messageRepository
+    
     var imageURL: URL?
-    let imageRepository: MessagesRepository = FirebaseMessagesRepository()
     var onImageReady: ((URL) -> Void)?
     
     override func viewDidLoad() {

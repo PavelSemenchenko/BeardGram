@@ -19,11 +19,11 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
-    let messageRepository: MessagesRepository = FirebaseMessagesRepository()
+    lazy var messageRepository: MessagesRepository = Locator.messageRepository
+    lazy var profilesRepository: ProfilesRepository = Locator.profilesRepository
+    
     var bgMessages: [BGMessage] = []
     var allbgMessages: [BGMessage] = []
-    
-    var profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
     
     var images: [URL] = []
     

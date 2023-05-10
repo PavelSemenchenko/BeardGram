@@ -11,11 +11,11 @@ import UIKit
 class GlobalSearchVC: UIViewController {
     
     @IBOutlet weak var globalSearchTextField: UITextField!
-    
     @IBOutlet weak var globalSearchTableView: UITableView!
     var onAddFriendCompletion: ((Profile?) -> Void)?
-    var profilesRepository: ProfilesRepository!
-    var navigation: Navigation!
+    
+    lazy var profilesRepository: ProfilesRepository = Locator.profilesRepository
+    lazy var navigation: Navigation = Locator.navigation
     
     var profiles: [Profile] = []
     

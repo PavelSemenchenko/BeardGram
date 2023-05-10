@@ -13,9 +13,9 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var searchContactsTextField: UITextField!
     @IBOutlet weak var contactsTableView: UITableView!
     
-    var authenticationService: AuthenticationService!
-    var contactsRepository: ContactsRepository! 
-    var navigation: Navigation! 
+    lazy var authenticationService: AuthenticationService = Locator.authenticationService
+    lazy var contactsRepository: ContactsRepository = Locator.contactsRepository
+    lazy var navigation: Navigation = Locator.navigation
     
     var contacts: [Profile] = []
     var allContacts : [Profile] = []
