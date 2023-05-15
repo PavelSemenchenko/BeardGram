@@ -16,4 +16,5 @@ class Locator {
     fileprivate(set) lazy var messageRepository: MessagesRepository = FirebaseMessagesRepository()
     
     static var L = Locator()
+//    сделали локатор защищенным и можем его переопределить заглушкой нижу через поле L
 }
