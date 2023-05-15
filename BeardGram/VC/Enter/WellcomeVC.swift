@@ -11,8 +11,8 @@ import AuthenticationServices
 import FBSDKLoginKit
 
 class WellcomeVC: UIViewController {
-    lazy var authenticationService: AuthenticationService = Locator.authenticationService
-    lazy var navigation: NavigationService = Locator.navigation
+    lazy var authenticationService: AuthenticationService = Locator.L.authenticationService
+    lazy var navigation: NavigationService = Locator.L.navigation
     
     fileprivate var currentNonce: String?
     

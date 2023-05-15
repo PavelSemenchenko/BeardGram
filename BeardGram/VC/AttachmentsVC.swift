@@ -13,7 +13,7 @@ class AttachmentsVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     @IBOutlet weak var addImageView: UIImageView!
     
-    lazy var imageRepository: MessagesRepository = Locator.messageRepository
+    lazy var imageRepository: MessagesRepository = Locator.L.messageRepository
     
     var imageURL: URL?
     var onImageReady: ((URL) -> Void)?

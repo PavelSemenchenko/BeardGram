@@ -8,10 +8,12 @@
 import Foundation
 
 class Locator {
-    static let profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
-    static let authenticationService: AuthenticationService = FirebaseAuthenticationService()
-    static let contactsRepository: ContactsRepository = FirebaseContactsRepository()
-    static let navigation: NavigationService = NavigationService()
-    static let dialogsRepository: DialogsRepository = FirebaseDialogsRepository()
-    static let messageRepository: MessagesRepository = FirebaseMessagesRepository()
+    fileprivate(set) lazy var profilesRepository: ProfilesRepository = FirebaseProfilesRepository()
+    fileprivate(set) lazy var authenticationService: AuthenticationService = FirebaseAuthenticationService()
+    fileprivate(set) lazy var contactsRepository: ContactsRepository = FirebaseContactsRepository()
+    fileprivate(set) lazy var navigation: NavigationService = NavigationService()
+    fileprivate(set) lazy var dialogsRepository: DialogsRepository = FirebaseDialogsRepository()
+    fileprivate(set) lazy var messageRepository: MessagesRepository = FirebaseMessagesRepository()
+    
+    static var L = Locator()
 }

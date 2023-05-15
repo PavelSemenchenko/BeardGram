@@ -51,6 +51,13 @@ class NavigationService {
         }
         host.pushVC(vc)
     }
+    func openAttachments(_ host: UIViewController) {
+        guard let vc = host.createById("attachmentsSB") as? AttachmentsVC else {
+            return
+        }
+//        vc.onImageReady = 
+    }
+    
     func back(_ host: UIViewController) {
         host.navigationController?.popViewController(animated: true)
     }

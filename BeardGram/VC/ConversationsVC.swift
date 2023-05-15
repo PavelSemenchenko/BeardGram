@@ -19,8 +19,8 @@ class ConversationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
-    lazy var messageRepository: MessagesRepository = Locator.messageRepository
-    lazy var profilesRepository: ProfilesRepository = Locator.profilesRepository
+    lazy var messageRepository: MessagesRepository = Locator.L.messageRepository
+    lazy var profilesRepository: ProfilesRepository = Locator.L.profilesRepository
     
     var bgMessages: [BGMessage] = []
     var allbgMessages: [BGMessage] = []

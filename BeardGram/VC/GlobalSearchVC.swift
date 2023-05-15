@@ -14,8 +14,8 @@ class GlobalSearchVC: UIViewController {
     @IBOutlet weak var globalSearchTableView: UITableView!
     var onAddFriendCompletion: ((Profile?) -> Void)?
     
-    lazy var profilesRepository: ProfilesRepository = Locator.profilesRepository
-    lazy var navigation: NavigationService = Locator.navigation
+    lazy var profilesRepository: ProfilesRepository = Locator.L.profilesRepository
+    lazy var navigation: NavigationService = Locator.L.navigation
     
     var profiles: [Profile] = []
     
