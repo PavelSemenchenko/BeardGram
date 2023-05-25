@@ -12,7 +12,6 @@ import Combine
 class SomeVC: UIViewController {
     
     private let loginVM = LoginVM()
-    private var somethingCancelable : AnyCancellable?
     
     private var invalidEmailCancelable: AnyCancellable?
     private var invalidPasswordCancelable: AnyCancellable?
@@ -54,8 +53,15 @@ class SomeVC: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        somethingCancelable?.cancel()
-        somethingCancelable = nil
+        
+        invalidEmailCancelable?.cancel()
+        invalidEmailCancelable = nil
+        invalidPasswordCancelable?.cancel()
+        invalidPasswordCancelable = nil
+        loginEnabledCancelable?.cancel()
+        loginEnabledCancelable = nil
+        loginActiveCancelable?.cancel()
+        loginActiveCancelable = nil
     }
     
 }
