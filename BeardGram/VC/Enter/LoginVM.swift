@@ -14,11 +14,41 @@ class SomeVC: UIViewController {
     private let loginVM = LoginVM()
     private var somethingCancelable : AnyCancellable?
     
+    private var invalidEmailCancelable: AnyCancellable?
+    private var invalidPasswordCancelable: AnyCancellable?
+    private var loginEnabledCancelable: AnyCancellable?
+    private var loginActiveCancelable: AnyCancellable?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        invalidEmailCancelable = loginVM.invalidEmail$.sink { _ in
+            
+        } receiveValue: { invalid in
+            
+        }
+        
+        invalidPasswordCancelable = loginVM.invalidPassword$.sink { _ in
+            
+        } receiveValue: { invalid in
+            
+        }
+        
+        loginEnabledCancelable = loginVM.loginEnabled$.sink { _ in
+            
+        } receiveValue: { enabled in
+            
+        }
+        
+        loginActiveCancelable = loginVM.loginEnabled$.sink { _ in
+            
+        } receiveValue: { active in
+            
+        }
         
     
     }
